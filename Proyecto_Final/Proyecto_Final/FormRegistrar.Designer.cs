@@ -45,6 +45,8 @@
             this.buttonMostrarContra = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timerAnimacionAbrir = new System.Windows.Forms.Timer(this.components);
+            this.timerSalir = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -215,6 +217,16 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // timerAnimacionAbrir
+            // 
+            this.timerAnimacionAbrir.Interval = 10;
+            this.timerAnimacionAbrir.Tick += new System.EventHandler(this.timerAnimacionAbrir_Tick);
+            // 
+            // timerSalir
+            // 
+            this.timerSalir.Interval = 10;
+            this.timerSalir.Tick += new System.EventHandler(this.timerSalir_Tick);
+            // 
             // FormRegistrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,6 +235,8 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormRegistrar";
+            this.Opacity = 0D;
+            this.ShowInTaskbar = false;
             this.Text = "FormRegistrar";
             this.Load += new System.EventHandler(this.FormRegistrar_Load);
             this.panel1.ResumeLayout(false);
@@ -249,5 +263,7 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label labelMensajeContra2;
         private System.Windows.Forms.Button buttonAtras;
+        private System.Windows.Forms.Timer timerAnimacionAbrir;
+        private System.Windows.Forms.Timer timerSalir;
     }
 }

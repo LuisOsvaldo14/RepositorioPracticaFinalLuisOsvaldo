@@ -17,13 +17,51 @@ namespace Proyecto_Final
         {
             InitializeComponent();
         }
+        private void FormSingin_Load(object sender, EventArgs e)
+        {
+            timerAnimacionAbrir.Start();
+        }
+        private void timerAnimacionAbrir_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity < 1.0) { this.Opacity += 0.035; }
+            else {timerAnimacionAbrir.Stop();}
+
+        }
         private void buttonClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            timerSalir.Start();       
         }
+        private void timerSalir_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity > 0)
+            {
+                this.Opacity -= 0.04;
+            }
+            else
+            {
+                timerSalir.Stop();
+                this.Close();
+            }
+
+        }
+
         private void buttonMinimized_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            Timer timerminimizar = new Timer();
+            timerminimizar.Interval = 10;
+            timerminimizar.Tick += (s, ve) =>
+            {
+                if (this.Opacity > 0)
+                {
+                    this.Opacity -= 0.2;
+                }
+                else
+                {
+                    timerminimizar.Stop();
+                    this.WindowState = FormWindowState.Minimized;
+                }
+            };
+            timerminimizar.Start();
         }
         bool mover = false;
         int X, Y;
@@ -53,54 +91,6 @@ namespace Proyecto_Final
         {
             mover = false;
         }
-
-        private void panelBarraTitulo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelContraseña_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelUsuario_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelWelcome_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormSingin_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonMostrarContra_Click(object sender, EventArgs e)
         {
             if (textBoxContra.PasswordChar == '*')
@@ -117,18 +107,46 @@ namespace Proyecto_Final
             }
         }
 
+        private void FormSingin_Activated(object sender, EventArgs e)
+        {
+            Timer Mostrar = new Timer();
+            Mostrar.Interval = 10;
+            Mostrar.Tick += (s, ve) =>
+            {
+                if (this.Opacity < 1)
+                {
+                    this.Opacity += 0.1;
+                }
+                else
+                {
+                    Mostrar.Stop();
+                }
+            };
+            Mostrar.Start();
+        }
+
         private void linkLabelRegistrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FormOveralay1 overlay = new FormOveralay1();
+            overlay.Owner = this;
             overlay.Location = this.Location;
             overlay.Size = this.Size;
             FormRegistrar registrar = new FormRegistrar();
             registrar.StartPosition = FormStartPosition.CenterParent;
             overlay.Show();
             registrar.ShowDialog(overlay);
-            overlay.Close();
-
-            
+            Timer timerOver = new Timer();
+            timerOver.Interval = 10;
+            timerOver.Tick += (s, ev) =>
+            {
+                if (overlay.Opacity > 0) { overlay.Opacity -= 0.2; }
+                else
+                {
+                    timerOver.Stop();
+                    overlay.Close();
+                }
+            };
+            timerOver.Start();
         }
     }
 }

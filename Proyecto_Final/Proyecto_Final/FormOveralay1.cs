@@ -16,5 +16,16 @@ namespace Proyecto_Final
         {
             InitializeComponent();
         }
+
+        private void FormOveralay1_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity < 0.5) {this.Opacity += 0.05;}
+            else { timer1.Stop(); }
+        }
     }
 }

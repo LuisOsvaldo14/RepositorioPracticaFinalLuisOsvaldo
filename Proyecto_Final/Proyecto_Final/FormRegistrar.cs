@@ -19,7 +19,7 @@ namespace Proyecto_Final
 
         private void FormRegistrar_Load(object sender, EventArgs e)
         {
-
+            timerAnimacionAbrir.Start();
         }
 
         private void buttonMostrarContra_Click(object sender, EventArgs e)
@@ -58,10 +58,34 @@ namespace Proyecto_Final
         {
 
         }
+        private void timerAnimacionAbrir_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity < 1.0)
+            {
+                this.Opacity += 0.05;
+            }
+            else
+            {
+                timerAnimacionAbrir.Stop();
+            }
+        }
 
+        private void timerSalir_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity > 0)
+            {
+                this.Opacity -= 0.1;
+            }
+            else
+            {
+                timerSalir.Stop();
+                this.Close();
+            }
+        }
         private void buttonAtras_Click(object sender, EventArgs e)
         {
-            this.Close();
+            timerSalir.Start();
         }
     }
+    
 }
