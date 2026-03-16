@@ -32,19 +32,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistrar));
             this.labelRegistrar = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonAtras = new System.Windows.Forms.Button();
             this.labelMensajeContra2 = new System.Windows.Forms.Label();
+            this.buttonMostrarContra = new System.Windows.Forms.Button();
             this.buttonSingin = new System.Windows.Forms.Button();
             this.labelContraseña2 = new System.Windows.Forms.Label();
             this.textBoxContra2 = new System.Windows.Forms.TextBox();
             this.labelContraseña = new System.Windows.Forms.Label();
             this.labelUsuario = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxContra1 = new System.Windows.Forms.TextBox();
             this.textBoxUsuario = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.buttonAtras = new System.Windows.Forms.Button();
-            this.buttonMostrarContra = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timerAnimacionAbrir = new System.Windows.Forms.Timer(this.components);
             this.timerSalir = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
@@ -84,6 +84,23 @@
             this.panel1.Size = new System.Drawing.Size(350, 448);
             this.panel1.TabIndex = 3;
             // 
+            // buttonAtras
+            // 
+            this.buttonAtras.BackColor = System.Drawing.Color.White;
+            this.buttonAtras.BackgroundImage = global::Proyecto_Final.Properties.Resources.close_icon_47;
+            this.buttonAtras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAtras.Font = new System.Drawing.Font("Segoe UI Variable Text", 8.25F);
+            this.buttonAtras.ForeColor = System.Drawing.Color.White;
+            this.buttonAtras.Location = new System.Drawing.Point(310, 0);
+            this.buttonAtras.Name = "buttonAtras";
+            this.buttonAtras.Size = new System.Drawing.Size(40, 35);
+            this.buttonAtras.TabIndex = 21;
+            this.buttonAtras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.buttonAtras, "Cerrar");
+            this.buttonAtras.UseVisualStyleBackColor = false;
+            this.buttonAtras.Click += new System.EventHandler(this.buttonAtras_Click);
+            // 
             // labelMensajeContra2
             // 
             this.labelMensajeContra2.AutoSize = true;
@@ -92,6 +109,20 @@
             this.labelMensajeContra2.Name = "labelMensajeContra2";
             this.labelMensajeContra2.Size = new System.Drawing.Size(0, 13);
             this.labelMensajeContra2.TabIndex = 20;
+            // 
+            // buttonMostrarContra
+            // 
+            this.buttonMostrarContra.BackgroundImage = global::Proyecto_Final.Properties.Resources.esconder;
+            this.buttonMostrarContra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonMostrarContra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMostrarContra.ForeColor = System.Drawing.Color.White;
+            this.buttonMostrarContra.Location = new System.Drawing.Point(284, 233);
+            this.buttonMostrarContra.Name = "buttonMostrarContra";
+            this.buttonMostrarContra.Size = new System.Drawing.Size(27, 24);
+            this.buttonMostrarContra.TabIndex = 19;
+            this.toolTip1.SetToolTip(this.buttonMostrarContra, "Mostrar contraseña");
+            this.buttonMostrarContra.UseVisualStyleBackColor = true;
+            this.buttonMostrarContra.Click += new System.EventHandler(this.buttonMostrarContra_Click);
             // 
             // buttonSingin
             // 
@@ -143,58 +174,6 @@
             this.labelUsuario.TabIndex = 14;
             this.labelUsuario.Text = "Usuario";
             // 
-            // textBoxContra1
-            // 
-            this.textBoxContra1.Location = new System.Drawing.Point(81, 233);
-            this.textBoxContra1.Name = "textBoxContra1";
-            this.textBoxContra1.PasswordChar = '*';
-            this.textBoxContra1.Size = new System.Drawing.Size(188, 20);
-            this.textBoxContra1.TabIndex = 11;
-            this.toolTip1.SetToolTip(this.textBoxContra1, "Ingresar contraseña");
-            // 
-            // textBoxUsuario
-            // 
-            this.textBoxUsuario.Location = new System.Drawing.Point(81, 145);
-            this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(188, 20);
-            this.textBoxUsuario.TabIndex = 10;
-            this.toolTip1.SetToolTip(this.textBoxUsuario, "Ingresar usuario");
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // buttonAtras
-            // 
-            this.buttonAtras.BackColor = System.Drawing.Color.White;
-            this.buttonAtras.BackgroundImage = global::Proyecto_Final.Properties.Resources.close_icon_47;
-            this.buttonAtras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAtras.Font = new System.Drawing.Font("Segoe UI Variable Text", 8.25F);
-            this.buttonAtras.ForeColor = System.Drawing.Color.White;
-            this.buttonAtras.Location = new System.Drawing.Point(310, 0);
-            this.buttonAtras.Name = "buttonAtras";
-            this.buttonAtras.Size = new System.Drawing.Size(40, 35);
-            this.buttonAtras.TabIndex = 21;
-            this.buttonAtras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.buttonAtras, "Cerrar");
-            this.buttonAtras.UseVisualStyleBackColor = false;
-            this.buttonAtras.Click += new System.EventHandler(this.buttonAtras_Click);
-            // 
-            // buttonMostrarContra
-            // 
-            this.buttonMostrarContra.BackgroundImage = global::Proyecto_Final.Properties.Resources.esconder;
-            this.buttonMostrarContra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonMostrarContra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMostrarContra.ForeColor = System.Drawing.Color.White;
-            this.buttonMostrarContra.Location = new System.Drawing.Point(284, 233);
-            this.buttonMostrarContra.Name = "buttonMostrarContra";
-            this.buttonMostrarContra.Size = new System.Drawing.Size(27, 24);
-            this.buttonMostrarContra.TabIndex = 19;
-            this.toolTip1.SetToolTip(this.buttonMostrarContra, "Mostrar contraseña");
-            this.buttonMostrarContra.UseVisualStyleBackColor = true;
-            this.buttonMostrarContra.Click += new System.EventHandler(this.buttonMostrarContra_Click);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
@@ -217,6 +196,27 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // textBoxContra1
+            // 
+            this.textBoxContra1.Location = new System.Drawing.Point(81, 233);
+            this.textBoxContra1.Name = "textBoxContra1";
+            this.textBoxContra1.PasswordChar = '*';
+            this.textBoxContra1.Size = new System.Drawing.Size(188, 20);
+            this.textBoxContra1.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.textBoxContra1, "Ingresar contraseña");
+            // 
+            // textBoxUsuario
+            // 
+            this.textBoxUsuario.Location = new System.Drawing.Point(81, 145);
+            this.textBoxUsuario.Name = "textBoxUsuario";
+            this.textBoxUsuario.Size = new System.Drawing.Size(188, 20);
+            this.textBoxUsuario.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.textBoxUsuario, "Ingresar usuario");
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.BackColor = System.Drawing.Color.Transparent;
+            // 
             // timerAnimacionAbrir
             // 
             this.timerAnimacionAbrir.Interval = 10;
@@ -234,6 +234,8 @@
             this.ClientSize = new System.Drawing.Size(350, 448);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(350, 448);
+            this.MinimumSize = new System.Drawing.Size(350, 448);
             this.Name = "FormRegistrar";
             this.Opacity = 0D;
             this.ShowInTaskbar = false;

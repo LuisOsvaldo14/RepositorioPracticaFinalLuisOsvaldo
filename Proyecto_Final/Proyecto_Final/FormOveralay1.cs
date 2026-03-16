@@ -27,5 +27,26 @@ namespace Proyecto_Final
             if (this.Opacity < 0.5) {this.Opacity += 0.05;}
             else { timer1.Stop(); }
         }
+        protected override void WndProc(ref Message m)
+        {
+            const int WM_SYSCOMMAND = 0x0112;
+            const int SC_MAXIMIZE = 0xF030;
+            const int SC_MINIMIZE = 0xF020;
+            const int SC_RESTORE = 0xF120;
+
+            if (m.Msg == WM_SYSCOMMAND)
+            {
+                int command = m.WParam.ToInt32() & 0xFFF0;
+
+
+                if (command == SC_MAXIMIZE || command == SC_MINIMIZE || command == SC_RESTORE)
+                {
+                    return;
+                }
+            }
+
+            base.WndProc(ref m);
+        }
     }
+
 }
