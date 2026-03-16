@@ -28,191 +28,240 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSingin));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panelBarraTitulo = new System.Windows.Forms.Panel();
+            this.labelBarra = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelContraseña = new System.Windows.Forms.Label();
+            this.labelUsuario = new System.Windows.Forms.Label();
+            this.linkLabelContraolvidada = new System.Windows.Forms.LinkLabel();
+            this.linkLabelRegistrar = new System.Windows.Forms.LinkLabel();
+            this.buttonSingin = new System.Windows.Forms.Button();
+            this.labelWelcome = new System.Windows.Forms.Label();
+            this.textBoxContra = new System.Windows.Forms.TextBox();
+            this.textBoxUsuario = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.buttonMostrarContra = new System.Windows.Forms.Button();
+            this.pictureBoxContraIcon = new System.Windows.Forms.PictureBox();
+            this.pictureBoxUsuarioicon = new System.Windows.Forms.PictureBox();
+            this.buttonMinimized = new System.Windows.Forms.Button();
+            this.buttonClose = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.panelBarraTitulo.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContraIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUsuarioicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelBarraTitulo
             // 
-            this.panel1.BackColor = System.Drawing.Color.Yellow;
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1010, 35);
-            this.panel1.TabIndex = 0;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
-            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            this.panelBarraTitulo.BackColor = System.Drawing.Color.Yellow;
+            this.panelBarraTitulo.Controls.Add(this.buttonMinimized);
+            this.panelBarraTitulo.Controls.Add(this.labelBarra);
+            this.panelBarraTitulo.Controls.Add(this.buttonClose);
+            this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelBarraTitulo.Location = new System.Drawing.Point(0, 0);
+            this.panelBarraTitulo.Name = "panelBarraTitulo";
+            this.panelBarraTitulo.Size = new System.Drawing.Size(1010, 35);
+            this.panelBarraTitulo.TabIndex = 0;
+            this.panelBarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBarraTitulo_Paint);
+            this.panelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseDown);
+            this.panelBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseMove);
+            this.panelBarraTitulo.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseUp);
             // 
-            // label2
+            // labelBarra
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labelBarra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("ROG Fonts", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "No Limits";
-            this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label2_MouseDown);
-            this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label2_MouseMove);
-            this.label2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.label2_MouseUp);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Yellow;
-            this.button1.Location = new System.Drawing.Point(970, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 35);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.labelBarra.AutoSize = true;
+            this.labelBarra.Font = new System.Drawing.Font("ROG Fonts", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBarra.Location = new System.Drawing.Point(3, 9);
+            this.labelBarra.Name = "labelBarra";
+            this.labelBarra.Size = new System.Drawing.Size(101, 18);
+            this.labelBarra.TabIndex = 2;
+            this.labelBarra.Text = "No Limits";
+            this.labelBarra.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelBarra_MouseDown);
+            this.labelBarra.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelBarra_MouseMove);
+            this.labelBarra.MouseUp += new System.Windows.Forms.MouseEventHandler(this.labelBarra_MouseUp);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Yellow;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.linkLabel2);
-            this.panel2.Controls.Add(this.linkLabel1);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.buttonMostrarContra);
+            this.panel2.Controls.Add(this.labelContraseña);
+            this.panel2.Controls.Add(this.labelUsuario);
+            this.panel2.Controls.Add(this.linkLabelContraolvidada);
+            this.panel2.Controls.Add(this.linkLabelRegistrar);
+            this.panel2.Controls.Add(this.buttonSingin);
+            this.panel2.Controls.Add(this.labelWelcome);
+            this.panel2.Controls.Add(this.pictureBoxContraIcon);
+            this.panel2.Controls.Add(this.pictureBoxUsuarioicon);
+            this.panel2.Controls.Add(this.textBoxContra);
+            this.panel2.Controls.Add(this.textBoxUsuario);
             this.panel2.Location = new System.Drawing.Point(288, 121);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(435, 362);
             this.panel2.TabIndex = 1;
             // 
-            // label4
+            // labelContraseña
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(192, 177);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Contraseña";
+            this.labelContraseña.AutoSize = true;
+            this.labelContraseña.Location = new System.Drawing.Point(192, 177);
+            this.labelContraseña.Name = "labelContraseña";
+            this.labelContraseña.Size = new System.Drawing.Size(61, 13);
+            this.labelContraseña.TabIndex = 9;
+            this.labelContraseña.Text = "Contraseña";
+            this.labelContraseña.Click += new System.EventHandler(this.labelContraseña_Click);
             // 
-            // label3
+            // labelUsuario
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(201, 99);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Usuario";
+            this.labelUsuario.AutoSize = true;
+            this.labelUsuario.Location = new System.Drawing.Point(201, 99);
+            this.labelUsuario.Name = "labelUsuario";
+            this.labelUsuario.Size = new System.Drawing.Size(43, 13);
+            this.labelUsuario.TabIndex = 8;
+            this.labelUsuario.Text = "Usuario";
+            this.labelUsuario.Click += new System.EventHandler(this.labelUsuario_Click);
             // 
-            // linkLabel2
+            // linkLabelContraolvidada
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(157, 216);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(131, 13);
-            this.linkLabel2.TabIndex = 7;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "¿Olvidaste tu contraseña?";
+            this.linkLabelContraolvidada.AutoSize = true;
+            this.linkLabelContraolvidada.Location = new System.Drawing.Point(157, 216);
+            this.linkLabelContraolvidada.Name = "linkLabelContraolvidada";
+            this.linkLabelContraolvidada.Size = new System.Drawing.Size(131, 13);
+            this.linkLabelContraolvidada.TabIndex = 7;
+            this.linkLabelContraolvidada.TabStop = true;
+            this.linkLabelContraolvidada.Text = "¿Olvidaste tu contraseña?";
             // 
-            // linkLabel1
+            // linkLabelRegistrar
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(194, 295);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(57, 15);
-            this.linkLabel1.TabIndex = 6;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Registrar";
+            this.linkLabelRegistrar.AutoSize = true;
+            this.linkLabelRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelRegistrar.Location = new System.Drawing.Point(194, 295);
+            this.linkLabelRegistrar.Name = "linkLabelRegistrar";
+            this.linkLabelRegistrar.Size = new System.Drawing.Size(57, 15);
+            this.linkLabelRegistrar.TabIndex = 6;
+            this.linkLabelRegistrar.TabStop = true;
+            this.linkLabelRegistrar.Text = "Registrar";
+            this.linkLabelRegistrar.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelRegistrar_LinkClicked);
             // 
-            // button2
+            // buttonSingin
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(167, 247);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 45);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Ingresar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.buttonSingin.BackColor = System.Drawing.Color.White;
+            this.buttonSingin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSingin.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSingin.Location = new System.Drawing.Point(167, 247);
+            this.buttonSingin.Name = "buttonSingin";
+            this.buttonSingin.Size = new System.Drawing.Size(110, 45);
+            this.buttonSingin.TabIndex = 5;
+            this.buttonSingin.Text = "Ingresar";
+            this.buttonSingin.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // labelWelcome
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Variable Display", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(167, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 26);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Bienvenido";
+            this.labelWelcome.AutoSize = true;
+            this.labelWelcome.Font = new System.Drawing.Font("Segoe UI Variable Display", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWelcome.Location = new System.Drawing.Point(167, 48);
+            this.labelWelcome.Name = "labelWelcome";
+            this.labelWelcome.Size = new System.Drawing.Size(111, 26);
+            this.labelWelcome.TabIndex = 4;
+            this.labelWelcome.Text = "Bienvenido";
+            this.labelWelcome.Click += new System.EventHandler(this.labelWelcome_Click);
             // 
-            // pictureBox2
+            // textBoxContra
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(85, 179);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(37, 34);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
+            this.textBoxContra.Location = new System.Drawing.Point(128, 193);
+            this.textBoxContra.Name = "textBoxContra";
+            this.textBoxContra.PasswordChar = '*';
+            this.textBoxContra.Size = new System.Drawing.Size(188, 20);
+            this.textBoxContra.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.textBoxContra, "Ingresar contraseña");
+            this.textBoxContra.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // pictureBox1
+            // textBoxUsuario
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(85, 101);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.textBoxUsuario.Location = new System.Drawing.Point(128, 115);
+            this.textBoxUsuario.Name = "textBoxUsuario";
+            this.textBoxUsuario.Size = new System.Drawing.Size(188, 20);
+            this.textBoxUsuario.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.textBoxUsuario, "Ingresar usuario");
+            this.textBoxUsuario.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // buttonMostrarContra
             // 
-            this.textBox2.Location = new System.Drawing.Point(128, 193);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(188, 20);
-            this.textBox2.TabIndex = 1;
+            this.buttonMostrarContra.BackgroundImage = global::Proyecto_Final.Properties.Resources.esconder;
+            this.buttonMostrarContra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonMostrarContra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMostrarContra.ForeColor = System.Drawing.Color.Yellow;
+            this.buttonMostrarContra.Location = new System.Drawing.Point(322, 189);
+            this.buttonMostrarContra.Name = "buttonMostrarContra";
+            this.buttonMostrarContra.Size = new System.Drawing.Size(27, 24);
+            this.buttonMostrarContra.TabIndex = 20;
+            this.buttonMostrarContra.Tag = "Mostrar contraseña";
+            this.toolTip1.SetToolTip(this.buttonMostrarContra, "Mostrar contraseña");
+            this.buttonMostrarContra.UseVisualStyleBackColor = true;
+            this.buttonMostrarContra.Click += new System.EventHandler(this.buttonMostrarContra_Click);
             // 
-            // textBox1
+            // pictureBoxContraIcon
             // 
-            this.textBox1.Location = new System.Drawing.Point(128, 115);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(188, 20);
-            this.textBox1.TabIndex = 0;
+            this.pictureBoxContraIcon.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxContraIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxContraIcon.Image")));
+            this.pictureBoxContraIcon.Location = new System.Drawing.Point(85, 179);
+            this.pictureBoxContraIcon.Name = "pictureBoxContraIcon";
+            this.pictureBoxContraIcon.Size = new System.Drawing.Size(37, 34);
+            this.pictureBoxContraIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxContraIcon.TabIndex = 3;
+            this.pictureBoxContraIcon.TabStop = false;
+            this.pictureBoxContraIcon.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBoxUsuarioicon
+            // 
+            this.pictureBoxUsuarioicon.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxUsuarioicon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxUsuarioicon.Image")));
+            this.pictureBoxUsuarioicon.Location = new System.Drawing.Point(85, 101);
+            this.pictureBoxUsuarioicon.Name = "pictureBoxUsuarioicon";
+            this.pictureBoxUsuarioicon.Size = new System.Drawing.Size(37, 34);
+            this.pictureBoxUsuarioicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxUsuarioicon.TabIndex = 2;
+            this.pictureBoxUsuarioicon.TabStop = false;
+            this.pictureBoxUsuarioicon.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // buttonMinimized
+            // 
+            this.buttonMinimized.BackColor = System.Drawing.Color.Transparent;
+            this.buttonMinimized.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonMinimized.BackgroundImage")));
+            this.buttonMinimized.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonMinimized.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.buttonMinimized.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonMinimized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMinimized.ForeColor = System.Drawing.Color.Yellow;
+            this.buttonMinimized.Location = new System.Drawing.Point(930, 0);
+            this.buttonMinimized.Name = "buttonMinimized";
+            this.buttonMinimized.Size = new System.Drawing.Size(40, 35);
+            this.buttonMinimized.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.buttonMinimized, "Minimizar");
+            this.buttonMinimized.UseVisualStyleBackColor = false;
+            this.buttonMinimized.Click += new System.EventHandler(this.buttonMinimized_Click);
+            // 
+            // buttonClose
+            // 
+            this.buttonClose.BackColor = System.Drawing.Color.Transparent;
+            this.buttonClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonClose.BackgroundImage")));
+            this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonClose.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.buttonClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClose.ForeColor = System.Drawing.Color.Yellow;
+            this.buttonClose.Location = new System.Drawing.Point(970, 0);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(40, 35);
+            this.buttonClose.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.buttonClose, "Cerrar");
+            this.buttonClose.UseVisualStyleBackColor = false;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // pictureBox4
             // 
@@ -226,41 +275,26 @@
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.Yellow;
-            this.button3.Location = new System.Drawing.Point(930, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(40, 35);
-            this.button3.TabIndex = 3;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // FormSingin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1010, 605);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelBarraTitulo);
             this.Controls.Add(this.pictureBox4);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormSingin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormSingin";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Load += new System.EventHandler(this.FormSingin_Load);
+            this.panelBarraTitulo.ResumeLayout(false);
+            this.panelBarraTitulo.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContraIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUsuarioicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
@@ -268,21 +302,23 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panelBarraTitulo;
+        private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.PictureBox pictureBoxUsuarioicon;
+        private System.Windows.Forms.TextBox textBoxContra;
+        private System.Windows.Forms.TextBox textBoxUsuario;
+        private System.Windows.Forms.PictureBox pictureBoxContraIcon;
+        private System.Windows.Forms.Label labelWelcome;
+        private System.Windows.Forms.Button buttonSingin;
+        private System.Windows.Forms.LinkLabel linkLabelContraolvidada;
+        private System.Windows.Forms.LinkLabel linkLabelRegistrar;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label labelBarra;
+        private System.Windows.Forms.Label labelContraseña;
+        private System.Windows.Forms.Label labelUsuario;
+        private System.Windows.Forms.Button buttonMinimized;
+        private System.Windows.Forms.Button buttonMostrarContra;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
