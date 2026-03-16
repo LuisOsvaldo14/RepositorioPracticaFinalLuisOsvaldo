@@ -119,9 +119,14 @@ namespace Proyecto_Final
 
         private void linkLabelRegistrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            FormOveralay1 overlay = new FormOveralay1();
+            overlay.Location = this.Location;
+            overlay.Size = this.Size;
             FormRegistrar registrar = new FormRegistrar();
             registrar.StartPosition = FormStartPosition.CenterParent;
-            registrar.ShowDialog(this);
+            overlay.Show();
+            registrar.ShowDialog(overlay);
+            overlay.Close();
 
             
         }
