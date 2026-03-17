@@ -34,6 +34,7 @@
             this.buttonMinimized = new System.Windows.Forms.Button();
             this.labelBarra = new System.Windows.Forms.Label();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonMostrarContra = new System.Windows.Forms.Button();
             this.labelContraseña = new System.Windows.Forms.Label();
@@ -50,7 +51,8 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.timerAnimacionAbrir = new System.Windows.Forms.Timer(this.components);
             this.timerSalir = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.labelMensajeContra = new System.Windows.Forms.Label();
+            this.labelMensajeUsuario = new System.Windows.Forms.Label();
             this.panelBarraTitulo.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContraIcon)).BeginInit();
@@ -70,7 +72,6 @@
             this.panelBarraTitulo.Name = "panelBarraTitulo";
             this.panelBarraTitulo.Size = new System.Drawing.Size(1010, 35);
             this.panelBarraTitulo.TabIndex = 0;
-            this.panelBarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBarraTitulo_Paint);
             this.panelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseDown);
             this.panelBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseMove);
             this.panelBarraTitulo.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseUp);
@@ -124,10 +125,25 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(466, 368);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(110, 45);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Ingresar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.buttonSingin_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Yellow;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.labelMensajeUsuario);
+            this.panel2.Controls.Add(this.labelMensajeContra);
             this.panel2.Controls.Add(this.buttonMostrarContra);
             this.panel2.Controls.Add(this.labelContraseña);
             this.panel2.Controls.Add(this.labelUsuario);
@@ -150,7 +166,7 @@
             this.buttonMostrarContra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonMostrarContra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMostrarContra.ForeColor = System.Drawing.Color.Yellow;
-            this.buttonMostrarContra.Location = new System.Drawing.Point(322, 189);
+            this.buttonMostrarContra.Location = new System.Drawing.Point(322, 176);
             this.buttonMostrarContra.Name = "buttonMostrarContra";
             this.buttonMostrarContra.Size = new System.Drawing.Size(27, 24);
             this.buttonMostrarContra.TabIndex = 20;
@@ -162,7 +178,7 @@
             // labelContraseña
             // 
             this.labelContraseña.AutoSize = true;
-            this.labelContraseña.Location = new System.Drawing.Point(192, 177);
+            this.labelContraseña.Location = new System.Drawing.Point(192, 164);
             this.labelContraseña.Name = "labelContraseña";
             this.labelContraseña.Size = new System.Drawing.Size(61, 13);
             this.labelContraseña.TabIndex = 9;
@@ -226,7 +242,7 @@
             // 
             this.pictureBoxContraIcon.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxContraIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxContraIcon.Image")));
-            this.pictureBoxContraIcon.Location = new System.Drawing.Point(85, 179);
+            this.pictureBoxContraIcon.Location = new System.Drawing.Point(85, 166);
             this.pictureBoxContraIcon.Name = "pictureBoxContraIcon";
             this.pictureBoxContraIcon.Size = new System.Drawing.Size(37, 34);
             this.pictureBoxContraIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -246,12 +262,13 @@
             // 
             // textBoxContra
             // 
-            this.textBoxContra.Location = new System.Drawing.Point(128, 193);
+            this.textBoxContra.Location = new System.Drawing.Point(128, 180);
             this.textBoxContra.Name = "textBoxContra";
             this.textBoxContra.PasswordChar = '*';
             this.textBoxContra.Size = new System.Drawing.Size(188, 20);
             this.textBoxContra.TabIndex = 1;
             this.toolTip1.SetToolTip(this.textBoxContra, "Ingresar contraseña");
+            this.textBoxContra.TextChanged += new System.EventHandler(this.textBoxContra_TextChanged);
             // 
             // textBoxUsuario
             // 
@@ -260,6 +277,7 @@
             this.textBoxUsuario.Size = new System.Drawing.Size(188, 20);
             this.textBoxUsuario.TabIndex = 0;
             this.toolTip1.SetToolTip(this.textBoxUsuario, "Ingresar usuario");
+            this.textBoxUsuario.TextChanged += new System.EventHandler(this.textBoxUsuario_TextChanged);
             // 
             // pictureBox4
             // 
@@ -283,18 +301,21 @@
             this.timerSalir.Interval = 10;
             this.timerSalir.Tick += new System.EventHandler(this.timerSalir_Tick);
             // 
-            // button1
+            // labelMensajeContra
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(466, 368);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 45);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Ingresar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.buttonSingin_Click);
+            this.labelMensajeContra.Location = new System.Drawing.Point(-3, 203);
+            this.labelMensajeContra.Name = "labelMensajeContra";
+            this.labelMensajeContra.Size = new System.Drawing.Size(435, 13);
+            this.labelMensajeContra.TabIndex = 21;
+            this.labelMensajeContra.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // labelMensajeUsuario
+            // 
+            this.labelMensajeUsuario.Location = new System.Drawing.Point(0, 138);
+            this.labelMensajeUsuario.Name = "labelMensajeUsuario";
+            this.labelMensajeUsuario.Size = new System.Drawing.Size(435, 13);
+            this.labelMensajeUsuario.TabIndex = 22;
+            this.labelMensajeUsuario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FormSingin
             // 
@@ -348,5 +369,7 @@
         private System.Windows.Forms.Timer timerAnimacionAbrir;
         private System.Windows.Forms.Timer timerSalir;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labelMensajeContra;
+        private System.Windows.Forms.Label labelMensajeUsuario;
     }
 }

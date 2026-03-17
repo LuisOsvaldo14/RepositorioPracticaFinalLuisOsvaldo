@@ -35,9 +35,9 @@
             this.buttonMaximizar = new System.Windows.Forms.Button();
             this.buttonMinimized = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpBarraTitulo = new System.Windows.Forms.TableLayoutPanel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tlpBarraTitulo.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelBarra
@@ -52,6 +52,9 @@
             this.labelBarra.Text = "No Limits";
             this.labelBarra.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelBarra.Click += new System.EventHandler(this.labelBarra_Click);
+            this.labelBarra.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelBarra_MouseDown);
+            this.labelBarra.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelBarra_MouseMove);
+            this.labelBarra.MouseUp += new System.Windows.Forms.MouseEventHandler(this.labelBarra_MouseUp);
             // 
             // timerSalir
             // 
@@ -105,26 +108,29 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
-            // tableLayoutPanel1
+            // tlpBarraTitulo
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Yellow;
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel1.Controls.Add(this.labelBarra, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.buttonClose, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.buttonMaximizar, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.buttonMinimized, 2, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1009, 35);
-            this.tableLayoutPanel1.TabIndex = 7;
+            this.tlpBarraTitulo.BackColor = System.Drawing.Color.Yellow;
+            this.tlpBarraTitulo.ColumnCount = 5;
+            this.tlpBarraTitulo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpBarraTitulo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpBarraTitulo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpBarraTitulo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpBarraTitulo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tlpBarraTitulo.Controls.Add(this.labelBarra, 0, 0);
+            this.tlpBarraTitulo.Controls.Add(this.buttonClose, 4, 0);
+            this.tlpBarraTitulo.Controls.Add(this.buttonMaximizar, 3, 0);
+            this.tlpBarraTitulo.Controls.Add(this.buttonMinimized, 2, 0);
+            this.tlpBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tlpBarraTitulo.Location = new System.Drawing.Point(0, 0);
+            this.tlpBarraTitulo.Name = "tlpBarraTitulo";
+            this.tlpBarraTitulo.RowCount = 1;
+            this.tlpBarraTitulo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpBarraTitulo.Size = new System.Drawing.Size(1009, 35);
+            this.tlpBarraTitulo.TabIndex = 7;
+            this.tlpBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tlpBarraTitulo_MouseDown);
+            this.tlpBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tlpBarraTitulo_MouseMove);
+            this.tlpBarraTitulo.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tlpBarraTitulo_MouseUp);
             // 
             // FormMenuprincipal
             // 
@@ -132,7 +138,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1009, 604);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tlpBarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMenuprincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -140,8 +146,8 @@
             this.Activated += new System.EventHandler(this.FormMenuprincipal_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.FormMenuprincipal_Resize);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tlpBarraTitulo.ResumeLayout(false);
+            this.tlpBarraTitulo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -152,7 +158,7 @@
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Timer timerSalir;
         private System.Windows.Forms.Button buttonMaximizar;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tlpBarraTitulo;
         private System.Windows.Forms.ToolTip toolTip1;
     }
 }

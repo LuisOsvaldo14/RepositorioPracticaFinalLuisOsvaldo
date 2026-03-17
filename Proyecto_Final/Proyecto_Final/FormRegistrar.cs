@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Proyecto_Final
 {
@@ -206,6 +207,7 @@ namespace Proyecto_Final
             }       
             else
             {
+                SystemSounds.Exclamation.Play();
                 labelErrorRegistrar.Text = "¡Verifique que los campos no estén vacíos o con errores!";
 
             }

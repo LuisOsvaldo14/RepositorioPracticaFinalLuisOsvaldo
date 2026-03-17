@@ -21,6 +21,34 @@ namespace Proyecto_Final
         {
             this.WindowState = FormWindowState.Maximized;
         }
+        bool mover = false;
+        int X, Y;
+        private void tlpBarraTitulo_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mover) { this.SetDesktopLocation(MousePosition.X - X, MousePosition.Y - Y); }
+        }
+        private void tlpBarraTitulo_MouseUp(object sender, MouseEventArgs e)
+        {
+            mover = false;
+        }
+        private void tlpBarraTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            mover = true;
+            X = e.X; Y = e.Y;
+        }
+        private void labelBarra_MouseDown(object sender, MouseEventArgs e)
+        {
+            mover = true;
+            X = e.X; Y = e.Y;
+        }
+        private void labelBarra_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mover) { this.SetDesktopLocation(MousePosition.X - X, MousePosition.Y - Y); }
+        }
+        private void labelBarra_MouseUp(object sender, MouseEventArgs e)
+        {
+            mover = false;
+        }
 
         private void labelBarra_Click(object sender, EventArgs e)
         {
@@ -97,7 +125,6 @@ namespace Proyecto_Final
                 toolTip1.SetToolTip(buttonMaximizar, "Windows state maximized");
             }
         }
-
 
 
         private void buttonMaximizar_Click(object sender, EventArgs e)
