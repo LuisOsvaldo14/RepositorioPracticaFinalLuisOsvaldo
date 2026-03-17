@@ -144,7 +144,7 @@ namespace Proyecto_Final
                 else
                 {
                     timerOver.Stop();
-                    overlay.Close();
+                    overlay.Hide();
                 }
             };
             timerOver.Start();

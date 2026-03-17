@@ -172,5 +172,14 @@
   <ItemGroup>
     <None Include="Resources\close-icon-47.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimizar-signo %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximizar %282%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

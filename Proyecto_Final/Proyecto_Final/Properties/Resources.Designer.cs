@@ -83,6 +83,36 @@ namespace Proyecto_Final.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap maximizar__2_ {
+            get {
+                object obj = ResourceManager.GetObject("maximizar (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minimizar {
+            get {
+                object obj = ResourceManager.GetObject("minimizar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minimizar_signo__1_ {
+            get {
+                object obj = ResourceManager.GetObject("minimizar-signo (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap mostrar_contrasena {
             get {
                 object obj = ResourceManager.GetObject("mostrar-contrasena", resourceCulture);

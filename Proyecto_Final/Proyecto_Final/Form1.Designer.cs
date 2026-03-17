@@ -30,27 +30,48 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuprincipal));
-            this.panelBarraTitulo = new System.Windows.Forms.Panel();
-            this.buttonMinimized = new System.Windows.Forms.Button();
             this.labelBarra = new System.Windows.Forms.Label();
-            this.buttonClose = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.timerSalir = new System.Windows.Forms.Timer(this.components);
-            this.panelBarraTitulo.SuspendLayout();
+            this.buttonMaximizar = new System.Windows.Forms.Button();
+            this.buttonMinimized = new System.Windows.Forms.Button();
+            this.buttonClose = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelBarraTitulo
+            // labelBarra
             // 
-            this.panelBarraTitulo.BackColor = System.Drawing.Color.Yellow;
-            this.panelBarraTitulo.Controls.Add(this.buttonMinimized);
-            this.panelBarraTitulo.Controls.Add(this.labelBarra);
-            this.panelBarraTitulo.Controls.Add(this.buttonClose);
-            this.panelBarraTitulo.Controls.Add(this.button1);
-            this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.panelBarraTitulo.Name = "panelBarraTitulo";
-            this.panelBarraTitulo.Size = new System.Drawing.Size(1009, 35);
-            this.panelBarraTitulo.TabIndex = 1;
+            this.labelBarra.AutoSize = true;
+            this.labelBarra.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelBarra.Font = new System.Drawing.Font("ROG Fonts", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBarra.Location = new System.Drawing.Point(3, 0);
+            this.labelBarra.Name = "labelBarra";
+            this.labelBarra.Size = new System.Drawing.Size(101, 35);
+            this.labelBarra.TabIndex = 2;
+            this.labelBarra.Text = "No Limits";
+            this.labelBarra.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelBarra.Click += new System.EventHandler(this.labelBarra_Click);
+            // 
+            // timerSalir
+            // 
+            this.timerSalir.Interval = 10;
+            this.timerSalir.Tick += new System.EventHandler(this.timerSalir_Tick);
+            // 
+            // buttonMaximizar
+            // 
+            this.buttonMaximizar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonMaximizar.BackgroundImage = global::Proyecto_Final.Properties.Resources.minimizar_signo__1_;
+            this.buttonMaximizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonMaximizar.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.buttonMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMaximizar.ForeColor = System.Drawing.Color.Yellow;
+            this.buttonMaximizar.Location = new System.Drawing.Point(931, 3);
+            this.buttonMaximizar.Name = "buttonMaximizar";
+            this.buttonMaximizar.Size = new System.Drawing.Size(34, 29);
+            this.buttonMaximizar.TabIndex = 6;
+            this.buttonMaximizar.UseVisualStyleBackColor = false;
+            this.buttonMaximizar.Click += new System.EventHandler(this.buttonMaximizar_Click);
             // 
             // buttonMinimized
             // 
@@ -58,28 +79,15 @@
             this.buttonMinimized.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonMinimized.BackgroundImage")));
             this.buttonMinimized.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonMinimized.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.buttonMinimized.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonMinimized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMinimized.ForeColor = System.Drawing.Color.Yellow;
-            this.buttonMinimized.Location = new System.Drawing.Point(929, 0);
+            this.buttonMinimized.Location = new System.Drawing.Point(891, 3);
             this.buttonMinimized.Name = "buttonMinimized";
-            this.buttonMinimized.Size = new System.Drawing.Size(40, 35);
+            this.buttonMinimized.Size = new System.Drawing.Size(34, 29);
             this.buttonMinimized.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.buttonMinimized, "Minimizar");
             this.buttonMinimized.UseVisualStyleBackColor = false;
             this.buttonMinimized.Click += new System.EventHandler(this.buttonMinimized_Click);
-            // 
-            // labelBarra
-            // 
-            this.labelBarra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelBarra.AutoSize = true;
-            this.labelBarra.Font = new System.Drawing.Font("ROG Fonts", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBarra.Location = new System.Drawing.Point(3, 9);
-            this.labelBarra.Name = "labelBarra";
-            this.labelBarra.Size = new System.Drawing.Size(101, 18);
-            this.labelBarra.TabIndex = 2;
-            this.labelBarra.Text = "No Limits";
-            this.labelBarra.Click += new System.EventHandler(this.labelBarra_Click);
             // 
             // buttonClose
             // 
@@ -87,32 +95,36 @@
             this.buttonClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonClose.BackgroundImage")));
             this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonClose.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.buttonClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.ForeColor = System.Drawing.Color.Yellow;
-            this.buttonClose.Location = new System.Drawing.Point(969, 0);
+            this.buttonClose.Location = new System.Drawing.Point(971, 3);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(40, 35);
+            this.buttonClose.Size = new System.Drawing.Size(35, 29);
             this.buttonClose.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.buttonClose, "Cerrar");
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
-            // button1
+            // tableLayoutPanel1
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(466, 368);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 45);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Ingresar";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // timerSalir
-            // 
-            this.timerSalir.Interval = 10;
-            this.timerSalir.Tick += new System.EventHandler(this.timerSalir_Tick);
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Yellow;
+            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel1.Controls.Add(this.labelBarra, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.buttonClose, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.buttonMaximizar, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.buttonMinimized, 2, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1009, 35);
+            this.tableLayoutPanel1.TabIndex = 7;
             // 
             // FormMenuprincipal
             // 
@@ -120,26 +132,28 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1009, 604);
-            this.Controls.Add(this.panelBarraTitulo);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMenuprincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Activated += new System.EventHandler(this.FormMenuprincipal_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.panelBarraTitulo.ResumeLayout(false);
-            this.panelBarraTitulo.PerformLayout();
+            this.Resize += new System.EventHandler(this.FormMenuprincipal_Resize);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelBarraTitulo;
         private System.Windows.Forms.Button buttonMinimized;
         private System.Windows.Forms.Label labelBarra;
         private System.Windows.Forms.Button buttonClose;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer timerSalir;
+        private System.Windows.Forms.Button buttonMaximizar;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
