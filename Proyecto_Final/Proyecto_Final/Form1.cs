@@ -40,6 +40,7 @@ namespace Proyecto_Final
             {
                 timerSalir.Stop();
                 this.Close();
+                Application.Exit();
             }
 
         }
