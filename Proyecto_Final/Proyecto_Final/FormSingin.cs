@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -148,19 +149,75 @@ namespace Proyecto_Final
             };
             timerOver.Start();
         }
+
+        private void buttonSingin_Click(object sender, EventArgs e)
+        {
+            string guardarRegistro = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "NoLimitsEvents", "Usuarios", "Usuarios.txt");
+            string textoUsuario = textBoxUsuario.Text;
+            string textoContraseña = textBoxContra.Text;
+            string[] lineas = File.ReadAllLines(guardarRegistro);
+            foreach (string line in lineas)
+            {
+                string[] datos = line.Split(',');
+                if (datos[0] == textoUsuario && datos[1] == textoContraseña)
+                {
+                    Timer timer = new Timer();
+                    timer.Interval = 10;
+                    timer.Tick += (s, ev) =>
+                    {
+                        if (this.Opacity > 0)
+                        {
+                            this.Opacity -= 0.1;
+                        }
+                        else
+                        {                        
+                            timer.Stop();
+                            this.Hide();
+                        }
+                    };
+                    FormMenuprincipal form = new FormMenuprincipal();
+                    form.Opacity = 0;
+                    form.StartPosition = FormStartPosition.CenterScreen;
+                    form.WindowState = FormWindowState.Maximized;
+
+                    Timer timer2 = new Timer();
+                    timer2.Interval = 10;
+                    timer2.Tick += (s, ev) =>
+                    {
+                        if (form.Opacity < 1)
+                        {
+                            form.Opacity += 0.1;
+                        }
+                        else
+                        {
+                            timer2.Stop();
+                            form.Show();
+                        }
+                    };
+                    timer.Start();
+                    timer2.Start();
+
+                }
+            }
+        }
+
+        private void panelBarraTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         protected override void WndProc(ref Message m)
         {
             const int WM_SYSCOMMAND = 0x0112;
             const int SC_MAXIMIZE = 0xF030; 
             const int SC_MINIMIZE = 0xF020; 
-            const int SC_RESTORE = 0xF120; 
 
             if (m.Msg == WM_SYSCOMMAND)
             {
                 int command = m.WParam.ToInt32() & 0xFFF0;
 
                 
-                if (command == SC_MAXIMIZE || command == SC_MINIMIZE || command == SC_RESTORE)
+                if (command == SC_MAXIMIZE || command == SC_MINIMIZE)
                 {
                     return;
                 }

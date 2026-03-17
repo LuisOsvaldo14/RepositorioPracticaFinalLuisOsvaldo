@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Proyecto_Final
 {
-    public partial class Form1 : Form
+    public partial class FormMenuprincipal : Form
     {
-        public Form1()
+        public FormMenuprincipal()
         {
             InitializeComponent();
         }
@@ -21,5 +21,47 @@ namespace Proyecto_Final
         {
 
         }
+
+        private void labelBarra_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            timerSalir.Start();
+        }
+        private void timerSalir_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity > 0)
+            {
+                this.Opacity -= 0.04;
+            }
+            else
+            {
+                timerSalir.Stop();
+                this.Close();
+            }
+
+        }
+
+        private void buttonMinimized_Click(object sender, EventArgs e)
+        {
+            Timer timerminimizar = new Timer();
+            timerminimizar.Interval = 10;
+            timerminimizar.Tick += (s, ve) =>
+            {
+                if (this.Opacity > 0)
+                {
+                    this.Opacity -= 0.2;
+                }
+                else
+                {
+                    timerminimizar.Stop();
+                    this.WindowState = FormWindowState.Minimized;
+                }
+            };
+            timerminimizar.Start();
+        }
+    
     }
 }

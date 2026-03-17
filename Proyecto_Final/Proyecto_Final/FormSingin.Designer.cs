@@ -50,6 +50,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.timerAnimacionAbrir = new System.Windows.Forms.Timer(this.components);
             this.timerSalir = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.panelBarraTitulo.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContraIcon)).BeginInit();
@@ -63,11 +64,13 @@
             this.panelBarraTitulo.Controls.Add(this.buttonMinimized);
             this.panelBarraTitulo.Controls.Add(this.labelBarra);
             this.panelBarraTitulo.Controls.Add(this.buttonClose);
+            this.panelBarraTitulo.Controls.Add(this.button1);
             this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.panelBarraTitulo.Name = "panelBarraTitulo";
             this.panelBarraTitulo.Size = new System.Drawing.Size(1010, 35);
             this.panelBarraTitulo.TabIndex = 0;
+            this.panelBarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBarraTitulo_Paint);
             this.panelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseDown);
             this.panelBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseMove);
             this.panelBarraTitulo.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseUp);
@@ -207,6 +210,7 @@
             this.buttonSingin.TabIndex = 5;
             this.buttonSingin.Text = "Ingresar";
             this.buttonSingin.UseVisualStyleBackColor = false;
+            this.buttonSingin.Click += new System.EventHandler(this.buttonSingin_Click);
             // 
             // labelWelcome
             // 
@@ -279,6 +283,19 @@
             this.timerSalir.Interval = 10;
             this.timerSalir.Tick += new System.EventHandler(this.timerSalir_Tick);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(466, 368);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(110, 45);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Ingresar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.buttonSingin_Click);
+            // 
             // FormSingin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,5 +347,6 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Timer timerAnimacionAbrir;
         private System.Windows.Forms.Timer timerSalir;
+        private System.Windows.Forms.Button button1;
     }
 }

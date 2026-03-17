@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -24,7 +26,7 @@ namespace Proyecto_Final
 
         private void buttonMostrarContra_Click(object sender, EventArgs e)
         {
-            if (textBoxContra1.PasswordChar == '*') 
+            if (textBoxContra1.PasswordChar == '*')
             {
                 textBoxContra1.PasswordChar = '\0';
                 textBoxContra2.PasswordChar = '\0';
@@ -38,26 +40,9 @@ namespace Proyecto_Final
                 toolTip1.SetToolTip(buttonMostrarContra, "Mostrar contraseña");
                 buttonMostrarContra.BackgroundImage = Properties.Resources.esconder;
             }
-            
-        }
-
-        private void textBoxContra2_TextChanged(object sender, EventArgs e)
-        {
-            if (textBoxContra1.Text != textBoxContra2.Text)
-            {
-                labelMensajeContra2.Text = "La contraseña no es igual; verifique que sea la misma.";
-
-            }
-            else
-            {
-                labelMensajeContra2.Text = " ";
-            }
-        }
-
-        private void buttonSingin_Click(object sender, EventArgs e)
-        {
 
         }
+
         private void timerAnimacionAbrir_Tick(object sender, EventArgs e)
         {
             if (this.Opacity < 1.0)
@@ -105,6 +90,127 @@ namespace Proyecto_Final
             }
 
             base.WndProc(ref m);
+        }
+        bool veriUsuario;
+
+
+        private void textBoxUsuario_TextChanged(object sender, EventArgs e)
+        {
+            labelErrorRegistrar.Text = "";
+
+            string guardarRegistro = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "NoLimitsEvents", "Usuarios", "Usuarios.txt");
+            string textoUsuario = textBoxUsuario.Text;
+            string[] lineas = File.ReadAllLines(guardarRegistro);
+            foreach (string line in lineas)
+            {
+                string[] datos = line.Split(',');
+                if (datos[0] == textoUsuario)
+                {
+                    labelMensajeUsuario.Text = "Este nombre de usuario ya existe";
+                    veriUsuario = false;
+                    return;
+                }
+            }
+
+            if (textoUsuario == "")
+            {
+                labelMensajeUsuario.Text = "El usuario no puede estar vacio";
+                veriUsuario = false;
+            }
+            else if (textoUsuario.Length < 4 || textoUsuario.Length > 15)
+            {
+                labelMensajeUsuario.Text = "El nombre de usuario debe tener entre 4 y 15 caracteres";
+                veriUsuario = false;
+            }
+            else if (!Regex.IsMatch(textoUsuario, @"^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ_]+$"))
+            {
+                labelMensajeUsuario.Text = "Solo se permiten letras,números o" + " '_' " + "(sin espacios ni símbolos)";
+                veriUsuario = false;
+            }
+
+
+            else
+            {
+                labelMensajeUsuario.Text = "";
+                veriUsuario = true;
+
+            }
+        }
+        bool veriConfirmacionContra;
+        bool veriContra;
+        private void textBoxContra1_TextChanged(object sender, EventArgs e)
+        {
+            labelErrorRegistrar.Text = "";
+            string textoContra1 = textBoxContra1.Text;
+            if (textoContra1 == "")
+            {
+                labelMensajeContra1.Text = "La contraseña no puede estar vacia";
+                veriContra = false;
+            }
+            else if (textoContra1.Length < 4 || textoContra1.Length > 15)
+            {
+                labelMensajeContra1.Text = "La contraseña debe tener entre 4 y 15 caracteres";
+                veriContra = false;
+            }
+            else if (!Regex.IsMatch(textoContra1, @"^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ]+$"))
+            {
+                labelMensajeContra1.Text = "Solo se permiten letras y números (sin espacios ni símbolos)";
+                veriContra = false;
+            }
+            else
+            {
+                labelMensajeContra1.Text = "";
+                veriContra = true;
+            }
+            
+            if (textBoxContra1.Text != textBoxContra2.Text)
+            {
+                labelMensajeContra2.Text = "La contraseña no es igual; verifique que sea la misma.";
+                veriConfirmacionContra = false;
+
+            }
+            else
+            {
+                labelMensajeContra2.Text = "";
+                veriConfirmacionContra = true;
+            }
+
+        }
+
+        private void textBoxContra2_TextChanged(object sender, EventArgs e)
+        {
+            labelErrorRegistrar.Text = "";
+            if (textBoxContra1.Text != textBoxContra2.Text)
+            {
+                labelMensajeContra2.Text = "La contraseña no es igual; verifique que sea la misma.";
+                veriConfirmacionContra = false;
+
+            }
+            else
+            {
+                labelMensajeContra2.Text = "";
+                veriConfirmacionContra = true;
+            }
+        }
+        private void buttonSingin_Click(object sender, EventArgs e)
+        {
+            if (veriUsuario && veriContra && veriConfirmacionContra)
+            {
+                string guardarRegistro = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "NoLimitsEvents", "Usuarios", "Usuarios.txt");
+                string usuario = textBoxUsuario.Text;
+                string Contrasena = textBoxContra1.Text;
+                File.AppendAllText(guardarRegistro, usuario + "," + Contrasena + Environment.NewLine);
+                labelErrorRegistrar.ForeColor = Color.Green;
+                labelErrorRegistrar.Text = "Usuario registrado";
+                timerSalir.Start();
+            }       
+            else
+            {
+                labelErrorRegistrar.Text = "¡Verifique que los campos no estén vacíos o con errores!";
+
+            }
+
+
         }
     }
     

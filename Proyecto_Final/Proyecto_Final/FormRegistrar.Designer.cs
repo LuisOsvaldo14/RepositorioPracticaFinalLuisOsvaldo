@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistrar));
             this.labelRegistrar = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelMensajeContra1 = new System.Windows.Forms.Label();
+            this.labelMensajeUsuario = new System.Windows.Forms.Label();
             this.buttonAtras = new System.Windows.Forms.Button();
             this.labelMensajeContra2 = new System.Windows.Forms.Label();
             this.buttonMostrarContra = new System.Windows.Forms.Button();
@@ -47,6 +49,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timerAnimacionAbrir = new System.Windows.Forms.Timer(this.components);
             this.timerSalir = new System.Windows.Forms.Timer(this.components);
+            this.labelErrorRegistrar = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -56,7 +59,7 @@
             // 
             this.labelRegistrar.AutoSize = true;
             this.labelRegistrar.Font = new System.Drawing.Font("Segoe UI Variable Display", 14.25F, System.Drawing.FontStyle.Bold);
-            this.labelRegistrar.Location = new System.Drawing.Point(129, 48);
+            this.labelRegistrar.Location = new System.Drawing.Point(129, 30);
             this.labelRegistrar.Name = "labelRegistrar";
             this.labelRegistrar.Size = new System.Drawing.Size(93, 26);
             this.labelRegistrar.TabIndex = 2;
@@ -65,6 +68,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.labelErrorRegistrar);
+            this.panel1.Controls.Add(this.labelMensajeContra1);
+            this.panel1.Controls.Add(this.labelMensajeUsuario);
             this.panel1.Controls.Add(this.buttonAtras);
             this.panel1.Controls.Add(this.labelMensajeContra2);
             this.panel1.Controls.Add(this.buttonMostrarContra);
@@ -83,6 +89,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(350, 448);
             this.panel1.TabIndex = 3;
+            // 
+            // labelMensajeContra1
+            // 
+            this.labelMensajeContra1.ForeColor = System.Drawing.Color.Red;
+            this.labelMensajeContra1.Location = new System.Drawing.Point(0, 256);
+            this.labelMensajeContra1.Name = "labelMensajeContra1";
+            this.labelMensajeContra1.Size = new System.Drawing.Size(350, 13);
+            this.labelMensajeContra1.TabIndex = 23;
+            this.labelMensajeContra1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelMensajeUsuario
+            // 
+            this.labelMensajeUsuario.ForeColor = System.Drawing.Color.Red;
+            this.labelMensajeUsuario.Location = new System.Drawing.Point(0, 150);
+            this.labelMensajeUsuario.Name = "labelMensajeUsuario";
+            this.labelMensajeUsuario.Size = new System.Drawing.Size(347, 13);
+            this.labelMensajeUsuario.TabIndex = 22;
+            this.labelMensajeUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonAtras
             // 
@@ -103,12 +127,12 @@
             // 
             // labelMensajeContra2
             // 
-            this.labelMensajeContra2.AutoSize = true;
             this.labelMensajeContra2.ForeColor = System.Drawing.Color.Red;
-            this.labelMensajeContra2.Location = new System.Drawing.Point(87, 323);
+            this.labelMensajeContra2.Location = new System.Drawing.Point(0, 323);
             this.labelMensajeContra2.Name = "labelMensajeContra2";
-            this.labelMensajeContra2.Size = new System.Drawing.Size(0, 13);
+            this.labelMensajeContra2.Size = new System.Drawing.Size(350, 13);
             this.labelMensajeContra2.TabIndex = 20;
+            this.labelMensajeContra2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonMostrarContra
             // 
@@ -129,7 +153,7 @@
             this.buttonSingin.BackColor = System.Drawing.Color.White;
             this.buttonSingin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSingin.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSingin.Location = new System.Drawing.Point(120, 360);
+            this.buttonSingin.Location = new System.Drawing.Point(120, 346);
             this.buttonSingin.Name = "buttonSingin";
             this.buttonSingin.Size = new System.Drawing.Size(110, 45);
             this.buttonSingin.TabIndex = 18;
@@ -168,7 +192,7 @@
             // labelUsuario
             // 
             this.labelUsuario.AutoSize = true;
-            this.labelUsuario.Location = new System.Drawing.Point(154, 129);
+            this.labelUsuario.Location = new System.Drawing.Point(154, 111);
             this.labelUsuario.Name = "labelUsuario";
             this.labelUsuario.Size = new System.Drawing.Size(43, 13);
             this.labelUsuario.TabIndex = 14;
@@ -189,7 +213,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(157, 94);
+            this.pictureBox1.Location = new System.Drawing.Point(157, 76);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(37, 34);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -204,14 +228,16 @@
             this.textBoxContra1.Size = new System.Drawing.Size(188, 20);
             this.textBoxContra1.TabIndex = 11;
             this.toolTip1.SetToolTip(this.textBoxContra1, "Ingresar contraseña");
+            this.textBoxContra1.TextChanged += new System.EventHandler(this.textBoxContra1_TextChanged);
             // 
             // textBoxUsuario
             // 
-            this.textBoxUsuario.Location = new System.Drawing.Point(81, 145);
+            this.textBoxUsuario.Location = new System.Drawing.Point(81, 127);
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(188, 20);
             this.textBoxUsuario.TabIndex = 10;
             this.toolTip1.SetToolTip(this.textBoxUsuario, "Ingresar usuario");
+            this.textBoxUsuario.TextChanged += new System.EventHandler(this.textBoxUsuario_TextChanged);
             // 
             // toolTip1
             // 
@@ -226,6 +252,15 @@
             // 
             this.timerSalir.Interval = 10;
             this.timerSalir.Tick += new System.EventHandler(this.timerSalir_Tick);
+            // 
+            // labelErrorRegistrar
+            // 
+            this.labelErrorRegistrar.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorRegistrar.Location = new System.Drawing.Point(0, 394);
+            this.labelErrorRegistrar.Name = "labelErrorRegistrar";
+            this.labelErrorRegistrar.Size = new System.Drawing.Size(350, 34);
+            this.labelErrorRegistrar.TabIndex = 24;
+            this.labelErrorRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormRegistrar
             // 
@@ -267,5 +302,8 @@
         private System.Windows.Forms.Button buttonAtras;
         private System.Windows.Forms.Timer timerAnimacionAbrir;
         private System.Windows.Forms.Timer timerSalir;
+        private System.Windows.Forms.Label labelMensajeUsuario;
+        private System.Windows.Forms.Label labelMensajeContra1;
+        private System.Windows.Forms.Label labelErrorRegistrar;
     }
 }
