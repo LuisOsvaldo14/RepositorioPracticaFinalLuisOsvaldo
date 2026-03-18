@@ -36,6 +36,9 @@
             this.buttonClose = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.radioButtonRecuerdame = new System.Windows.Forms.RadioButton();
+            this.labelMensajeUsuario = new System.Windows.Forms.Label();
+            this.labelMensajeContra = new System.Windows.Forms.Label();
             this.buttonMostrarContra = new System.Windows.Forms.Button();
             this.labelContraseña = new System.Windows.Forms.Label();
             this.labelUsuario = new System.Windows.Forms.Label();
@@ -48,11 +51,9 @@
             this.textBoxContra = new System.Windows.Forms.TextBox();
             this.textBoxUsuario = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.timerAnimacionAbrir = new System.Windows.Forms.Timer(this.components);
             this.timerSalir = new System.Windows.Forms.Timer(this.components);
-            this.labelMensajeContra = new System.Windows.Forms.Label();
-            this.labelMensajeUsuario = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panelBarraTitulo.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContraIcon)).BeginInit();
@@ -142,6 +143,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Yellow;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.radioButtonRecuerdame);
             this.panel2.Controls.Add(this.labelMensajeUsuario);
             this.panel2.Controls.Add(this.labelMensajeContra);
             this.panel2.Controls.Add(this.buttonMostrarContra);
@@ -159,6 +161,33 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(435, 362);
             this.panel2.TabIndex = 1;
+            // 
+            // radioButtonRecuerdame
+            // 
+            this.radioButtonRecuerdame.AutoSize = true;
+            this.radioButtonRecuerdame.Location = new System.Drawing.Point(128, 219);
+            this.radioButtonRecuerdame.Name = "radioButtonRecuerdame";
+            this.radioButtonRecuerdame.Size = new System.Drawing.Size(86, 17);
+            this.radioButtonRecuerdame.TabIndex = 23;
+            this.radioButtonRecuerdame.TabStop = true;
+            this.radioButtonRecuerdame.Text = "Recuerdame";
+            this.radioButtonRecuerdame.UseVisualStyleBackColor = true;
+            // 
+            // labelMensajeUsuario
+            // 
+            this.labelMensajeUsuario.Location = new System.Drawing.Point(0, 138);
+            this.labelMensajeUsuario.Name = "labelMensajeUsuario";
+            this.labelMensajeUsuario.Size = new System.Drawing.Size(435, 13);
+            this.labelMensajeUsuario.TabIndex = 22;
+            this.labelMensajeUsuario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // labelMensajeContra
+            // 
+            this.labelMensajeContra.Location = new System.Drawing.Point(-3, 203);
+            this.labelMensajeContra.Name = "labelMensajeContra";
+            this.labelMensajeContra.Size = new System.Drawing.Size(435, 13);
+            this.labelMensajeContra.TabIndex = 21;
+            this.labelMensajeContra.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // buttonMostrarContra
             // 
@@ -196,7 +225,7 @@
             // linkLabelContraolvidada
             // 
             this.linkLabelContraolvidada.AutoSize = true;
-            this.linkLabelContraolvidada.Location = new System.Drawing.Point(157, 216);
+            this.linkLabelContraolvidada.Location = new System.Drawing.Point(152, 324);
             this.linkLabelContraolvidada.Name = "linkLabelContraolvidada";
             this.linkLabelContraolvidada.Size = new System.Drawing.Size(131, 13);
             this.linkLabelContraolvidada.TabIndex = 7;
@@ -279,6 +308,16 @@
             this.toolTip1.SetToolTip(this.textBoxUsuario, "Ingresar usuario");
             this.textBoxUsuario.TextChanged += new System.EventHandler(this.textBoxUsuario_TextChanged);
             // 
+            // timerAnimacionAbrir
+            // 
+            this.timerAnimacionAbrir.Interval = 10;
+            this.timerAnimacionAbrir.Tick += new System.EventHandler(this.timerAnimacionAbrir_Tick);
+            // 
+            // timerSalir
+            // 
+            this.timerSalir.Interval = 10;
+            this.timerSalir.Tick += new System.EventHandler(this.timerSalir_Tick);
+            // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
@@ -290,32 +329,6 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
-            // 
-            // timerAnimacionAbrir
-            // 
-            this.timerAnimacionAbrir.Interval = 10;
-            this.timerAnimacionAbrir.Tick += new System.EventHandler(this.timerAnimacionAbrir_Tick);
-            // 
-            // timerSalir
-            // 
-            this.timerSalir.Interval = 10;
-            this.timerSalir.Tick += new System.EventHandler(this.timerSalir_Tick);
-            // 
-            // labelMensajeContra
-            // 
-            this.labelMensajeContra.Location = new System.Drawing.Point(-3, 203);
-            this.labelMensajeContra.Name = "labelMensajeContra";
-            this.labelMensajeContra.Size = new System.Drawing.Size(435, 13);
-            this.labelMensajeContra.TabIndex = 21;
-            this.labelMensajeContra.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // labelMensajeUsuario
-            // 
-            this.labelMensajeUsuario.Location = new System.Drawing.Point(0, 138);
-            this.labelMensajeUsuario.Name = "labelMensajeUsuario";
-            this.labelMensajeUsuario.Size = new System.Drawing.Size(435, 13);
-            this.labelMensajeUsuario.TabIndex = 22;
-            this.labelMensajeUsuario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FormSingin
             // 
@@ -371,5 +384,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label labelMensajeContra;
         private System.Windows.Forms.Label labelMensajeUsuario;
+        private System.Windows.Forms.RadioButton radioButtonRecuerdame;
     }
 }

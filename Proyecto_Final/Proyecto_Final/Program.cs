@@ -20,10 +20,13 @@ namespace Proyecto_Final
             string Carpeta_Usuarios = NLV_Carpeta_appdata + "\\Usuarios";
             string Carpeta_configuracion = NLV_Carpeta_appdata + "\\Configuracion";
             string Carpeta_log = NLV_Carpeta_appdata + "\\Logs";
+            
 
-            string archivo_Usuarios = Path.Combine(Carpeta_Usuarios, "usuarios.txt");
-            string archivo_configuracion = Path.Combine(Carpeta_configuracion, "configuracion.txt");
-            string archivo_log = Path.Combine(Carpeta_log, "Log.txt");
+            string archivo_Usuarios = Path.Combine(Carpeta_Usuarios,"usuarios.txt");
+            string archivo_configuracion = Path.Combine(Carpeta_configuracion,"configuracion.txt");
+            string archivo_log = Path.Combine(Carpeta_log,"Log.txt");
+            string archivo_Recuerdame = Path.Combine(NLV_Carpeta_appdata,"Recuerdame.txt");
+
 
             if (!File.Exists(archivo_Usuarios))
             {
@@ -39,10 +42,14 @@ namespace Proyecto_Final
             {
                 File.Create(archivo_log).Close();
             }
+            if (!File.Exists(archivo_Recuerdame))
+            {
+                File.Create(archivo_Recuerdame).Close();
+            }
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMenuprincipal());
+            Application.Run(new FormSingin());
         }
     }
 }

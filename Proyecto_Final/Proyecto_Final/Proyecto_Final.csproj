@@ -107,6 +107,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCopiaryPegar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCopiaryPegar.Designer.cs">
+      <DependentUpon>FormCopiaryPegar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOveralay1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCopiaryPegar.resx">
+      <DependentUpon>FormCopiaryPegar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOveralay1.resx">
       <DependentUpon>FormOveralay1.cs</DependentUpon>
@@ -180,6 +189,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\maximizar %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3643769-building-home-house-main-menu-start_113416 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu_icon_icon-icons.com_71858.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\out_log_icon_255959.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4213426-about-description-help-info-information-notification_115427.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

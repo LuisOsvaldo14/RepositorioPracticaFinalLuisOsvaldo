@@ -22,6 +22,21 @@ namespace Proyecto_Final
         private void FormSingin_Load(object sender, EventArgs e)
         {
             timerAnimacionAbrir.Start();
+            string Recuerdame = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "NoLimitsEvents", "Recuerdame.txt");
+            if (File.Exists(Recuerdame))
+            {
+                string contenido = File.ReadAllText(Recuerdame);
+
+                if (!string.IsNullOrWhiteSpace(contenido))
+                {
+                    string[] datos = contenido.Split(',');
+
+                    textBoxUsuario.Text = datos[0];
+                    textBoxContra.Text = datos[1];
+
+                    radioButtonRecuerdame.Checked = true;
+                }
+            }
         }
         private void timerAnimacionAbrir_Tick(object sender, EventArgs e)
         {
@@ -153,8 +168,23 @@ namespace Proyecto_Final
 
         private void buttonSingin_Click(object sender, EventArgs e)
         {
+            string textoUsuario = textBoxUsuario.Text;
+            string textoContraseña = textBoxContra.Text;
+            string Recuerdame = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),"NoLimitsEvents", "Recuerdame.txt");
             if (UsuarioEncontrado == true && ContraseñaCoincide == true)
             {
+                if (radioButtonRecuerdame.Checked)
+                {
+                    string datos = textoUsuario + "," + textoContraseña;
+                    File.WriteAllText(Recuerdame, datos);
+                }
+                else
+                {
+                    File.WriteAllText(Recuerdame, "");
+                }
+
+
+
                 Timer timer = new Timer();
                 timer.Interval = 10;
                 timer.Tick += (s, ev) =>
@@ -229,7 +259,7 @@ namespace Proyecto_Final
         {
             UsuarioEncontrado = false;
             ContraseñaCoincide = false; 
-            string guardarRegistro = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "NoLimitsEvents", "Usuarios", "Usuarios.txt");
+            string guardarRegistro = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),"NoLimitsEvents", "Usuarios", "Usuarios.txt");
             string textoUsuario = textBoxUsuario.Text;
             string textoContraseña = textBoxContra.Text;
             string[] lineas = File.ReadAllLines(guardarRegistro);
@@ -309,6 +339,8 @@ namespace Proyecto_Final
 
 
         }
+
+
 
         protected override void WndProc(ref Message m)
         {

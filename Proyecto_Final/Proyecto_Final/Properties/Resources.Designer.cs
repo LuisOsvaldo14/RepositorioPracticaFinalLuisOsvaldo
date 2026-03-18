@@ -63,6 +63,26 @@ namespace Proyecto_Final.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3643769_building_home_house_main_menu_start_113416__1_ {
+            get {
+                object obj = ResourceManager.GetObject("3643769-building-home-house-main-menu-start_113416 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4213426_about_description_help_info_information_notification_115427 {
+            get {
+                object obj = ResourceManager.GetObject("4213426-about-description-help-info-information-notification_115427", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_icon_47 {
             get {
                 object obj = ResourceManager.GetObject("close-icon-47", resourceCulture);
@@ -93,6 +113,16 @@ namespace Proyecto_Final.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Menu_icon_icon_icons_com_71858 {
+            get {
+                object obj = ResourceManager.GetObject("Menu_icon_icon-icons.com_71858", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minimizar {
             get {
                 object obj = ResourceManager.GetObject("minimizar", resourceCulture);
@@ -116,6 +146,16 @@ namespace Proyecto_Final.Properties {
         internal static System.Drawing.Bitmap mostrar_contrasena {
             get {
                 object obj = ResourceManager.GetObject("mostrar-contrasena", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap out_log_icon_255959 {
+            get {
+                object obj = ResourceManager.GetObject("out_log_icon_255959", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

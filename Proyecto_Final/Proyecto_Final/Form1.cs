@@ -126,6 +126,62 @@ namespace Proyecto_Final
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        bool expandir;
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (tlpBarralateral.Width < tlpBarralateral.MaximumSize.Width)
+            {
+                expandir = false;
+            }
+            else { expandir = true; }
+            timerBarralaterar.Start();
+        }
+ 
+
+        private void timerBarralaterar_Tick(object sender, EventArgs e)
+        {
+            if (expandir)
+            {
+                tlpBarralateral.Width -= 15;
+                if (tlpBarralateral.Width == tlpBarralateral.MinimumSize.Width)
+                {
+                    timerBarralaterar.Stop();
+                }
+            }
+            else
+            {
+                tlpBarralateral.Width += 15;
+                if (tlpBarralateral.Width == tlpBarralateral.MaximumSize.Width)
+                {
+                    timerBarralaterar.Stop();
+                }
+            }
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
 
         private void buttonMaximizar_Click(object sender, EventArgs e)
         {
