@@ -83,6 +83,16 @@ namespace Proyecto_Final.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_insert_new_plus_button_icon_142943 {
+            get {
+                object obj = ResourceManager.GetObject("add_insert_new_plus_button_icon_142943", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_icon_47 {
             get {
                 object obj = ResourceManager.GetObject("close-icon-47", resourceCulture);
@@ -156,6 +166,16 @@ namespace Proyecto_Final.Properties {
         internal static System.Drawing.Bitmap out_log_icon_255959 {
             get {
                 object obj = ResourceManager.GetObject("out_log_icon_255959", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap searcher_magnifyng_glass_search_locate_find_icon_123813 {
+            get {
+                object obj = ResourceManager.GetObject("searcher_magnifyng_glass_search_locate_find_icon_123813", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

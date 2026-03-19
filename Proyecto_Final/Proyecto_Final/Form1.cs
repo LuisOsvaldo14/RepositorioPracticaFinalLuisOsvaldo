@@ -16,6 +16,15 @@ namespace Proyecto_Final
         {
             InitializeComponent();
         }
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -48,11 +57,6 @@ namespace Proyecto_Final
         private void labelBarra_MouseUp(object sender, MouseEventArgs e)
         {
             mover = false;
-        }
-
-        private void labelBarra_Click(object sender, EventArgs e)
-        {
-
         }
         private void buttonClose_Click(object sender, EventArgs e)
         {
@@ -125,21 +129,6 @@ namespace Proyecto_Final
                 toolTip1.SetToolTip(buttonMaximizar, "Windows state maximized");
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         bool expandir;
 
         private void button2_Click(object sender, EventArgs e)
@@ -154,10 +143,10 @@ namespace Proyecto_Final
  
 
         private void timerBarralaterar_Tick(object sender, EventArgs e)
-        {
+        {         
             if (expandir)
             {
-                tlpBarralateral.Width -= 15;
+                tlpBarralateral.Width -= 20;
                 if (tlpBarralateral.Width == tlpBarralateral.MinimumSize.Width)
                 {
                     timerBarralaterar.Stop();
@@ -165,22 +154,13 @@ namespace Proyecto_Final
             }
             else
             {
-                tlpBarralateral.Width += 15;
+                tlpBarralateral.Width += 20;
                 if (tlpBarralateral.Width == tlpBarralateral.MaximumSize.Width)
                 {
                     timerBarralaterar.Stop();
+                    panelContenedor.Dock = DockStyle.Fill;                
                 }
             }
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelMenu_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void buttonMaximizar_Click(object sender, EventArgs e)
@@ -209,15 +189,15 @@ namespace Proyecto_Final
                             {
                                 this.Opacity += 0.15;
                             }
-                            else 
+                            else
                             {
                                 timernormal2.Stop();
                             }
 
                         };
                         timernormal2.Start();
-                    }  
-                       
+                    }
+
 
 
                 };
@@ -260,7 +240,22 @@ namespace Proyecto_Final
                 };
                 timernormal.Start();
             }
-
         }
+
+        private void AbrirUc(UserControl Uc)
+        {
+            Uc.Dock = DockStyle.Fill;
+            panelContenedor.Controls.Clear();
+            panelContenedor.Controls.Add(Uc);
+            
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UcPrincipal ucprincipal = new UcPrincipal();
+            AbrirUc(ucprincipal);
+        }
+
+
+
     }
 }
