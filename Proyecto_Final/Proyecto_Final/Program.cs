@@ -49,7 +49,7 @@ namespace Proyecto_Final
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMenuprincipal());
+            Application.Run(new FormSingin());
         }
     }
 }

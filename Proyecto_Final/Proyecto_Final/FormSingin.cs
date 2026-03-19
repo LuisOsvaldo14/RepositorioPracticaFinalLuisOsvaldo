@@ -200,6 +200,7 @@ namespace Proyecto_Final
                     }
                 };
                 FormMenuprincipal form = new FormMenuprincipal();
+                form.FormClosed += (s, ve) => this.Show();
                 form.Opacity = 0;
                 form.StartPosition = FormStartPosition.CenterScreen;
                 form.WindowState = FormWindowState.Maximized;

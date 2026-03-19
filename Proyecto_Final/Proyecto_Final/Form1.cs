@@ -16,15 +16,7 @@ namespace Proyecto_Final
         {
             InitializeComponent();
         }
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000;
-                return cp;
-            }
-        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -249,6 +241,18 @@ namespace Proyecto_Final
             panelContenedor.Controls.Add(Uc);
             
         }
+
+        private void buttonAbout_Click(object sender, EventArgs e)
+        {
+            UcAbout ucabout = new UcAbout();
+            AbrirUc(ucabout);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             UcPrincipal ucprincipal = new UcPrincipal();
