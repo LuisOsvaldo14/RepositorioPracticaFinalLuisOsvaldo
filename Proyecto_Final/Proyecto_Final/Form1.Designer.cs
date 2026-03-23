@@ -41,6 +41,8 @@
             this.panelLogout = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonConfiguracion = new System.Windows.Forms.Button();
             this.buttonAbout = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -54,6 +56,7 @@
             this.tlpBarralateral.SuspendLayout();
             this.panelLogout.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelBarra
@@ -128,6 +131,7 @@
             this.tlpBarralateral.BackColor = System.Drawing.Color.Yellow;
             this.tlpBarralateral.ColumnCount = 1;
             this.tlpBarralateral.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpBarralateral.Controls.Add(this.panel2, 0, 3);
             this.tlpBarralateral.Controls.Add(this.panelLogout, 0, 2);
             this.tlpBarralateral.Controls.Add(this.panelMenu, 0, 0);
             this.tlpBarralateral.Controls.Add(this.panelHome, 0, 1);
@@ -140,11 +144,12 @@
             this.tlpBarralateral.RowCount = 5;
             this.tlpBarralateral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tlpBarralateral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tlpBarralateral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tlpBarralateral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tlpBarralateral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpBarralateral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tlpBarralateral.Size = new System.Drawing.Size(205, 569);
             this.tlpBarralateral.TabIndex = 9;
+            this.tlpBarralateral.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpBarralateral_Paint);
             // 
             // panelLogout
             // 
@@ -152,7 +157,7 @@
             this.panelLogout.ForeColor = System.Drawing.Color.Transparent;
             this.panelLogout.Location = new System.Drawing.Point(3, 101);
             this.panelLogout.Name = "panelLogout";
-            this.panelLogout.Size = new System.Drawing.Size(199, 43);
+            this.panelLogout.Size = new System.Drawing.Size(199, 42);
             this.panelLogout.TabIndex = 14;
             // 
             // panel1
@@ -171,6 +176,31 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(804, 569);
             this.panelContenedor.TabIndex = 10;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.buttonConfiguracion);
+            this.panel2.ForeColor = System.Drawing.Color.Transparent;
+            this.panel2.Location = new System.Drawing.Point(3, 149);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(199, 43);
+            this.panel2.TabIndex = 15;
+            // 
+            // buttonConfiguracion
+            // 
+            this.buttonConfiguracion.BackColor = System.Drawing.Color.Yellow;
+            this.buttonConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConfiguracion.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonConfiguracion.ForeColor = System.Drawing.Color.Black;
+            this.buttonConfiguracion.Image = global::Proyecto_Final.Properties.Resources.configuracion;
+            this.buttonConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonConfiguracion.Location = new System.Drawing.Point(-28, -35);
+            this.buttonConfiguracion.Name = "buttonConfiguracion";
+            this.buttonConfiguracion.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.buttonConfiguracion.Size = new System.Drawing.Size(250, 111);
+            this.buttonConfiguracion.TabIndex = 10;
+            this.buttonConfiguracion.Text = "Configuración";
+            this.buttonConfiguracion.UseVisualStyleBackColor = true;
             // 
             // buttonAbout
             // 
@@ -290,13 +320,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1009, 604);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.tlpBarralateral);
             this.Controls.Add(this.tlpBarraTitulo);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMenuprincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -310,6 +340,7 @@
             this.tlpBarralateral.ResumeLayout(false);
             this.panelLogout.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -333,6 +364,8 @@
         private System.Windows.Forms.Panel panelLogout;
         private System.Windows.Forms.Button buttonAbout;
         private System.Windows.Forms.Panel panelContenedor;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button buttonConfiguracion;
     }
 }
 

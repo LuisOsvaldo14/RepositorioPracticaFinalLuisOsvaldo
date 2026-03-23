@@ -253,6 +253,11 @@ namespace Proyecto_Final
             this.Close();
         }
 
+        private void tlpBarralateral_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             UcPrincipal ucprincipal = new UcPrincipal();
