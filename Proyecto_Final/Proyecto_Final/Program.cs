@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,6 +17,7 @@ namespace Proyecto_Final
         [STAThread]
         static void Main()
         {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
             string NLV_Carpeta_appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\NoLimitsEvents";
 
             string Carpeta_Usuarios = NLV_Carpeta_appdata + "\\Usuarios";

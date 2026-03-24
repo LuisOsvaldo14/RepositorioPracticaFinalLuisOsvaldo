@@ -32,12 +32,31 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBoxLupa = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.buttonAdd = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonExportar = new System.Windows.Forms.Button();
-            this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonEditar = new System.Windows.Forms.Button();
             this.dataGridViewDatos = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelMensajeNombre = new System.Windows.Forms.Label();
+            this.labelNombre = new System.Windows.Forms.Label();
+            this.labelPais = new System.Windows.Forms.Label();
+            this.labelFecha = new System.Windows.Forms.Label();
+            this.labelHora = new System.Windows.Forms.Label();
+            this.labelPrecio = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAgregar = new System.Windows.Forms.Button();
+            this.textBoxNombre = new System.Windows.Forms.TextBox();
+            this.numericUpDownPrecio = new System.Windows.Forms.NumericUpDown();
+            this.comboBoxPais = new System.Windows.Forms.ComboBox();
+            this.dtpHora = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.labelMensajePais = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.flpAgregar = new System.Windows.Forms.FlowLayoutPanel();
+            this.timerAnimacion = new System.Windows.Forms.Timer(this.components);
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.Clnid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClnNombreTour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClnPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,23 +67,6 @@
             this.ClnITBIS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClnDuracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClnEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelNombre = new System.Windows.Forms.Label();
-            this.labelPais = new System.Windows.Forms.Label();
-            this.labelFecha = new System.Windows.Forms.Label();
-            this.labelHora = new System.Windows.Forms.Label();
-            this.labelPrecio = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBoxNombre = new System.Windows.Forms.TextBox();
-            this.numericUpDownPrecio = new System.Windows.Forms.NumericUpDown();
-            this.maskedTextBoxHora = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBoxFecha = new System.Windows.Forms.MaskedTextBox();
-            this.comboBoxPais = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.flpAgregar = new System.Windows.Forms.FlowLayoutPanel();
-            this.timerAnimacion = new System.Windows.Forms.Timer(this.components);
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLupa)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
@@ -81,7 +83,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 460F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 310F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.pictureBoxLupa, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
@@ -94,7 +96,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(804, 46);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // pictureBoxLupa
             // 
@@ -116,26 +117,13 @@
             this.textBox1.TabIndex = 1;
             this.toolTip.SetToolTip(this.textBox1, "Buscar");
             // 
-            // buttonAdd
-            // 
-            this.buttonAdd.BackgroundImage = global::Proyecto_Final.Properties.Resources.agregar;
-            this.buttonAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAdd.Location = new System.Drawing.Point(3, 3);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(39, 30);
-            this.buttonAdd.TabIndex = 2;
-            this.toolTip.SetToolTip(this.buttonAdd, "Agregar");
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 4;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel3.Controls.Add(this.buttonExportar, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.buttonEliminar, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.buttonAdd, 0, 0);
@@ -146,7 +134,6 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(183, 40);
             this.tableLayoutPanel3.TabIndex = 3;
-            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
             // buttonExportar
             // 
@@ -160,6 +147,32 @@
             this.toolTip.SetToolTip(this.buttonExportar, "Exportar");
             this.buttonExportar.UseVisualStyleBackColor = true;
             // 
+            // buttonEliminar
+            // 
+            this.buttonEliminar.BackgroundImage = global::Proyecto_Final.Properties.Resources.basura;
+            this.buttonEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEliminar.Location = new System.Drawing.Point(48, 3);
+            this.buttonEliminar.Name = "buttonEliminar";
+            this.buttonEliminar.Size = new System.Drawing.Size(36, 30);
+            this.buttonEliminar.TabIndex = 3;
+            this.toolTip.SetToolTip(this.buttonEliminar, "Eliminar");
+            this.buttonEliminar.UseVisualStyleBackColor = true;
+            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.BackgroundImage = global::Proyecto_Final.Properties.Resources.agregar;
+            this.buttonAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdd.Location = new System.Drawing.Point(3, 3);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(39, 30);
+            this.buttonAdd.TabIndex = 2;
+            this.toolTip.SetToolTip(this.buttonAdd, "Agregar");
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
             // buttonEditar
             // 
             this.buttonEditar.BackgroundImage = global::Proyecto_Final.Properties.Resources.editar;
@@ -172,21 +185,10 @@
             this.toolTip.SetToolTip(this.buttonEditar, "Editar");
             this.buttonEditar.UseVisualStyleBackColor = true;
             // 
-            // buttonEliminar
-            // 
-            this.buttonEliminar.BackgroundImage = global::Proyecto_Final.Properties.Resources.basura;
-            this.buttonEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEliminar.Location = new System.Drawing.Point(48, 3);
-            this.buttonEliminar.Name = "buttonEliminar";
-            this.buttonEliminar.Size = new System.Drawing.Size(36, 30);
-            this.buttonEliminar.TabIndex = 3;
-            this.toolTip.SetToolTip(this.buttonEliminar, "Eliminar");
-            this.buttonEliminar.UseVisualStyleBackColor = true;
-            this.buttonEliminar.Click += new System.EventHandler(this.button3_Click);
-            // 
             // dataGridViewDatos
             // 
+            this.dataGridViewDatos.AllowUserToAddRows = false;
+            this.dataGridViewDatos.AllowUserToDeleteRows = false;
             this.dataGridViewDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewDatos.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -203,79 +205,33 @@
             this.ClnEstado});
             this.dataGridViewDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewDatos.Location = new System.Drawing.Point(0, 214);
+            this.dataGridViewDatos.MultiSelect = false;
             this.dataGridViewDatos.Name = "dataGridViewDatos";
+            this.dataGridViewDatos.ReadOnly = true;
+            this.dataGridViewDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDatos.Size = new System.Drawing.Size(804, 309);
             this.dataGridViewDatos.TabIndex = 1;
-            this.dataGridViewDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDatos_CellContentClick);
-            // 
-            // Clnid
-            // 
-            this.Clnid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Clnid.HeaderText = "ID";
-            this.Clnid.Name = "Clnid";
-            // 
-            // ClnNombreTour
-            // 
-            this.ClnNombreTour.HeaderText = "Nombre";
-            this.ClnNombreTour.Name = "ClnNombreTour";
-            // 
-            // ClnPais
-            // 
-            this.ClnPais.HeaderText = "País";
-            this.ClnPais.Name = "ClnPais";
-            // 
-            // ClnDestino
-            // 
-            this.ClnDestino.HeaderText = "Destino";
-            this.ClnDestino.Name = "ClnDestino";
-            // 
-            // ClnFecha
-            // 
-            this.ClnFecha.HeaderText = "Fecha";
-            this.ClnFecha.Name = "ClnFecha";
-            // 
-            // ClnHora
-            // 
-            this.ClnHora.HeaderText = "Hora";
-            this.ClnHora.Name = "ClnHora";
-            // 
-            // ClnPrecio
-            // 
-            this.ClnPrecio.HeaderText = "Precio";
-            this.ClnPrecio.Name = "ClnPrecio";
-            // 
-            // ClnITBIS
-            // 
-            this.ClnITBIS.HeaderText = "ITBIS";
-            this.ClnITBIS.Name = "ClnITBIS";
-            // 
-            // ClnDuracion
-            // 
-            this.ClnDuracion.HeaderText = "Duración";
-            this.ClnDuracion.Name = "ClnDuracion";
-            // 
-            // ClnEstado
-            // 
-            this.ClnEstado.HeaderText = "Estado";
-            this.ClnEstado.Name = "ClnEstado";
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 705F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 399F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.labelMensajeNombre, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.labelNombre, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.labelPais, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.labelFecha, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.labelHora, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.labelPrecio, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.button1, 0, 5);
-            this.tableLayoutPanel2.Controls.Add(this.button2, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.buttonAgregar, 1, 5);
             this.tableLayoutPanel2.Controls.Add(this.textBoxNombre, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.numericUpDownPrecio, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.maskedTextBoxHora, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.maskedTextBoxFecha, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.comboBoxPais, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.dtpHora, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.dtpFecha, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.labelMensajePais, 2, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -286,9 +242,17 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(798, 222);
             this.tableLayoutPanel2.TabIndex = 2;
+            // 
+            // labelMensajeNombre
+            // 
+            this.labelMensajeNombre.Location = new System.Drawing.Point(495, 0);
+            this.labelMensajeNombre.Name = "labelMensajeNombre";
+            this.labelMensajeNombre.Size = new System.Drawing.Size(268, 24);
+            this.labelMensajeNombre.TabIndex = 20;
+            this.labelMensajeNombre.Text = "label2";
+            this.labelMensajeNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelNombre
             // 
@@ -347,16 +311,17 @@
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonAgregar
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(96, 173);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 27);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Agregar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAgregar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAgregar.Location = new System.Drawing.Point(96, 173);
+            this.buttonAgregar.Name = "buttonAgregar";
+            this.buttonAgregar.Size = new System.Drawing.Size(75, 27);
+            this.buttonAgregar.TabIndex = 6;
+            this.buttonAgregar.Text = "Agregar";
+            this.buttonAgregar.UseVisualStyleBackColor = true;
+            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
             // 
             // textBoxNombre
             // 
@@ -366,10 +331,11 @@
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(392, 20);
             this.textBoxNombre.TabIndex = 7;
+            this.textBoxNombre.TextChanged += new System.EventHandler(this.textBoxNombre_TextChanged);
             // 
             // numericUpDownPrecio
             // 
-            this.numericUpDownPrecio.DecimalPlaces = 3;
+            this.numericUpDownPrecio.DecimalPlaces = 2;
             this.numericUpDownPrecio.Location = new System.Drawing.Point(96, 139);
             this.numericUpDownPrecio.Maximum = new decimal(new int[] {
             1000000000,
@@ -384,27 +350,13 @@
             this.numericUpDownPrecio.Name = "numericUpDownPrecio";
             this.numericUpDownPrecio.Size = new System.Drawing.Size(392, 20);
             this.numericUpDownPrecio.TabIndex = 11;
+            this.numericUpDownPrecio.ThousandsSeparator = true;
+            this.toolTip.SetToolTip(this.numericUpDownPrecio, "Introduce el precio.");
             this.numericUpDownPrecio.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            // 
-            // maskedTextBoxHora
-            // 
-            this.maskedTextBoxHora.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.maskedTextBoxHora.Location = new System.Drawing.Point(96, 105);
-            this.maskedTextBoxHora.Name = "maskedTextBoxHora";
-            this.maskedTextBoxHora.Size = new System.Drawing.Size(392, 20);
-            this.maskedTextBoxHora.TabIndex = 13;
-            // 
-            // maskedTextBoxFecha
-            // 
-            this.maskedTextBoxFecha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.maskedTextBoxFecha.Location = new System.Drawing.Point(96, 71);
-            this.maskedTextBoxFecha.Name = "maskedTextBoxFecha";
-            this.maskedTextBoxFecha.Size = new System.Drawing.Size(392, 20);
-            this.maskedTextBoxFecha.TabIndex = 14;
             // 
             // comboBoxPais
             // 
@@ -413,6 +365,33 @@
             this.comboBoxPais.Name = "comboBoxPais";
             this.comboBoxPais.Size = new System.Drawing.Size(392, 21);
             this.comboBoxPais.TabIndex = 15;
+            this.comboBoxPais.TextChanged += new System.EventHandler(this.comboBoxPais_TextChanged);
+            // 
+            // dtpHora
+            // 
+            this.dtpHora.CustomFormat = "HH:mm ";
+            this.dtpHora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpHora.Location = new System.Drawing.Point(96, 105);
+            this.dtpHora.Name = "dtpHora";
+            this.dtpHora.ShowUpDown = true;
+            this.dtpHora.Size = new System.Drawing.Size(392, 20);
+            this.dtpHora.TabIndex = 16;
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Location = new System.Drawing.Point(96, 71);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(392, 20);
+            this.dtpFecha.TabIndex = 17;
+            // 
+            // labelMensajePais
+            // 
+            this.labelMensajePais.Location = new System.Drawing.Point(495, 34);
+            this.labelMensajePais.Name = "labelMensajePais";
+            this.labelMensajePais.Size = new System.Drawing.Size(268, 24);
+            this.labelMensajePais.TabIndex = 19;
+            this.labelMensajePais.Text = "label2";
+            this.labelMensajePais.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel1
             // 
@@ -447,6 +426,67 @@
             this.toolTip.InitialDelay = 500;
             this.toolTip.ReshowDelay = 0;
             // 
+            // Clnid
+            // 
+            this.Clnid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Clnid.HeaderText = "ID";
+            this.Clnid.Name = "Clnid";
+            this.Clnid.ReadOnly = true;
+            // 
+            // ClnNombreTour
+            // 
+            this.ClnNombreTour.HeaderText = "Nombre";
+            this.ClnNombreTour.Name = "ClnNombreTour";
+            this.ClnNombreTour.ReadOnly = true;
+            // 
+            // ClnPais
+            // 
+            this.ClnPais.HeaderText = "País";
+            this.ClnPais.Name = "ClnPais";
+            this.ClnPais.ReadOnly = true;
+            // 
+            // ClnDestino
+            // 
+            this.ClnDestino.HeaderText = "Destino";
+            this.ClnDestino.Name = "ClnDestino";
+            this.ClnDestino.ReadOnly = true;
+            // 
+            // ClnFecha
+            // 
+            this.ClnFecha.HeaderText = "Fecha";
+            this.ClnFecha.Name = "ClnFecha";
+            this.ClnFecha.ReadOnly = true;
+            // 
+            // ClnHora
+            // 
+            this.ClnHora.HeaderText = "Hora";
+            this.ClnHora.Name = "ClnHora";
+            this.ClnHora.ReadOnly = true;
+            // 
+            // ClnPrecio
+            // 
+            this.ClnPrecio.HeaderText = "Precio";
+            this.ClnPrecio.Name = "ClnPrecio";
+            this.ClnPrecio.ReadOnly = true;
+            // 
+            // ClnITBIS
+            // 
+            this.ClnITBIS.HeaderText = "ITBIS";
+            this.ClnITBIS.Name = "ClnITBIS";
+            this.ClnITBIS.ReadOnly = true;
+            // 
+            // ClnDuracion
+            // 
+            this.ClnDuracion.HeaderText = "Duración";
+            this.ClnDuracion.Name = "ClnDuracion";
+            this.ClnDuracion.ReadOnly = true;
+            // 
+            // ClnEstado
+            // 
+            this.ClnEstado.HeaderText = "Estado";
+            this.ClnEstado.Name = "ClnEstado";
+            this.ClnEstado.ReadOnly = true;
+            // 
             // UcPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,6 +520,29 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.DataGridView dataGridViewDatos;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label labelNombre;
+        private System.Windows.Forms.Label labelPais;
+        private System.Windows.Forms.Label labelFecha;
+        private System.Windows.Forms.Label labelHora;
+        private System.Windows.Forms.Label labelPrecio;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAgregar;
+        private System.Windows.Forms.TextBox textBoxNombre;
+        private System.Windows.Forms.NumericUpDown numericUpDownPrecio;
+        private System.Windows.Forms.ComboBox comboBoxPais;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.FlowLayoutPanel flpAgregar;
+        private System.Windows.Forms.Timer timerAnimacion;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Button buttonEliminar;
+        private System.Windows.Forms.Button buttonEditar;
+        private System.Windows.Forms.Button buttonExportar;
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.DateTimePicker dtpHora;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.Label labelMensajePais;
+        private System.Windows.Forms.Label labelMensajeNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Clnid;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClnNombreTour;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClnPais;
@@ -490,26 +553,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ClnITBIS;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClnDuracion;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClnEstado;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label labelNombre;
-        private System.Windows.Forms.Label labelPais;
-        private System.Windows.Forms.Label labelFecha;
-        private System.Windows.Forms.Label labelHora;
-        private System.Windows.Forms.Label labelPrecio;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBoxNombre;
-        private System.Windows.Forms.NumericUpDown numericUpDownPrecio;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxHora;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxFecha;
-        private System.Windows.Forms.ComboBox comboBoxPais;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.FlowLayoutPanel flpAgregar;
-        private System.Windows.Forms.Timer timerAnimacion;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Button buttonEliminar;
-        private System.Windows.Forms.Button buttonEditar;
-        private System.Windows.Forms.Button buttonExportar;
-        private System.Windows.Forms.ToolTip toolTip;
     }
 }
