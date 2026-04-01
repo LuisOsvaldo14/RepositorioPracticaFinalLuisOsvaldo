@@ -163,6 +163,16 @@ namespace Proyecto_Final.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imgi_199_rs_180722_475734213 {
+            get {
+                object obj = ResourceManager.GetObject("imgi_199_rs-180722-475734213", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap maximizar__2_ {
             get {
                 object obj = ResourceManager.GetObject("maximizar (2)", resourceCulture);
@@ -226,6 +236,16 @@ namespace Proyecto_Final.Properties {
         internal static System.Drawing.Bitmap searcher_magnifyng_glass_search_locate_find_icon_123813 {
             get {
                 object obj = ResourceManager.GetObject("searcher_magnifyng_glass_search_locate_find_icon_123813", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap videoplayback {
+            get {
+                object obj = ResourceManager.GetObject("videoplayback", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

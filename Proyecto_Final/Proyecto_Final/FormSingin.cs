@@ -22,21 +22,6 @@ namespace Proyecto_Final
         private void FormSingin_Load(object sender, EventArgs e)
         {
             timerAnimacionAbrir.Start();
-            string Recuerdame = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "NoLimitsEvents", "Recuerdame.txt");
-            if (File.Exists(Recuerdame))
-            {
-                string contenido = File.ReadAllText(Recuerdame);
-
-                if (!string.IsNullOrWhiteSpace(contenido))
-                {
-                    string[] datos = contenido.Split(',');
-
-                    textBoxUsuario.Text = datos[0];
-                    textBoxContra.Text = datos[1];
-
-                    radioButtonRecuerdame.Checked = true;
-                }
-            }
         }
         private void timerAnimacionAbrir_Tick(object sender, EventArgs e)
         {
@@ -170,18 +155,8 @@ namespace Proyecto_Final
         {
             string textoUsuario = textBoxUsuario.Text;
             string textoContraseña = textBoxContra.Text;
-            string Recuerdame = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),"NoLimitsEvents", "Recuerdame.txt");
             if (UsuarioEncontrado == true && ContraseñaCoincide == true)
             {
-                if (radioButtonRecuerdame.Checked)
-                {
-                    string datos = textoUsuario + "," + textoContraseña;
-                    File.WriteAllText(Recuerdame, datos);
-                }
-                else
-                {
-                    File.WriteAllText(Recuerdame, "");
-                }
 
 
 
@@ -227,28 +202,13 @@ namespace Proyecto_Final
                 SystemSounds.Exclamation.Play();
                 if (ContraseñaCoincide)
                 {
-                    labelMensajeContra.ForeColor = Color.Green;
                     ContraseñaCoincide = true;
-                    labelMensajeContra.Text = "La contraseña coincide con el usuario.";
                 }
                 else
                 {
                     labelMensajeContra.ForeColor = Color.Red;
                     ContraseñaCoincide = false;
-                    labelMensajeContra.Text = "La contraseña no coincide con el usuario.";
-                }
-                if (UsuarioEncontrado)
-                {
-                    labelMensajeUsuario.ForeColor = Color.Green;
-                    UsuarioEncontrado = true;
-                    labelMensajeUsuario.Text = "Usuario encontrado.";
-                }
-                else
-                {
-                    labelMensajeUsuario.ForeColor = Color.Red;
-                    UsuarioEncontrado = false;
-                    labelMensajeUsuario.Text = "Usuario no encontrado.";
-
+                    labelMensajeContra.Text = "La contraseña o usuario incorectos";
                 }
 
             }
@@ -275,15 +235,12 @@ namespace Proyecto_Final
             }
             if(UsuarioEncontrado)
             {
-                labelMensajeUsuario.ForeColor = Color.Green;
                 UsuarioEncontrado = true;
-                labelMensajeUsuario.Text = "Usuario encontrado.";
+
             }
             else
             {
-                labelMensajeUsuario.ForeColor = Color.Red;
                 UsuarioEncontrado = false;
-                labelMensajeUsuario.Text = "Usuario no encontrado.";
 
             }
             foreach (string line in lineas)
@@ -297,15 +254,13 @@ namespace Proyecto_Final
             }
             if (ContraseñaCoincide)
             {
-                labelMensajeContra.ForeColor = Color.Green;
+
                 ContraseñaCoincide = true;
-                labelMensajeContra.Text = "La contraseña coincide con el usuario.";
             }
             else
             {
-                labelMensajeContra.ForeColor = Color.Red;
+
                 ContraseñaCoincide = false;
-                labelMensajeContra.Text = "La contraseña no coincide con el usuario.";
             }
         }
 
@@ -327,21 +282,22 @@ namespace Proyecto_Final
             }
             if (ContraseñaCoincide)
             {
-                labelMensajeContra.ForeColor = Color.Green;
                 ContraseñaCoincide = true;
-                labelMensajeContra.Text = "La contraseña coincide con el usuario.";
+
             }
             else
             {
-                labelMensajeContra.ForeColor = Color.Red;
                 ContraseñaCoincide = false;
-                labelMensajeContra.Text = "La contraseña no coincide con el usuario.";
+
             }
 
 
         }
 
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
 
         protected override void WndProc(ref Message m)
         {

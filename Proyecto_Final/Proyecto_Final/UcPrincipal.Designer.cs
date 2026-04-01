@@ -38,8 +38,17 @@
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.dataGridViewDatos = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelMensajeNombre = new System.Windows.Forms.Label();
+            this.Clnid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnNombreTour = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnITBIS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnDuracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tlpAgregar = new System.Windows.Forms.TableLayoutPanel();
             this.labelNombre = new System.Windows.Forms.Label();
             this.labelPais = new System.Windows.Forms.Label();
             this.labelFecha = new System.Windows.Forms.Label();
@@ -53,48 +62,58 @@
             this.dtpHora = new System.Windows.Forms.DateTimePicker();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.labelMensajePais = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.labelMensajeNombre = new System.Windows.Forms.Label();
+            this.labelMensajePrecio = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.flpAgregar = new System.Windows.Forms.FlowLayoutPanel();
+            this.tlpEditar = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.timerAnimacion = new System.Windows.Forms.Timer(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.Clnid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnNombreTour = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnITBIS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnDuracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timerAnimacion2 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLupa)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDatos)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.tlpAgregar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrecio)).BeginInit();
             this.panel1.SuspendLayout();
-            this.flpAgregar.SuspendLayout();
+            this.tlpEditar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 460F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 310F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 517F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.pictureBoxLupa, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.ForeColor = System.Drawing.Color.White;
+            this.tableLayoutPanel1.ForeColor = System.Drawing.SystemColors.Control;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(804, 46);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1011, 46);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // pictureBoxLupa
@@ -123,7 +142,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tableLayoutPanel3.Controls.Add(this.buttonExportar, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.buttonEliminar, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.buttonAdd, 0, 0);
@@ -184,13 +203,14 @@
             this.buttonEditar.TabIndex = 4;
             this.toolTip.SetToolTip(this.buttonEditar, "Editar");
             this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // dataGridViewDatos
             // 
             this.dataGridViewDatos.AllowUserToAddRows = false;
             this.dataGridViewDatos.AllowUserToDeleteRows = false;
             this.dataGridViewDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewDatos.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewDatos.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridViewDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Clnid,
@@ -204,70 +224,138 @@
             this.ClnDuracion,
             this.ClnEstado});
             this.dataGridViewDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewDatos.Location = new System.Drawing.Point(0, 214);
+            this.dataGridViewDatos.Location = new System.Drawing.Point(0, 478);
             this.dataGridViewDatos.MultiSelect = false;
             this.dataGridViewDatos.Name = "dataGridViewDatos";
             this.dataGridViewDatos.ReadOnly = true;
+            this.dataGridViewDatos.RowHeadersWidth = 72;
             this.dataGridViewDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewDatos.Size = new System.Drawing.Size(804, 309);
+            this.dataGridViewDatos.Size = new System.Drawing.Size(1011, 45);
             this.dataGridViewDatos.TabIndex = 1;
             // 
-            // tableLayoutPanel2
+            // Clnid
             // 
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 399F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.labelMensajeNombre, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.labelNombre, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.labelPais, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.labelFecha, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.labelHora, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.labelPrecio, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.button1, 0, 5);
-            this.tableLayoutPanel2.Controls.Add(this.buttonAgregar, 1, 5);
-            this.tableLayoutPanel2.Controls.Add(this.textBoxNombre, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.numericUpDownPrecio, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.comboBoxPais, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.dtpHora, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.dtpFecha, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.labelMensajePais, 2, 1);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 6;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(798, 222);
-            this.tableLayoutPanel2.TabIndex = 2;
+            this.Clnid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Clnid.HeaderText = "ID";
+            this.Clnid.MinimumWidth = 9;
+            this.Clnid.Name = "Clnid";
+            this.Clnid.ReadOnly = true;
             // 
-            // labelMensajeNombre
+            // ClnNombreTour
             // 
-            this.labelMensajeNombre.Location = new System.Drawing.Point(495, 0);
-            this.labelMensajeNombre.Name = "labelMensajeNombre";
-            this.labelMensajeNombre.Size = new System.Drawing.Size(268, 24);
-            this.labelMensajeNombre.TabIndex = 20;
-            this.labelMensajeNombre.Text = "label2";
-            this.labelMensajeNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ClnNombreTour.HeaderText = "Nombre";
+            this.ClnNombreTour.MinimumWidth = 9;
+            this.ClnNombreTour.Name = "ClnNombreTour";
+            this.ClnNombreTour.ReadOnly = true;
+            // 
+            // ClnPais
+            // 
+            this.ClnPais.HeaderText = "País";
+            this.ClnPais.MinimumWidth = 9;
+            this.ClnPais.Name = "ClnPais";
+            this.ClnPais.ReadOnly = true;
+            // 
+            // ClnDestino
+            // 
+            this.ClnDestino.HeaderText = "Destino";
+            this.ClnDestino.MinimumWidth = 9;
+            this.ClnDestino.Name = "ClnDestino";
+            this.ClnDestino.ReadOnly = true;
+            // 
+            // ClnFecha
+            // 
+            this.ClnFecha.HeaderText = "Fecha";
+            this.ClnFecha.MinimumWidth = 9;
+            this.ClnFecha.Name = "ClnFecha";
+            this.ClnFecha.ReadOnly = true;
+            // 
+            // ClnHora
+            // 
+            this.ClnHora.HeaderText = "Hora";
+            this.ClnHora.MinimumWidth = 9;
+            this.ClnHora.Name = "ClnHora";
+            this.ClnHora.ReadOnly = true;
+            // 
+            // ClnPrecio
+            // 
+            this.ClnPrecio.HeaderText = "Precio";
+            this.ClnPrecio.MinimumWidth = 9;
+            this.ClnPrecio.Name = "ClnPrecio";
+            this.ClnPrecio.ReadOnly = true;
+            // 
+            // ClnITBIS
+            // 
+            this.ClnITBIS.HeaderText = "ITBIS";
+            this.ClnITBIS.MinimumWidth = 9;
+            this.ClnITBIS.Name = "ClnITBIS";
+            this.ClnITBIS.ReadOnly = true;
+            // 
+            // ClnDuracion
+            // 
+            this.ClnDuracion.HeaderText = "Duración";
+            this.ClnDuracion.MinimumWidth = 9;
+            this.ClnDuracion.Name = "ClnDuracion";
+            this.ClnDuracion.ReadOnly = true;
+            // 
+            // ClnEstado
+            // 
+            this.ClnEstado.HeaderText = "Estado";
+            this.ClnEstado.MinimumWidth = 9;
+            this.ClnEstado.Name = "ClnEstado";
+            this.ClnEstado.ReadOnly = true;
+            // 
+            // tlpAgregar
+            // 
+            this.tlpAgregar.BackColor = System.Drawing.SystemColors.Control;
+            this.tlpAgregar.ColumnCount = 3;
+            this.tlpAgregar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93F));
+            this.tlpAgregar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 399F));
+            this.tlpAgregar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpAgregar.Controls.Add(this.labelNombre, 0, 1);
+            this.tlpAgregar.Controls.Add(this.labelPais, 0, 2);
+            this.tlpAgregar.Controls.Add(this.labelFecha, 0, 3);
+            this.tlpAgregar.Controls.Add(this.labelHora, 0, 4);
+            this.tlpAgregar.Controls.Add(this.labelPrecio, 0, 5);
+            this.tlpAgregar.Controls.Add(this.button1, 0, 6);
+            this.tlpAgregar.Controls.Add(this.buttonAgregar, 1, 6);
+            this.tlpAgregar.Controls.Add(this.textBoxNombre, 1, 1);
+            this.tlpAgregar.Controls.Add(this.numericUpDownPrecio, 1, 5);
+            this.tlpAgregar.Controls.Add(this.comboBoxPais, 1, 2);
+            this.tlpAgregar.Controls.Add(this.dtpHora, 1, 4);
+            this.tlpAgregar.Controls.Add(this.dtpFecha, 1, 3);
+            this.tlpAgregar.Controls.Add(this.labelMensajePais, 2, 2);
+            this.tlpAgregar.Controls.Add(this.label8, 1, 0);
+            this.tlpAgregar.Controls.Add(this.labelMensajeNombre, 2, 1);
+            this.tlpAgregar.Controls.Add(this.labelMensajePrecio, 2, 5);
+            this.tlpAgregar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tlpAgregar.Location = new System.Drawing.Point(0, 233);
+            this.tlpAgregar.MaximumSize = new System.Drawing.Size(0, 245);
+            this.tlpAgregar.Name = "tlpAgregar";
+            this.tlpAgregar.RowCount = 7;
+            this.tlpAgregar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tlpAgregar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tlpAgregar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tlpAgregar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tlpAgregar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tlpAgregar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tlpAgregar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 14F));
+            this.tlpAgregar.Size = new System.Drawing.Size(1011, 245);
+            this.tlpAgregar.TabIndex = 2;
             // 
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
             this.labelNombre.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labelNombre.Location = new System.Drawing.Point(3, 0);
+            this.labelNombre.Location = new System.Drawing.Point(3, 33);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(82, 34);
+            this.labelNombre.Size = new System.Drawing.Size(82, 33);
             this.labelNombre.TabIndex = 0;
             this.labelNombre.Text = "Nombre del tour";
             // 
             // labelPais
             // 
             this.labelPais.AutoSize = true;
-            this.labelPais.Location = new System.Drawing.Point(3, 34);
+            this.labelPais.Location = new System.Drawing.Point(3, 66);
             this.labelPais.Name = "labelPais";
             this.labelPais.Size = new System.Drawing.Size(83, 13);
             this.labelPais.TabIndex = 1;
@@ -276,7 +364,7 @@
             // labelFecha
             // 
             this.labelFecha.AutoSize = true;
-            this.labelFecha.Location = new System.Drawing.Point(3, 68);
+            this.labelFecha.Location = new System.Drawing.Point(3, 102);
             this.labelFecha.Name = "labelFecha";
             this.labelFecha.Size = new System.Drawing.Size(75, 13);
             this.labelFecha.TabIndex = 2;
@@ -285,7 +373,7 @@
             // labelHora
             // 
             this.labelHora.AutoSize = true;
-            this.labelHora.Location = new System.Drawing.Point(3, 102);
+            this.labelHora.Location = new System.Drawing.Point(3, 138);
             this.labelHora.Name = "labelHora";
             this.labelHora.Size = new System.Drawing.Size(68, 13);
             this.labelHora.TabIndex = 3;
@@ -294,7 +382,7 @@
             // labelPrecio
             // 
             this.labelPrecio.AutoSize = true;
-            this.labelPrecio.Location = new System.Drawing.Point(3, 136);
+            this.labelPrecio.Location = new System.Drawing.Point(3, 176);
             this.labelPrecio.Name = "labelPrecio";
             this.labelPrecio.Size = new System.Drawing.Size(37, 13);
             this.labelPrecio.TabIndex = 4;
@@ -304,7 +392,7 @@
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(3, 173);
+            this.button1.Location = new System.Drawing.Point(3, 214);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 27);
             this.button1.TabIndex = 5;
@@ -315,7 +403,7 @@
             // 
             this.buttonAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAgregar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAgregar.Location = new System.Drawing.Point(96, 173);
+            this.buttonAgregar.Location = new System.Drawing.Point(96, 214);
             this.buttonAgregar.Name = "buttonAgregar";
             this.buttonAgregar.Size = new System.Drawing.Size(75, 27);
             this.buttonAgregar.TabIndex = 6;
@@ -327,7 +415,7 @@
             // 
             this.textBoxNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxNombre.Dock = System.Windows.Forms.DockStyle.Left;
-            this.textBoxNombre.Location = new System.Drawing.Point(96, 3);
+            this.textBoxNombre.Location = new System.Drawing.Point(96, 36);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(392, 20);
             this.textBoxNombre.TabIndex = 7;
@@ -336,9 +424,9 @@
             // numericUpDownPrecio
             // 
             this.numericUpDownPrecio.DecimalPlaces = 2;
-            this.numericUpDownPrecio.Location = new System.Drawing.Point(96, 139);
+            this.numericUpDownPrecio.Location = new System.Drawing.Point(96, 179);
             this.numericUpDownPrecio.Maximum = new decimal(new int[] {
-            1000000000,
+            10000000,
             0,
             0,
             0});
@@ -357,11 +445,13 @@
             0,
             0,
             0});
+            this.numericUpDownPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numericUpDownPrecio_KeyPress);
+            this.numericUpDownPrecio.KeyUp += new System.Windows.Forms.KeyEventHandler(this.numericUpDownPrecio_KeyUp);
             // 
             // comboBoxPais
             // 
             this.comboBoxPais.FormattingEnabled = true;
-            this.comboBoxPais.Location = new System.Drawing.Point(96, 37);
+            this.comboBoxPais.Location = new System.Drawing.Point(96, 69);
             this.comboBoxPais.Name = "comboBoxPais";
             this.comboBoxPais.Size = new System.Drawing.Size(392, 21);
             this.comboBoxPais.TabIndex = 15;
@@ -371,7 +461,7 @@
             // 
             this.dtpHora.CustomFormat = "HH:mm ";
             this.dtpHora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpHora.Location = new System.Drawing.Point(96, 105);
+            this.dtpHora.Location = new System.Drawing.Point(96, 141);
             this.dtpHora.Name = "dtpHora";
             this.dtpHora.ShowUpDown = true;
             this.dtpHora.Size = new System.Drawing.Size(392, 20);
@@ -379,44 +469,252 @@
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(96, 71);
+            this.dtpFecha.Location = new System.Drawing.Point(96, 105);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(392, 20);
             this.dtpFecha.TabIndex = 17;
             // 
             // labelMensajePais
             // 
-            this.labelMensajePais.Location = new System.Drawing.Point(495, 34);
+            this.labelMensajePais.Location = new System.Drawing.Point(495, 66);
             this.labelMensajePais.Name = "labelMensajePais";
             this.labelMensajePais.Size = new System.Drawing.Size(268, 24);
             this.labelMensajePais.TabIndex = 19;
-            this.labelMensajePais.Text = "label2";
             this.labelMensajePais.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(96, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(393, 33);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Agregar";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // labelMensajeNombre
+            // 
+            this.labelMensajeNombre.Location = new System.Drawing.Point(495, 33);
+            this.labelMensajeNombre.Name = "labelMensajeNombre";
+            this.labelMensajeNombre.Size = new System.Drawing.Size(268, 24);
+            this.labelMensajeNombre.TabIndex = 20;
+            this.labelMensajeNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelMensajePrecio
+            // 
+            this.labelMensajePrecio.Location = new System.Drawing.Point(495, 176);
+            this.labelMensajePrecio.Name = "labelMensajePrecio";
+            this.labelMensajePrecio.Size = new System.Drawing.Size(449, 24);
+            this.labelMensajePrecio.TabIndex = 22;
+            this.labelMensajePrecio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
             this.panel1.Controls.Add(this.dataGridViewDatos);
-            this.panel1.Controls.Add(this.flpAgregar);
+            this.panel1.Controls.Add(this.tlpAgregar);
+            this.panel1.Controls.Add(this.tlpEditar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 46);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(804, 523);
+            this.panel1.Size = new System.Drawing.Size(1011, 523);
             this.panel1.TabIndex = 3;
             // 
-            // flpAgregar
+            // tlpEditar
             // 
-            this.flpAgregar.Controls.Add(this.tableLayoutPanel2);
-            this.flpAgregar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flpAgregar.Location = new System.Drawing.Point(0, 0);
-            this.flpAgregar.MaximumSize = new System.Drawing.Size(0, 214);
-            this.flpAgregar.Name = "flpAgregar";
-            this.flpAgregar.Size = new System.Drawing.Size(804, 214);
-            this.flpAgregar.TabIndex = 4;
+            this.tlpEditar.BackColor = System.Drawing.SystemColors.Control;
+            this.tlpEditar.ColumnCount = 3;
+            this.tlpEditar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93F));
+            this.tlpEditar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 399F));
+            this.tlpEditar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpEditar.Controls.Add(this.label1, 2, 1);
+            this.tlpEditar.Controls.Add(this.label2, 0, 1);
+            this.tlpEditar.Controls.Add(this.label3, 0, 2);
+            this.tlpEditar.Controls.Add(this.label4, 0, 3);
+            this.tlpEditar.Controls.Add(this.label5, 0, 4);
+            this.tlpEditar.Controls.Add(this.label6, 0, 5);
+            this.tlpEditar.Controls.Add(this.button2, 0, 6);
+            this.tlpEditar.Controls.Add(this.button3, 1, 6);
+            this.tlpEditar.Controls.Add(this.textBox2, 1, 1);
+            this.tlpEditar.Controls.Add(this.numericUpDown1, 1, 5);
+            this.tlpEditar.Controls.Add(this.comboBox1, 1, 2);
+            this.tlpEditar.Controls.Add(this.dateTimePicker1, 1, 4);
+            this.tlpEditar.Controls.Add(this.dateTimePicker2, 1, 3);
+            this.tlpEditar.Controls.Add(this.label7, 2, 2);
+            this.tlpEditar.Controls.Add(this.label9, 1, 0);
+            this.tlpEditar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tlpEditar.Location = new System.Drawing.Point(0, 0);
+            this.tlpEditar.MaximumSize = new System.Drawing.Size(0, 245);
+            this.tlpEditar.Name = "tlpEditar";
+            this.tlpEditar.RowCount = 7;
+            this.tlpEditar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tlpEditar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tlpEditar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tlpEditar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tlpEditar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tlpEditar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpEditar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tlpEditar.Size = new System.Drawing.Size(1011, 233);
+            this.tlpEditar.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(495, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(268, 24);
+            this.label1.TabIndex = 20;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label2.Location = new System.Drawing.Point(3, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 34);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Nombre del tour";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 67);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "País de Destino";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 101);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Fecha del tour";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 135);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Hora del tour";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 169);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Precio";
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(3, 197);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 27);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Cancelar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(96, 197);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 27);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Editar";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.textBox2.Location = new System.Drawing.Point(96, 36);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(392, 20);
+            this.textBox2.TabIndex = 7;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.DecimalPlaces = 2;
+            this.numericUpDown1.Location = new System.Drawing.Point(96, 172);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(392, 20);
+            this.numericUpDown1.TabIndex = 11;
+            this.numericUpDown1.ThousandsSeparator = true;
+            this.toolTip.SetToolTip(this.numericUpDown1, "Introduce el precio.");
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(96, 70);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(392, 21);
+            this.comboBox1.TabIndex = 15;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "HH:mm ";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(96, 138);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.ShowUpDown = true;
+            this.dateTimePicker1.Size = new System.Drawing.Size(392, 20);
+            this.dateTimePicker1.TabIndex = 16;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(96, 104);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(392, 20);
+            this.dateTimePicker2.TabIndex = 17;
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(495, 67);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(268, 24);
+            this.label7.TabIndex = 19;
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.label9.Location = new System.Drawing.Point(96, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(393, 33);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Editar";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // timerAnimacion
             // 
-            this.timerAnimacion.Interval = 10;
+            this.timerAnimacion.Interval = 15;
             this.timerAnimacion.Tick += new System.EventHandler(this.timerAnimacion_Tick);
             // 
             // toolTip
@@ -426,66 +724,10 @@
             this.toolTip.InitialDelay = 500;
             this.toolTip.ReshowDelay = 0;
             // 
-            // Clnid
+            // timerAnimacion2
             // 
-            this.Clnid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Clnid.HeaderText = "ID";
-            this.Clnid.Name = "Clnid";
-            this.Clnid.ReadOnly = true;
-            // 
-            // ClnNombreTour
-            // 
-            this.ClnNombreTour.HeaderText = "Nombre";
-            this.ClnNombreTour.Name = "ClnNombreTour";
-            this.ClnNombreTour.ReadOnly = true;
-            // 
-            // ClnPais
-            // 
-            this.ClnPais.HeaderText = "País";
-            this.ClnPais.Name = "ClnPais";
-            this.ClnPais.ReadOnly = true;
-            // 
-            // ClnDestino
-            // 
-            this.ClnDestino.HeaderText = "Destino";
-            this.ClnDestino.Name = "ClnDestino";
-            this.ClnDestino.ReadOnly = true;
-            // 
-            // ClnFecha
-            // 
-            this.ClnFecha.HeaderText = "Fecha";
-            this.ClnFecha.Name = "ClnFecha";
-            this.ClnFecha.ReadOnly = true;
-            // 
-            // ClnHora
-            // 
-            this.ClnHora.HeaderText = "Hora";
-            this.ClnHora.Name = "ClnHora";
-            this.ClnHora.ReadOnly = true;
-            // 
-            // ClnPrecio
-            // 
-            this.ClnPrecio.HeaderText = "Precio";
-            this.ClnPrecio.Name = "ClnPrecio";
-            this.ClnPrecio.ReadOnly = true;
-            // 
-            // ClnITBIS
-            // 
-            this.ClnITBIS.HeaderText = "ITBIS";
-            this.ClnITBIS.Name = "ClnITBIS";
-            this.ClnITBIS.ReadOnly = true;
-            // 
-            // ClnDuracion
-            // 
-            this.ClnDuracion.HeaderText = "Duración";
-            this.ClnDuracion.Name = "ClnDuracion";
-            this.ClnDuracion.ReadOnly = true;
-            // 
-            // ClnEstado
-            // 
-            this.ClnEstado.HeaderText = "Estado";
-            this.ClnEstado.Name = "ClnEstado";
-            this.ClnEstado.ReadOnly = true;
+            this.timerAnimacion2.Interval = 10;
+            this.timerAnimacion2.Tick += new System.EventHandler(this.timerAnimacion2_Tick);
             // 
             // UcPrincipal
             // 
@@ -496,18 +738,20 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
             this.Name = "UcPrincipal";
-            this.Size = new System.Drawing.Size(804, 569);
+            this.Size = new System.Drawing.Size(1011, 569);
             this.Load += new System.EventHandler(this.UcPrincipal_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLupa)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDatos)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.tlpAgregar.ResumeLayout(false);
+            this.tlpAgregar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrecio)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.flpAgregar.ResumeLayout(false);
+            this.tlpEditar.ResumeLayout(false);
+            this.tlpEditar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -520,7 +764,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.DataGridView dataGridViewDatos;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tlpAgregar;
         private System.Windows.Forms.Label labelNombre;
         private System.Windows.Forms.Label labelPais;
         private System.Windows.Forms.Label labelFecha;
@@ -532,7 +776,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDownPrecio;
         private System.Windows.Forms.ComboBox comboBoxPais;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.FlowLayoutPanel flpAgregar;
         private System.Windows.Forms.Timer timerAnimacion;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button buttonEliminar;
@@ -553,5 +796,24 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ClnITBIS;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClnDuracion;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClnEstado;
+        private System.Windows.Forms.TableLayoutPanel tlpEditar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Timer timerAnimacion2;
+        private System.Windows.Forms.Label labelMensajePrecio;
     }
 }

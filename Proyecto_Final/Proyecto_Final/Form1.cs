@@ -20,40 +20,58 @@ namespace Proyecto_Final
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            guna2ShadowForm1.SetShadowForm(this);
+            this.WindowState = FormWindowState.Normal;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            UcPrincipal ucprincipal = new UcPrincipal();
+            AbrirUc(ucprincipal);
+
         }
-        bool mover = false;
-        int X, Y;
-        private void tlpBarraTitulo_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (mover) { this.SetDesktopLocation(MousePosition.X - X, MousePosition.Y - Y); }
-        }
-        private void tlpBarraTitulo_MouseUp(object sender, MouseEventArgs e)
-        {
-            mover = false;
-        }
+
+        [System.Runtime.InteropServices.DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [System.Runtime.InteropServices.DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         private void tlpBarraTitulo_MouseDown(object sender, MouseEventArgs e)
+
+
         {
-            mover = true;
-            X = e.X; Y = e.Y;
+            if (e.Button == MouseButtons.Left)
+            {
+                if (this.WindowState == FormWindowState.Maximized)
+                {
+
+                    double percent = (double)e.X / (double)tlpBarraTitulo.Width;
+
+                    this.WindowState = FormWindowState.Normal;
+
+                    this.Left = Cursor.Position.X - (int)(this.Width * percent);
+                    this.Top = Cursor.Position.Y - e.Y;
+                }
+                ReleaseCapture();
+                SendMessage(this.Handle, 0x112, 0xf012, 0);
+            }
         }
-        private void labelBarra_MouseDown(object sender, MouseEventArgs e)
+
+        private void CargarControl<T>() where T : UserControl, new()
         {
-            mover = true;
-            X = e.X; Y = e.Y;
+
+            Control existente = panelContenedor.Controls.OfType<T>().FirstOrDefault();
+
+            if (existente == null)
+            {
+                T nuevoControl = new T();
+                nuevoControl.Dock = DockStyle.Fill;
+                panelContenedor.Controls.Add(nuevoControl);
+                nuevoControl.BringToFront();
+            }
+            else
+            {
+
+                existente.BringToFront();
+            }
         }
-        private void labelBarra_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (mover) { this.SetDesktopLocation(MousePosition.X - X, MousePosition.Y - Y); }
-        }
-        private void labelBarra_MouseUp(object sender, MouseEventArgs e)
-        {
-            mover = false;
-        }
-        private void buttonClose_Click(object sender, EventArgs e)
-        {
-            timerSalir.Start();
-        }
+
         private void timerSalir_Tick(object sender, EventArgs e)
         {
             if (this.Opacity > 0)
@@ -108,52 +126,9 @@ namespace Proyecto_Final
             }
         }
 
-        private void FormMenuprincipal_Resize(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-                buttonMaximizar.BackgroundImage = Properties.Resources.minimizar_signo__1_;
-                toolTip1.SetToolTip(buttonMaximizar, "Windows state normal");
-            }
-            else if (this.WindowState != FormWindowState.Maximized)
-            {
-                buttonMaximizar.BackgroundImage = Properties.Resources.maximizar__2_;
-                toolTip1.SetToolTip(buttonMaximizar, "Windows state maximized");
-            }
-        }
+
         bool expandir;
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (tlpBarralateral.Width < tlpBarralateral.MaximumSize.Width)
-            {
-                expandir = false;
-            }
-            else { expandir = true; }
-            timerBarralaterar.Start();
-        }
- 
-
-        private void timerBarralaterar_Tick(object sender, EventArgs e)
-        {         
-            if (expandir)
-            {
-                tlpBarralateral.Width -= 20;
-                if (tlpBarralateral.Width == tlpBarralateral.MinimumSize.Width)
-                {
-                    timerBarralaterar.Stop();
-                }
-            }
-            else
-            {
-                tlpBarralateral.Width += 20;
-                if (tlpBarralateral.Width == tlpBarralateral.MaximumSize.Width)
-                {
-                    timerBarralaterar.Stop();
-                    panelContenedor.Dock = DockStyle.Fill;                
-                }
-            }
-        }
 
         private void buttonMaximizar_Click(object sender, EventArgs e)
         {
@@ -244,8 +219,7 @@ namespace Proyecto_Final
 
         private void buttonAbout_Click(object sender, EventArgs e)
         {
-            UcAbout ucabout = new UcAbout();
-            AbrirUc(ucabout);
+            CargarControl<UcAbout>();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -253,15 +227,58 @@ namespace Proyecto_Final
             this.Close();
         }
 
-        private void tlpBarralateral_Paint(object sender, PaintEventArgs e)
+
+        private void button1_MouseEnter(object sender, EventArgs e)
         {
+            button1.BackColor = Color.White;
+
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.SlateGray;
+        }
+
+        private void buttonAbout_MouseEnter(object sender, EventArgs e)
+        {
+            buttonAbout.BackColor = Color.White;
+        }
+
+        
+
+        private void buttonAbout_MouseLeave(object sender, EventArgs e)
+        {
+            buttonAbout.BackColor = Color.SlateGray;
+        }
+
+        private void buttonConfiguracion_MouseEnter(object sender, EventArgs e)
+        {
+            buttonConfiguracion.BackColor = Color.White;
+        }
+    
+
+        private void buttonConfiguracion_MouseLeave(object sender, EventArgs e)
+        {
+            buttonConfiguracion.BackColor = Color.SlateGray;
+
+        }
+
+        private void button3_MouseEnter(object sender, EventArgs e)
+        {
+            button3.BackColor = Color.White;
+
+        }
+
+        private void button3_MouseLeave(object sender, EventArgs e)
+        {
+            button3.BackColor = Color.SlateGray;
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UcPrincipal ucprincipal = new UcPrincipal();
-            AbrirUc(ucprincipal);
+            CargarControl<UcPrincipal>();
+
         }
 
 

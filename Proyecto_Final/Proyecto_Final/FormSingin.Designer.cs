@@ -36,13 +36,11 @@
             this.buttonClose = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.radioButtonRecuerdame = new System.Windows.Forms.RadioButton();
             this.labelMensajeUsuario = new System.Windows.Forms.Label();
             this.labelMensajeContra = new System.Windows.Forms.Label();
             this.buttonMostrarContra = new System.Windows.Forms.Button();
             this.labelContraseña = new System.Windows.Forms.Label();
             this.labelUsuario = new System.Windows.Forms.Label();
-            this.linkLabelContraolvidada = new System.Windows.Forms.LinkLabel();
             this.linkLabelRegistrar = new System.Windows.Forms.LinkLabel();
             this.buttonSingin = new System.Windows.Forms.Button();
             this.labelWelcome = new System.Windows.Forms.Label();
@@ -53,17 +51,15 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timerAnimacionAbrir = new System.Windows.Forms.Timer(this.components);
             this.timerSalir = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panelBarraTitulo.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContraIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUsuarioicon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBarraTitulo
             // 
-            this.panelBarraTitulo.BackColor = System.Drawing.Color.Yellow;
+            this.panelBarraTitulo.BackColor = System.Drawing.Color.SlateGray;
             this.panelBarraTitulo.Controls.Add(this.buttonMinimized);
             this.panelBarraTitulo.Controls.Add(this.labelBarra);
             this.panelBarraTitulo.Controls.Add(this.buttonClose);
@@ -85,7 +81,7 @@
             this.buttonMinimized.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonMinimized.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonMinimized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMinimized.ForeColor = System.Drawing.Color.Yellow;
+            this.buttonMinimized.ForeColor = System.Drawing.Color.SlateGray;
             this.buttonMinimized.Location = new System.Drawing.Point(930, 0);
             this.buttonMinimized.Name = "buttonMinimized";
             this.buttonMinimized.Size = new System.Drawing.Size(40, 35);
@@ -117,7 +113,7 @@
             this.buttonClose.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClose.ForeColor = System.Drawing.Color.Yellow;
+            this.buttonClose.ForeColor = System.Drawing.Color.SlateGray;
             this.buttonClose.Location = new System.Drawing.Point(970, 0);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(40, 35);
@@ -141,15 +137,13 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Yellow;
+            this.panel2.BackColor = System.Drawing.Color.SlateGray;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.radioButtonRecuerdame);
             this.panel2.Controls.Add(this.labelMensajeUsuario);
             this.panel2.Controls.Add(this.labelMensajeContra);
             this.panel2.Controls.Add(this.buttonMostrarContra);
             this.panel2.Controls.Add(this.labelContraseña);
             this.panel2.Controls.Add(this.labelUsuario);
-            this.panel2.Controls.Add(this.linkLabelContraolvidada);
             this.panel2.Controls.Add(this.linkLabelRegistrar);
             this.panel2.Controls.Add(this.buttonSingin);
             this.panel2.Controls.Add(this.labelWelcome);
@@ -161,17 +155,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(435, 362);
             this.panel2.TabIndex = 1;
-            // 
-            // radioButtonRecuerdame
-            // 
-            this.radioButtonRecuerdame.AutoSize = true;
-            this.radioButtonRecuerdame.Location = new System.Drawing.Point(128, 219);
-            this.radioButtonRecuerdame.Name = "radioButtonRecuerdame";
-            this.radioButtonRecuerdame.Size = new System.Drawing.Size(86, 17);
-            this.radioButtonRecuerdame.TabIndex = 23;
-            this.radioButtonRecuerdame.TabStop = true;
-            this.radioButtonRecuerdame.Text = "Recuerdame";
-            this.radioButtonRecuerdame.UseVisualStyleBackColor = true;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // labelMensajeUsuario
             // 
@@ -194,7 +178,7 @@
             this.buttonMostrarContra.BackgroundImage = global::Proyecto_Final.Properties.Resources.esconder;
             this.buttonMostrarContra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonMostrarContra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMostrarContra.ForeColor = System.Drawing.Color.Yellow;
+            this.buttonMostrarContra.ForeColor = System.Drawing.Color.SlateGray;
             this.buttonMostrarContra.Location = new System.Drawing.Point(322, 176);
             this.buttonMostrarContra.Name = "buttonMostrarContra";
             this.buttonMostrarContra.Size = new System.Drawing.Size(27, 24);
@@ -222,23 +206,13 @@
             this.labelUsuario.TabIndex = 8;
             this.labelUsuario.Text = "Usuario";
             // 
-            // linkLabelContraolvidada
-            // 
-            this.linkLabelContraolvidada.AutoSize = true;
-            this.linkLabelContraolvidada.Location = new System.Drawing.Point(152, 324);
-            this.linkLabelContraolvidada.Name = "linkLabelContraolvidada";
-            this.linkLabelContraolvidada.Size = new System.Drawing.Size(131, 13);
-            this.linkLabelContraolvidada.TabIndex = 7;
-            this.linkLabelContraolvidada.TabStop = true;
-            this.linkLabelContraolvidada.Text = "¿Olvidaste tu contraseña?";
-            // 
             // linkLabelRegistrar
             // 
             this.linkLabelRegistrar.AutoSize = true;
-            this.linkLabelRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabelRegistrar.Location = new System.Drawing.Point(194, 295);
+            this.linkLabelRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelRegistrar.Location = new System.Drawing.Point(183, 295);
             this.linkLabelRegistrar.Name = "linkLabelRegistrar";
-            this.linkLabelRegistrar.Size = new System.Drawing.Size(57, 15);
+            this.linkLabelRegistrar.Size = new System.Drawing.Size(68, 18);
             this.linkLabelRegistrar.TabIndex = 6;
             this.linkLabelRegistrar.TabStop = true;
             this.linkLabelRegistrar.Text = "Registrar";
@@ -249,7 +223,7 @@
             this.buttonSingin.BackColor = System.Drawing.Color.White;
             this.buttonSingin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSingin.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSingin.Location = new System.Drawing.Point(167, 247);
+            this.buttonSingin.Location = new System.Drawing.Point(163, 245);
             this.buttonSingin.Name = "buttonSingin";
             this.buttonSingin.Size = new System.Drawing.Size(110, 45);
             this.buttonSingin.TabIndex = 5;
@@ -260,10 +234,10 @@
             // labelWelcome
             // 
             this.labelWelcome.AutoSize = true;
-            this.labelWelcome.Font = new System.Drawing.Font("Segoe UI Variable Display", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWelcome.Location = new System.Drawing.Point(167, 48);
+            this.labelWelcome.Font = new System.Drawing.Font("Segoe UI Variable Display", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWelcome.Location = new System.Drawing.Point(124, 34);
             this.labelWelcome.Name = "labelWelcome";
-            this.labelWelcome.Size = new System.Drawing.Size(111, 26);
+            this.labelWelcome.Size = new System.Drawing.Size(186, 43);
             this.labelWelcome.TabIndex = 4;
             this.labelWelcome.Text = "Bienvenido";
             // 
@@ -318,26 +292,15 @@
             this.timerSalir.Interval = 10;
             this.timerSalir.Tick += new System.EventHandler(this.timerSalir_Tick);
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(1010, 605);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            // 
             // FormSingin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Proyecto_Final.Properties.Resources.imgi_199_rs_180722_475734213;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1010, 605);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelBarraTitulo);
-            this.Controls.Add(this.pictureBox4);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -354,7 +317,6 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContraIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUsuarioicon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -370,9 +332,7 @@
         private System.Windows.Forms.PictureBox pictureBoxContraIcon;
         private System.Windows.Forms.Label labelWelcome;
         private System.Windows.Forms.Button buttonSingin;
-        private System.Windows.Forms.LinkLabel linkLabelContraolvidada;
         private System.Windows.Forms.LinkLabel linkLabelRegistrar;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label labelBarra;
         private System.Windows.Forms.Label labelContraseña;
         private System.Windows.Forms.Label labelUsuario;
@@ -384,6 +344,5 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label labelMensajeContra;
         private System.Windows.Forms.Label labelMensajeUsuario;
-        private System.Windows.Forms.RadioButton radioButtonRecuerdame;
     }
 }
