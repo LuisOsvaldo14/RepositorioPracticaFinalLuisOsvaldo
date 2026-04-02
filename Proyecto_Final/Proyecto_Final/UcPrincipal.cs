@@ -587,7 +587,7 @@ namespace Proyecto_Final
         {
             if (decimal.TryParse(numericUpDownPrecio.Text, out decimal valorEscrito))
             {
-                if (valorEscrito <= 1000 || valorEscrito > 10000000)
+                if (valorEscrito <= 0 || valorEscrito > 10000000)
                 {
                     PrecioInput = false;
                     labelMensajePrecio.Text = "Introduce un número entre 1 y 10,000,000";
@@ -619,7 +619,7 @@ namespace Proyecto_Final
         {
             if (decimal.TryParse(numericUpDownPrecio.Text, out decimal valorEscrito))
             {
-                if (valorEscrito <= 1000 || valorEscrito > 10000000)
+                if (valorEscrito <= 0 || valorEscrito > 10000000)
                 {
                     PrecioInput = false;
                     labelMensajePrecio.Text = "Introduce un número entre 1 y 10,000,000";
@@ -824,10 +824,10 @@ namespace Proyecto_Final
         {
             if (decimal.TryParse(numericUpDownPrecio2.Text, out decimal valorEscrito2))
             {
-                if (valorEscrito2 <= 1000 || valorEscrito2 > 10000000)
+                if (valorEscrito2 <= 0 || valorEscrito2 > 10000000)
                 {
                     PrecioInput2 = false;
-                    labelMensajePrecio2.Text = "Introduce un número entre 1000 y 10,000,000";
+                    labelMensajePrecio2.Text = "Introduce un número entre 1 y 10,000,000";
                     labelMensajePrecio2.ForeColor = Color.Red;
                     labelMensajePrecio2.Visible = true;
                 }
@@ -868,7 +868,7 @@ namespace Proyecto_Final
         {
             if (decimal.TryParse(numericUpDownPrecio2.Text, out decimal valorEscrito2))
             {
-                if (valorEscrito2 <= 1000 || valorEscrito2 > 10000000)
+                if (valorEscrito2 <= 0 || valorEscrito2 > 10000000)
                 {
                     PrecioInput2 = false;
                     labelMensajePrecio2.Text = "Introduce un número entre 1 y 10,000,000";
@@ -986,6 +986,53 @@ namespace Proyecto_Final
             }
 
         }
+
+        private void buttonExportar_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog guardarArchivo = new SaveFileDialog();
+            guardarArchivo.Filter = "Archivo CSV (*.csv)|*.csv";
+            guardarArchivo.Title = "Seleccione dónde guardar su lista de tours";
+            guardarArchivo.FileName = "MisTours_" + DateTime.Now.ToString("dd-MM-yyyy");
+            if (guardarArchivo.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    using (System.IO.StreamWriter archivo = new System.IO.StreamWriter(guardarArchivo.FileName, false, System.Text.Encoding.UTF8))
+                    {
+                        string encabezados = "";
+                        foreach (DataGridViewColumn col in dataGridViewDatos.Columns)
+                        {
+                            encabezados += col.HeaderText + ",";
+                        }
+                        archivo.WriteLine(encabezados.TrimEnd(','));
+                        foreach (DataGridViewRow fila in dataGridViewDatos.Rows)
+                        {
+                            string linea = "";
+                            foreach (DataGridViewCell celda in fila.Cells)
+                            {
+                                string valor = celda.FormattedValue?.ToString() ?? "";
+                                valor = valor.Replace("\"", "\"\"");
+                                if (valor.Contains(",") || valor.Contains("\"") || valor.Contains("\n"))
+                                    valor = "\"" + valor + "\"";
+                                linea += valor + ",";
+                            }
+                            archivo.WriteLine(linea.TrimEnd(','));
+                            
+                        }
+                    }
+
+                    MessageBox.Show("¡Archivo '" + System.IO.Path.GetFileName(guardarArchivo.FileName) + "' creado con éxito!",
+                                    "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo guardar el archivo: " + ex.Message, "Error",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+    
     }
     
 }

@@ -349,11 +349,6 @@
             0,
             0,
             0});
-            this.numericUpDownPrecio.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.numericUpDownPrecio.Name = "numericUpDownPrecio";
             this.numericUpDownPrecio.Size = new System.Drawing.Size(392, 20);
             this.numericUpDownPrecio.TabIndex = 11;
@@ -572,11 +567,6 @@
             0,
             0,
             0});
-            this.numericUpDownPrecio2.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.numericUpDownPrecio2.Name = "numericUpDownPrecio2";
             this.numericUpDownPrecio2.Size = new System.Drawing.Size(392, 20);
             this.numericUpDownPrecio2.TabIndex = 11;
@@ -739,6 +729,7 @@
             this.buttonExportar.TabIndex = 5;
             this.toolTip.SetToolTip(this.buttonExportar, "Exportar");
             this.buttonExportar.UseVisualStyleBackColor = true;
+            this.buttonExportar.Click += new System.EventHandler(this.buttonExportar_Click);
             // 
             // labelMensajeNombre
             // 
