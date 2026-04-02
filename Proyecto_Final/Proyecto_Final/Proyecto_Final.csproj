@@ -264,5 +264,8 @@
   <ItemGroup>
     <None Include="Resources\imgi_199_rs-180722-475734213.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-computer-icons-add-button-logo-number-add-button.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

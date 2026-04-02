@@ -22,8 +22,16 @@ namespace Proyecto_Final
             System.Reflection.BindingFlags.SetProperty | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic,
             null, dataGridViewDatos, new object[] { true });
 
-
-
+        }
+        private void ActualizarSugerenciasBusqueda()
+        {
+            comboBoxBuscar.Items.Clear();
+            foreach (DataGridViewRow fila in dataGridViewDatos.Rows)
+            {
+                string id = fila.Cells["Clnid"].Value?.ToString() ?? "";
+                string nombre = fila.Cells["ClnNombreTour"].Value?.ToString() ?? "";
+                comboBoxBuscar.Items.Add($"{id} - {nombre}");
+            }
         }
         private TimeSpan ObtenerDuracion(string pais)
         {
@@ -31,7 +39,7 @@ namespace Proyecto_Final
             {
                 switch (pais)
                 {
-                    // 🌴 Caribe (1–3 horas)
+                    //Caribe (1–3 horas)
                     case "Cuba":
                     case "Haití":
                     case "Jamaica":
@@ -44,9 +52,15 @@ namespace Proyecto_Final
                     case "Santa Lucía":
                     case "Trinidad y Tobago":
                     case "Antigua y Barbuda":
+                    
+
+
                         return TimeSpan.FromHours(2);
 
-                    // 🌎 Centroamérica (2–4 horas)
+                    case "República Dominicana":
+                        return TimeSpan.FromHours(0);
+
+                    //Centroamérica (2–4 horas)
                     case "Panamá":
                     case "Costa Rica":
                     case "Nicaragua":
@@ -56,13 +70,13 @@ namespace Proyecto_Final
                     case "Belice":
                         return TimeSpan.FromHours(3);
 
-                    // 🇺🇸 Norteamérica (4–6 horas)
+                    //Norteamérica (4–6 horas)
                     case "Estados Unidos":
                     case "Canadá":
                     case "México":
                         return TimeSpan.FromHours(5);
 
-                    // 🇦🇷 Sudamérica (5–9 horas)
+                    //Sudamérica (5–9 horas)
                     case "Colombia":
                     case "Venezuela":
                     case "Ecuador":
@@ -81,7 +95,7 @@ namespace Proyecto_Final
                     case "Paraguay":
                         return TimeSpan.FromHours(8);
 
-                    // 🇪🇺 Europa (8–11 horas)
+                    //Europa (8–11 horas)
                     case "España":
                     case "Portugal":
                     case "Francia":
@@ -106,7 +120,7 @@ namespace Proyecto_Final
             }.Contains(pais))
                             return TimeSpan.FromHours(10);
 
-                        // 🌍 África (10–14 horas)
+                        //África (10–14 horas)
                         if (new[] {
                 "Marruecos","Argelia","Túnez","Egipto","Senegal","Ghana",
                 "Nigeria","Costa de Marfil","Camerún","Angola","Etiopía",
@@ -120,14 +134,14 @@ namespace Proyecto_Final
             }.Contains(pais))
                             return TimeSpan.FromHours(12);
 
-                        // 🌏 Medio Oriente (12–16 horas)
+                        //Medio Oriente (12–16 horas)
                         if (new[] {
                 "Arabia Saudita","Emiratos Árabes Unidos","Catar","Kuwait",
                 "Omán","Israel","Jordania","Líbano","Irak","Irán","Siria","Yemen"
             }.Contains(pais))
                             return TimeSpan.FromHours(14);
 
-                        // 🌏 Asia (16–25 horas)
+                        //Asia (16–25 horas)
                         if (new[] {
                 "China","Japón","Corea del Sur","Corea del Norte","India",
                 "Pakistán","Bangladés","Nepal","Sri Lanka","Tailandia",
@@ -137,7 +151,7 @@ namespace Proyecto_Final
             }.Contains(pais))
                             return TimeSpan.FromHours(20);
 
-                        // 🌏 Oceanía (20–30 horas)
+                        //Oceanía (20–30 horas)
                         if (new[] {
                 "Australia","Nueva Zelanda","Fiyi","Papúa Nueva Guinea",
                 "Islas Salomón","Vanuatu","Samoa","Tonga","Tuvalu",
@@ -150,10 +164,55 @@ namespace Proyecto_Final
             }
 
         }
+        private void EjecutarBusqueda()
+        {
+            if (!string.IsNullOrWhiteSpace(comboBoxBuscar.Text))
+            {
+                string texto = comboBoxBuscar.Text;
+                
+                string idBuscado = texto.Contains("-") ? texto.Split('-')[0].Trim() : texto.Trim();
+
+                foreach (DataGridViewRow fila in dataGridViewDatos.Rows)
+                {
+                    if (fila.IsNewRow) continue;
+
+                    
+                    if (fila.Cells["Clnid"].Value?.ToString() == idBuscado)
+                    {
+                        dataGridViewDatos.CurrentCell = fila.Cells[0];
+                        comboBoxBuscar.Focus();
+                        textBoxNombre2.Text = fila.Cells["ClnNombreTour"].Value.ToString();
+                        comboBoxPais2.Text = fila.Cells["ClnPais"].Value.ToString();
+                        dtpFecha2.Value = (DateTime)fila.Cells["ClnFecha"].Value;
+                        dtpHora2.Value  = (DateTime)fila.Cells["ClnHora"].Value;
+                        numericUpDownPrecio2.Text = fila.Cells["ClnPrecio"].Value.ToString();
+                        idSeleccionada = fila.Cells["Clnid"].Value.ToString();
+                        richTextBoxMensaje.Clear();
+                        richTextBoxMensaje.SelectionColor = Color.Black;
+                        richTextBoxMensaje.AppendText("ID: ");
+                        richTextBoxMensaje.SelectionColor = Color.Green;
+                        richTextBoxMensaje.AppendText(idSeleccionada + " ");
+                        richTextBoxMensaje.SelectionColor = Color.Black;
+                        richTextBoxMensaje.AppendText("| Tour: ");
+                        richTextBoxMensaje.SelectionColor = Color.Green;
+                        richTextBoxMensaje.AppendText(fila.Cells["ClnNombreTour"].Value.ToString());
+                        return;
+                    }
+                }
+                MessageBox.Show("No se encontró ningún tour con el ID: " + idBuscado, "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
 
         private void UcPrincipal_Load(object sender, EventArgs e)
         {
-            tlpAgregar.Height = tlpAgregar.MinimumSize.Height;
+            comboBoxBuscar.Items.Clear();
+            foreach (DataGridViewRow fila in dataGridViewDatos.Rows)
+            {
+                string id = fila.Cells["Clnid"].Value?.ToString() ?? "";
+                string nombre = fila.Cells["ClnNombreTour"].Value?.ToString() ?? "";
+                comboBoxBuscar.Items.Add($"{id} - {nombre}");
+            }
+            tlpAgregar.Height = tlpAgregar.MaximumSize.Height;
             tlpEditar.Height = tlpEditar.MinimumSize.Height;
             paises = new string[]
 {
@@ -354,6 +413,14 @@ namespace Proyecto_Final
             comboBoxPais.Items.AddRange(paises);
             comboBoxPais.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboBoxPais.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboBoxPais2.Items.AddRange(paises);
+            comboBoxPais2.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboBoxPais2.AutoCompleteSource = AutoCompleteSource.ListItems;
+            // al añadir
+            dataGridViewDatos.Columns["ClnFecha"].ValueType = typeof(DateTime);
+            dataGridViewDatos.Columns["ClnHora"].ValueType = typeof(DateTime);
+            dataGridViewDatos.Columns["ClnFecha"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dataGridViewDatos.Columns["ClnHora"].DefaultCellStyle.Format  = "HH:mm";
         }
 
 
@@ -385,20 +452,29 @@ namespace Proyecto_Final
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-
-            if (expandireditar)
+            if (dataGridViewDatos.CurrentRow == null)
             {
-                expandireditar = false;
-                pendienteAbrirEditar = false;
+                MessageBox.Show("Por favor, seleccione una fila de la tabla para editar.",
+                "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
 
-                pendienteAbrirEditar = true;
-                pendienteAbrirAgregar = false;
-                expandir = false;
+
+                if (expandireditar)
+                {
+                    expandireditar = false;
+                    pendienteAbrirEditar = false;
+                }
+                else
+                {
+
+                    pendienteAbrirEditar = true;
+                    pendienteAbrirAgregar = false;
+                    expandir = false;
+                }
+                timerAnimacion.Start();
             }
-            timerAnimacion.Start();
         }
 
         private void timerAnimacion_Tick(object sender, EventArgs e)
@@ -525,6 +601,19 @@ namespace Proyecto_Final
                 }
             }
         }
+        private void numericUpDownPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as NumericUpDown).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+
+        }
 
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
@@ -624,14 +713,15 @@ namespace Proyecto_Final
                     Nombre,
                     Pais,
                     Destino,
-                    FechaForma,
-                    HoraForma,
+                    Fecha /*DateTime*/,
+                    Hora /*DateTime*/,
                     Precio,
                     Itbis,
                     Tiempo,
                     Estado
 
                 );
+                ActualizarSugerenciasBusqueda();
                 dataGridViewDatos.CurrentCell = null;
                 dataGridViewDatos.ClearSelection();
             }
@@ -659,8 +749,65 @@ namespace Proyecto_Final
                     "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        //
+        //Logica Para editar basicamente la misma que la de agregar
+        //
+        bool txtNombre2;
+        bool Combopais2;
+        bool PrecioInput2;
+        
 
-        private void numericUpDownPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBoxNombre2_TextChanged(object sender, EventArgs e)
+        {
+            string VerficarNombre2 = textBoxNombre2.Text;
+            if (string.IsNullOrWhiteSpace(VerficarNombre2))
+            {
+                labelMensajeNombre2.ForeColor = Color.Red;
+                labelMensajeNombre2.Text = "Introduce no solo espacios";
+                txtNombre2 = false;
+            }
+            else if (VerficarNombre2.Length < 4 || VerficarNombre2.Length > 15)
+            {
+                labelMensajeNombre2.ForeColor = Color.Red;
+                labelMensajeNombre2.Text = "El nombre del tour debe tener entre 4 y 15 caracteres.";
+                txtNombre2 = false;
+            }
+            else if (!Regex.IsMatch(VerficarNombre2, @"^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ_]+$"))
+            {
+                labelMensajeNombre2.ForeColor = Color.Red;
+                labelMensajeNombre2.Text = "Solo se permiten letras,números o" + " '_' " + "(sin espacios ni símbolos)";
+                txtNombre2 = false;
+            }
+            else
+            {
+                labelMensajeNombre2.Text = "";
+                txtNombre2 = true;
+            }
+        }
+
+        private void comboBoxPais2_TextChanged(object sender, EventArgs e)
+        {
+            string VerificarPais2 = comboBoxPais2.Text;
+            if (string.IsNullOrWhiteSpace(VerificarPais2))
+            {
+                labelMensajePais2.ForeColor = Color.Red;
+                labelMensajePais2.Text = "Introduce no solo espacios.";
+                Combopais2 = false;
+            }
+            else if (!paises.Contains(VerificarPais2))
+            {
+                labelMensajePais2.ForeColor = Color.Red;
+                labelMensajePais2.Text = "El pais que introdujiste no esta en nuestro sistema.";
+                Combopais2 = false;
+            }
+            else
+            {
+                labelMensajePais2.Text = "";
+                Combopais2 = true;
+            }
+        }
+
+        private void numericUpDownPrecio2_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
@@ -671,20 +818,174 @@ namespace Proyecto_Final
             {
                 e.Handled = true;
             }
-
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        private void numericUpDownPrecio2_KeyUp(object sender, KeyEventArgs e)
         {
-
+            if (decimal.TryParse(numericUpDownPrecio2.Text, out decimal valorEscrito2))
+            {
+                if (valorEscrito2 <= 1000 || valorEscrito2 > 10000000)
+                {
+                    PrecioInput2 = false;
+                    labelMensajePrecio2.Text = "Introduce un número entre 1000 y 10,000,000";
+                    labelMensajePrecio2.ForeColor = Color.Red;
+                    labelMensajePrecio2.Visible = true;
+                }
+                else
+                {
+                    PrecioInput2 = true;
+                    labelMensajePrecio2.Visible = false;
+                }
+            }
         }
+        string idSeleccionada;
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void dataGridViewDatos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow fila = dataGridViewDatos.Rows[e.RowIndex];
+                textBoxNombre2.Text = fila.Cells["ClnNombreTour"].Value.ToString();
+                comboBoxPais2.Text = fila.Cells["ClnPais"].Value.ToString();
+                dtpFecha2.Value = (DateTime)fila.Cells["ClnFecha"].Value;
+                dtpHora2.Value = (DateTime)fila.Cells["ClnHora"].Value;
+                numericUpDownPrecio2.Text = fila.Cells["ClnPrecio"].Value.ToString();
+                idSeleccionada = fila.Cells["Clnid"].Value.ToString();
+                richTextBoxMensaje.Clear();
+                richTextBoxMensaje.SelectionColor = Color.Black;
+                richTextBoxMensaje.AppendText("ID: ");
+                richTextBoxMensaje.SelectionColor = Color.Green;
+                richTextBoxMensaje.AppendText(idSeleccionada + " ");
+                richTextBoxMensaje.SelectionColor = Color.Black;
+                richTextBoxMensaje.AppendText("| Tour: ");
+                richTextBoxMensaje.SelectionColor = Color.Green;
+                richTextBoxMensaje.AppendText(fila.Cells["ClnNombreTour"].Value.ToString());
 
+            }
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(numericUpDownPrecio2.Text, out decimal valorEscrito2))
+            {
+                if (valorEscrito2 <= 1000 || valorEscrito2 > 10000000)
+                {
+                    PrecioInput2 = false;
+                    labelMensajePrecio2.Text = "Introduce un número entre 1 y 10,000,000";
+                    labelMensajePrecio2.ForeColor = Color.Red;
+                    labelMensajePrecio2.Visible = true;
+                }
+                else
+                {
+                    PrecioInput2 = true;
+                    labelMensajePrecio2.Visible = false;
+                }
+            }
+            string VerficarNombre2 = textBoxNombre2.Text;
+            if (string.IsNullOrWhiteSpace(VerficarNombre2))
+            {
+                labelMensajeNombre2.ForeColor = Color.Red;
+                labelMensajeNombre2.Text = "Introduce no solo espacios";
+                txtNombre2 = false;
+            }
+            else if (VerficarNombre2.Length < 4 || VerficarNombre2.Length > 15)
+            {
+                labelMensajeNombre2.ForeColor = Color.Red;
+                labelMensajeNombre2.Text = "El nombre del tour debe tener entre 4 y 15 caracteres.";
+                txtNombre2 = false;
+            }
+            else if (!Regex.IsMatch(VerficarNombre2, @"^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ_]+$"))
+            {
+                labelMensajeNombre2.ForeColor = Color.Red;
+                labelMensajeNombre2.Text = "Solo se permiten letras,números o" + " '_' " + "(sin espacios ni símbolos)";
+                txtNombre2 = false;
+            }
+            else
+            {
+                labelMensajeNombre2.Text = "";
+                txtNombre2 = true;
+            }
+            string VerificarPais2 = comboBoxPais2.Text;
+            if (string.IsNullOrWhiteSpace(VerificarPais2))
+            {
+                labelMensajePais2.ForeColor = Color.Red;
+                labelMensajePais2.Text = "Introduce no solo espacios.";
+                Combopais2 = false;
+            }
 
+            if (txtNombre2 == true && Combopais2 == true && PrecioInput2 == true)
+            {
+                if (dataGridViewDatos.CurrentRow == null)
+                {
+                    MessageBox.Show("Por favor, seleccione un tour de la tabla para editar.");
+                    return;
+                }
+                // Obtenemos la fila actual (la que cargamos previamente en los TextBox)
+                DataGridViewRow fila = dataGridViewDatos.CurrentRow;
+                // Precio e ITBIS
+                decimal Precio = numericUpDownPrecio2.Value;
+                decimal Itbis = Precio * 0.18m;
+                string Nombre = textBoxNombre2.Text;
+                string Pais = comboBoxPais2.Text;
+                // Calcular Fecha y Hora
+                DateTime Fecha = dtpFecha2.Value.Date;
+                DateTime Hora = dtpHora2.Value;
+                string FechaForma = Fecha.ToString("dd/MM/yyyy");
+                string HoraForma = Hora.ToString("HH:mm");
+                // Lógica de Destino y Duración
+                string Destino = "Aeropuerto de " + Pais;
+                TimeSpan duracion = ObtenerDuracion(Pais);
+                // Lógica de Estado (Vencida/Vigente)
+                DateTime fechaHoraInicio = Fecha.Add(Hora.TimeOfDay);
+                DateTime fechaHoraFin = fechaHoraInicio.Add(duracion);
+                string Estado = DateTime.Now > fechaHoraFin ? "Vencida" : "Vigente";
+
+                string Tiempo = duracion.TotalHours + " horas";
+                fila.Cells["ClnNombreTour"].Value = Nombre;
+                fila.Cells["ClnPais"].Value = Pais;
+                fila.Cells["ClnDestino"].Value = Destino;
+                fila.Cells["ClnFecha"].Value = Fecha;
+                fila.Cells["ClnHora"].Value = Hora; 
+                fila.Cells["ClnPrecio"].Value = Precio;
+                fila.Cells["ClnITBIS"].Value = Itbis;
+                fila.Cells["ClnDuracion"].Value = Tiempo;
+                fila.Cells["ClnEstado"].Value = Estado;
+                ActualizarSugerenciasBusqueda();
+                dataGridViewDatos.CurrentCell = null;
+                dataGridViewDatos.ClearSelection();
+                MessageBox.Show("¡Tour actualizado con éxito!");
+
+                if (expandir)
+                {
+                    expandir = false;
+                    pendienteAbrirAgregar = false;
+                }
+                else
+                {
+
+                    pendienteAbrirAgregar = true;
+                    pendienteAbrirEditar = false;
+                    expandireditar = false;
+                }
+                timerAnimacion.Start();
         
+            }
+        }
+
+        private void comboBoxBuscar_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            EjecutarBusqueda();
+        }
+
+        private void comboBoxBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                EjecutarBusqueda();
+                e.SuppressKeyPress = true;
+            }
+
+        }
     }
+    
 }
