@@ -29,8 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcPrincipal));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBoxLupa = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelGuardar = new System.Windows.Forms.Label();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonEliminar = new System.Windows.Forms.Button();
+            this.buttonEditar = new System.Windows.Forms.Button();
+            this.buttonExportar = new System.Windows.Forms.Button();
+            this.labelNombrearchivo = new System.Windows.Forms.Label();
+            this.FotoGuardando = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
             this.dataGridViewDatos = new System.Windows.Forms.DataGridView();
             this.Clnid = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,21 +53,23 @@
             this.ClnDuracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClnEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpAgregar = new System.Windows.Forms.TableLayoutPanel();
-            this.labelPais = new System.Windows.Forms.Label();
-            this.labelFecha = new System.Windows.Forms.Label();
-            this.labelHora = new System.Windows.Forms.Label();
-            this.labelPrecio = new System.Windows.Forms.Label();
+            this.labelNombre = new System.Windows.Forms.Label();
+            this.textBoxNombre = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.buttonAgregar = new System.Windows.Forms.Button();
             this.numericUpDownPrecio = new System.Windows.Forms.NumericUpDown();
-            this.comboBoxPais = new System.Windows.Forms.ComboBox();
-            this.dtpHora = new System.Windows.Forms.DateTimePicker();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.labelMensajePais = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.labelPrecio = new System.Windows.Forms.Label();
             this.labelMensajePrecio = new System.Windows.Forms.Label();
+            this.dtpHora = new System.Windows.Forms.DateTimePicker();
+            this.labelHora = new System.Windows.Forms.Label();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.labelFecha = new System.Windows.Forms.Label();
+            this.comboBoxPais = new System.Windows.Forms.ComboBox();
+            this.labelPais = new System.Windows.Forms.Label();
+            this.labelMensajePais = new System.Windows.Forms.Label();
+            this.labelMensajeNombre = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tlpEditar = new System.Windows.Forms.TableLayoutPanel();
-            this.labelMensajeNombre2 = new System.Windows.Forms.Label();
             this.labelNombre2 = new System.Windows.Forms.Label();
             this.labelPaisDestino2 = new System.Windows.Forms.Label();
             this.labelFecha2 = new System.Windows.Forms.Label();
@@ -71,40 +82,35 @@
             this.comboBoxPais2 = new System.Windows.Forms.ComboBox();
             this.dtpHora2 = new System.Windows.Forms.DateTimePicker();
             this.dtpFecha2 = new System.Windows.Forms.DateTimePicker();
-            this.labelMensajePais2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.labelMensajePrecio2 = new System.Windows.Forms.Label();
             this.richTextBoxMensaje = new System.Windows.Forms.RichTextBox();
             this.labelEditando = new System.Windows.Forms.Label();
+            this.labelMensajeNombre2 = new System.Windows.Forms.Label();
+            this.labelMensajePais2 = new System.Windows.Forms.Label();
+            this.labelMensajePrecio2 = new System.Windows.Forms.Label();
             this.timerAnimacion = new System.Windows.Forms.Timer(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.timerAnimacion2 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBoxLupa = new System.Windows.Forms.PictureBox();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonEliminar = new System.Windows.Forms.Button();
-            this.buttonEditar = new System.Windows.Forms.Button();
-            this.buttonExportar = new System.Windows.Forms.Button();
-            this.labelMensajeNombre = new System.Windows.Forms.Label();
-            this.textBoxNombre = new System.Windows.Forms.TextBox();
-            this.labelNombre = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLupa)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FotoGuardando)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDatos)).BeginInit();
             this.tlpAgregar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrecio)).BeginInit();
             this.panel1.SuspendLayout();
             this.tlpEditar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrecio2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLupa)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 478F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 642F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 398F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 741F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.pictureBoxLupa, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 2, 0);
@@ -118,23 +124,129 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1173, 43);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // pictureBoxLupa
+            // 
+            this.pictureBoxLupa.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBoxLupa.Image = global::Proyecto_Final.Properties.Resources.searcher_magnifyng_glass_search_locate_find_icon_123813;
+            this.pictureBoxLupa.Location = new System.Drawing.Point(3, 10);
+            this.pictureBoxLupa.Name = "pictureBoxLupa";
+            this.pictureBoxLupa.Size = new System.Drawing.Size(28, 26);
+            this.pictureBoxLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLupa.TabIndex = 0;
+            this.pictureBoxLupa.TabStop = false;
+            // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel3.ColumnCount = 7;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
+            this.tableLayoutPanel3.Controls.Add(this.labelGuardar, 6, 0);
             this.tableLayoutPanel3.Controls.Add(this.buttonAdd, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.buttonEliminar, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.buttonEditar, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.buttonExportar, 3, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(515, 3);
+            this.tableLayoutPanel3.Controls.Add(this.labelNombrearchivo, 4, 0);
+            this.tableLayoutPanel3.Controls.Add(this.FotoGuardando, 5, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(435, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(183, 40);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(735, 40);
             this.tableLayoutPanel3.TabIndex = 3;
+            // 
+            // labelGuardar
+            // 
+            this.labelGuardar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelGuardar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGuardar.ForeColor = System.Drawing.Color.Lime;
+            this.labelGuardar.Location = new System.Drawing.Point(642, 0);
+            this.labelGuardar.Name = "labelGuardar";
+            this.labelGuardar.Size = new System.Drawing.Size(90, 40);
+            this.labelGuardar.TabIndex = 8;
+            this.labelGuardar.Text = "Guardado";
+            this.labelGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.BackgroundImage = global::Proyecto_Final.Properties.Resources.agregar;
+            this.buttonAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdd.Location = new System.Drawing.Point(3, 3);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(39, 30);
+            this.buttonAdd.TabIndex = 2;
+            this.toolTip.SetToolTip(this.buttonAdd, "Agregar");
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // buttonEliminar
+            // 
+            this.buttonEliminar.BackgroundImage = global::Proyecto_Final.Properties.Resources.basura;
+            this.buttonEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEliminar.Location = new System.Drawing.Point(93, 3);
+            this.buttonEliminar.Name = "buttonEliminar";
+            this.buttonEliminar.Size = new System.Drawing.Size(36, 30);
+            this.buttonEliminar.TabIndex = 3;
+            this.toolTip.SetToolTip(this.buttonEliminar, "Eliminar");
+            this.buttonEliminar.UseVisualStyleBackColor = true;
+            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
+            // 
+            // buttonEditar
+            // 
+            this.buttonEditar.BackgroundImage = global::Proyecto_Final.Properties.Resources.editar;
+            this.buttonEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEditar.Location = new System.Drawing.Point(48, 3);
+            this.buttonEditar.Name = "buttonEditar";
+            this.buttonEditar.Size = new System.Drawing.Size(39, 30);
+            this.buttonEditar.TabIndex = 4;
+            this.toolTip.SetToolTip(this.buttonEditar, "Editar");
+            this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
+            // 
+            // buttonExportar
+            // 
+            this.buttonExportar.BackgroundImage = global::Proyecto_Final.Properties.Resources.exportacion_de_archivos;
+            this.buttonExportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExportar.Location = new System.Drawing.Point(138, 3);
+            this.buttonExportar.Name = "buttonExportar";
+            this.buttonExportar.Size = new System.Drawing.Size(39, 30);
+            this.buttonExportar.TabIndex = 5;
+            this.toolTip.SetToolTip(this.buttonExportar, "Exportar");
+            this.buttonExportar.UseVisualStyleBackColor = true;
+            this.buttonExportar.Click += new System.EventHandler(this.buttonExportar_Click);
+            // 
+            // labelNombrearchivo
+            // 
+            this.labelNombrearchivo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelNombrearchivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombrearchivo.ForeColor = System.Drawing.Color.Lime;
+            this.labelNombrearchivo.Location = new System.Drawing.Point(187, 0);
+            this.labelNombrearchivo.Name = "labelNombrearchivo";
+            this.labelNombrearchivo.Size = new System.Drawing.Size(406, 40);
+            this.labelNombrearchivo.TabIndex = 6;
+            this.labelNombrearchivo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // FotoGuardando
+            // 
+            this.FotoGuardando.Image = ((System.Drawing.Image)(resources.GetObject("FotoGuardando.Image")));
+            this.FotoGuardando.ImageRotate = 0F;
+            this.FotoGuardando.Location = new System.Drawing.Point(599, 3);
+            this.FotoGuardando.Name = "FotoGuardando";
+            this.FotoGuardando.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.FotoGuardando.Size = new System.Drawing.Size(37, 34);
+            this.FotoGuardando.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.FotoGuardando.TabIndex = 7;
+            this.FotoGuardando.TabStop = false;
+            this.FotoGuardando.Visible = false;
             // 
             // comboBoxBuscar
             // 
@@ -144,7 +256,7 @@
             this.comboBoxBuscar.FormattingEnabled = true;
             this.comboBoxBuscar.Location = new System.Drawing.Point(37, 12);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
-            this.comboBoxBuscar.Size = new System.Drawing.Size(472, 21);
+            this.comboBoxBuscar.Size = new System.Drawing.Size(392, 21);
             this.comboBoxBuscar.TabIndex = 4;
             this.comboBoxBuscar.SelectionChangeCommitted += new System.EventHandler(this.comboBoxBuscar_SelectionChangeCommitted);
             this.comboBoxBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBoxBuscar_KeyDown);
@@ -291,41 +403,35 @@
             this.tlpAgregar.Size = new System.Drawing.Size(1173, 300);
             this.tlpAgregar.TabIndex = 2;
             // 
-            // labelPais
+            // labelNombre
             // 
-            this.labelPais.AutoSize = true;
-            this.labelPais.Location = new System.Drawing.Point(342, 81);
-            this.labelPais.Name = "labelPais";
-            this.labelPais.Size = new System.Drawing.Size(83, 13);
-            this.labelPais.TabIndex = 1;
-            this.labelPais.Text = "País de Destino";
+            this.labelNombre.AutoSize = true;
+            this.labelNombre.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelNombre.Location = new System.Drawing.Point(342, 35);
+            this.labelNombre.Name = "labelNombre";
+            this.labelNombre.Size = new System.Drawing.Size(82, 24);
+            this.labelNombre.TabIndex = 0;
+            this.labelNombre.Text = "Nombre del tour";
             // 
-            // labelFecha
+            // textBoxNombre
             // 
-            this.labelFecha.AutoSize = true;
-            this.labelFecha.Location = new System.Drawing.Point(342, 132);
-            this.labelFecha.Name = "labelFecha";
-            this.labelFecha.Size = new System.Drawing.Size(75, 13);
-            this.labelFecha.TabIndex = 2;
-            this.labelFecha.Text = "Fecha del tour";
+            this.textBoxNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxNombre.Dock = System.Windows.Forms.DockStyle.Left;
+            this.textBoxNombre.Location = new System.Drawing.Point(437, 38);
+            this.textBoxNombre.Name = "textBoxNombre";
+            this.textBoxNombre.Size = new System.Drawing.Size(392, 20);
+            this.textBoxNombre.TabIndex = 7;
+            this.textBoxNombre.TextChanged += new System.EventHandler(this.textBoxNombre_TextChanged);
             // 
-            // labelHora
+            // label8
             // 
-            this.labelHora.AutoSize = true;
-            this.labelHora.Location = new System.Drawing.Point(342, 165);
-            this.labelHora.Name = "labelHora";
-            this.labelHora.Size = new System.Drawing.Size(68, 13);
-            this.labelHora.TabIndex = 3;
-            this.labelHora.Text = "Hora del tour";
-            // 
-            // labelPrecio
-            // 
-            this.labelPrecio.AutoSize = true;
-            this.labelPrecio.Location = new System.Drawing.Point(342, 207);
-            this.labelPrecio.Name = "labelPrecio";
-            this.labelPrecio.Size = new System.Drawing.Size(37, 13);
-            this.labelPrecio.TabIndex = 4;
-            this.labelPrecio.Text = "Precio";
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(437, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(393, 33);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Agregar";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // buttonAgregar
             // 
@@ -362,14 +468,22 @@
             this.numericUpDownPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numericUpDownPrecio_KeyPress);
             this.numericUpDownPrecio.KeyUp += new System.Windows.Forms.KeyEventHandler(this.numericUpDownPrecio_KeyUp);
             // 
-            // comboBoxPais
+            // labelPrecio
             // 
-            this.comboBoxPais.FormattingEnabled = true;
-            this.comboBoxPais.Location = new System.Drawing.Point(437, 84);
-            this.comboBoxPais.Name = "comboBoxPais";
-            this.comboBoxPais.Size = new System.Drawing.Size(392, 21);
-            this.comboBoxPais.TabIndex = 15;
-            this.comboBoxPais.TextChanged += new System.EventHandler(this.comboBoxPais_TextChanged);
+            this.labelPrecio.AutoSize = true;
+            this.labelPrecio.Location = new System.Drawing.Point(342, 207);
+            this.labelPrecio.Name = "labelPrecio";
+            this.labelPrecio.Size = new System.Drawing.Size(37, 13);
+            this.labelPrecio.TabIndex = 4;
+            this.labelPrecio.Text = "Precio";
+            // 
+            // labelMensajePrecio
+            // 
+            this.labelMensajePrecio.Location = new System.Drawing.Point(437, 232);
+            this.labelMensajePrecio.Name = "labelMensajePrecio";
+            this.labelMensajePrecio.Size = new System.Drawing.Size(394, 17);
+            this.labelMensajePrecio.TabIndex = 22;
+            this.labelMensajePrecio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dtpHora
             // 
@@ -381,12 +495,48 @@
             this.dtpHora.Size = new System.Drawing.Size(392, 20);
             this.dtpHora.TabIndex = 16;
             // 
+            // labelHora
+            // 
+            this.labelHora.AutoSize = true;
+            this.labelHora.Location = new System.Drawing.Point(342, 165);
+            this.labelHora.Name = "labelHora";
+            this.labelHora.Size = new System.Drawing.Size(68, 13);
+            this.labelHora.TabIndex = 3;
+            this.labelHora.Text = "Hora del tour";
+            // 
             // dtpFecha
             // 
             this.dtpFecha.Location = new System.Drawing.Point(437, 135);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(392, 20);
             this.dtpFecha.TabIndex = 17;
+            // 
+            // labelFecha
+            // 
+            this.labelFecha.AutoSize = true;
+            this.labelFecha.Location = new System.Drawing.Point(342, 132);
+            this.labelFecha.Name = "labelFecha";
+            this.labelFecha.Size = new System.Drawing.Size(75, 13);
+            this.labelFecha.TabIndex = 2;
+            this.labelFecha.Text = "Fecha del tour";
+            // 
+            // comboBoxPais
+            // 
+            this.comboBoxPais.FormattingEnabled = true;
+            this.comboBoxPais.Location = new System.Drawing.Point(437, 84);
+            this.comboBoxPais.Name = "comboBoxPais";
+            this.comboBoxPais.Size = new System.Drawing.Size(392, 21);
+            this.comboBoxPais.TabIndex = 15;
+            this.comboBoxPais.TextChanged += new System.EventHandler(this.comboBoxPais_TextChanged);
+            // 
+            // labelPais
+            // 
+            this.labelPais.AutoSize = true;
+            this.labelPais.Location = new System.Drawing.Point(342, 81);
+            this.labelPais.Name = "labelPais";
+            this.labelPais.Size = new System.Drawing.Size(83, 13);
+            this.labelPais.TabIndex = 1;
+            this.labelPais.Text = "País de Destino";
             // 
             // labelMensajePais
             // 
@@ -396,23 +546,13 @@
             this.labelMensajePais.TabIndex = 19;
             this.labelMensajePais.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label8
+            // labelMensajeNombre
             // 
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(437, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(393, 33);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Agregar";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // labelMensajePrecio
-            // 
-            this.labelMensajePrecio.Location = new System.Drawing.Point(437, 232);
-            this.labelMensajePrecio.Name = "labelMensajePrecio";
-            this.labelMensajePrecio.Size = new System.Drawing.Size(394, 17);
-            this.labelMensajePrecio.TabIndex = 22;
-            this.labelMensajePrecio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelMensajeNombre.Location = new System.Drawing.Point(437, 59);
+            this.labelMensajeNombre.Name = "labelMensajeNombre";
+            this.labelMensajeNombre.Size = new System.Drawing.Size(268, 22);
+            this.labelMensajeNombre.TabIndex = 20;
+            this.labelMensajeNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel1
             // 
@@ -470,14 +610,6 @@
             this.tlpEditar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             this.tlpEditar.Size = new System.Drawing.Size(1173, 300);
             this.tlpEditar.TabIndex = 5;
-            // 
-            // labelMensajeNombre2
-            // 
-            this.labelMensajeNombre2.Location = new System.Drawing.Point(434, 85);
-            this.labelMensajeNombre2.Name = "labelMensajeNombre2";
-            this.labelMensajeNombre2.Size = new System.Drawing.Size(394, 16);
-            this.labelMensajeNombre2.TabIndex = 20;
-            this.labelMensajeNombre2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelNombre2
             // 
@@ -606,14 +738,6 @@
             this.dtpFecha2.Size = new System.Drawing.Size(392, 20);
             this.dtpFecha2.TabIndex = 17;
             // 
-            // labelMensajePais2
-            // 
-            this.labelMensajePais2.Location = new System.Drawing.Point(434, 127);
-            this.labelMensajePais2.Name = "labelMensajePais2";
-            this.labelMensajePais2.Size = new System.Drawing.Size(392, 18);
-            this.labelMensajePais2.TabIndex = 19;
-            this.labelMensajePais2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // label9
             // 
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
@@ -623,14 +747,6 @@
             this.label9.TabIndex = 22;
             this.label9.Text = "Editar";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // labelMensajePrecio2
-            // 
-            this.labelMensajePrecio2.Location = new System.Drawing.Point(434, 247);
-            this.labelMensajePrecio2.Name = "labelMensajePrecio2";
-            this.labelMensajePrecio2.Size = new System.Drawing.Size(394, 18);
-            this.labelMensajePrecio2.TabIndex = 23;
-            this.labelMensajePrecio2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // richTextBoxMensaje
             // 
@@ -651,6 +767,30 @@
             this.labelEditando.TabIndex = 24;
             this.labelEditando.Text = "Editando:";
             // 
+            // labelMensajeNombre2
+            // 
+            this.labelMensajeNombre2.Location = new System.Drawing.Point(434, 85);
+            this.labelMensajeNombre2.Name = "labelMensajeNombre2";
+            this.labelMensajeNombre2.Size = new System.Drawing.Size(394, 16);
+            this.labelMensajeNombre2.TabIndex = 20;
+            this.labelMensajeNombre2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelMensajePais2
+            // 
+            this.labelMensajePais2.Location = new System.Drawing.Point(434, 127);
+            this.labelMensajePais2.Name = "labelMensajePais2";
+            this.labelMensajePais2.Size = new System.Drawing.Size(392, 18);
+            this.labelMensajePais2.TabIndex = 19;
+            this.labelMensajePais2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelMensajePrecio2
+            // 
+            this.labelMensajePrecio2.Location = new System.Drawing.Point(434, 247);
+            this.labelMensajePrecio2.Name = "labelMensajePrecio2";
+            this.labelMensajePrecio2.Size = new System.Drawing.Size(394, 18);
+            this.labelMensajePrecio2.TabIndex = 23;
+            this.labelMensajePrecio2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // timerAnimacion
             // 
             this.timerAnimacion.Interval = 15;
@@ -668,97 +808,6 @@
             this.timerAnimacion2.Interval = 10;
             this.timerAnimacion2.Tick += new System.EventHandler(this.timerAnimacion2_Tick);
             // 
-            // pictureBoxLupa
-            // 
-            this.pictureBoxLupa.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBoxLupa.Image = global::Proyecto_Final.Properties.Resources.searcher_magnifyng_glass_search_locate_find_icon_123813;
-            this.pictureBoxLupa.Location = new System.Drawing.Point(3, 10);
-            this.pictureBoxLupa.Name = "pictureBoxLupa";
-            this.pictureBoxLupa.Size = new System.Drawing.Size(28, 26);
-            this.pictureBoxLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLupa.TabIndex = 0;
-            this.pictureBoxLupa.TabStop = false;
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.BackgroundImage = global::Proyecto_Final.Properties.Resources.agregar;
-            this.buttonAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAdd.Location = new System.Drawing.Point(3, 3);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(39, 30);
-            this.buttonAdd.TabIndex = 2;
-            this.toolTip.SetToolTip(this.buttonAdd, "Agregar");
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // buttonEliminar
-            // 
-            this.buttonEliminar.BackgroundImage = global::Proyecto_Final.Properties.Resources.basura;
-            this.buttonEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEliminar.Location = new System.Drawing.Point(93, 3);
-            this.buttonEliminar.Name = "buttonEliminar";
-            this.buttonEliminar.Size = new System.Drawing.Size(36, 30);
-            this.buttonEliminar.TabIndex = 3;
-            this.toolTip.SetToolTip(this.buttonEliminar, "Eliminar");
-            this.buttonEliminar.UseVisualStyleBackColor = true;
-            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
-            // 
-            // buttonEditar
-            // 
-            this.buttonEditar.BackgroundImage = global::Proyecto_Final.Properties.Resources.editar;
-            this.buttonEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEditar.Location = new System.Drawing.Point(48, 3);
-            this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(39, 30);
-            this.buttonEditar.TabIndex = 4;
-            this.toolTip.SetToolTip(this.buttonEditar, "Editar");
-            this.buttonEditar.UseVisualStyleBackColor = true;
-            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
-            // 
-            // buttonExportar
-            // 
-            this.buttonExportar.BackgroundImage = global::Proyecto_Final.Properties.Resources.exportacion_de_archivos;
-            this.buttonExportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExportar.Location = new System.Drawing.Point(138, 3);
-            this.buttonExportar.Name = "buttonExportar";
-            this.buttonExportar.Size = new System.Drawing.Size(39, 30);
-            this.buttonExportar.TabIndex = 5;
-            this.toolTip.SetToolTip(this.buttonExportar, "Exportar");
-            this.buttonExportar.UseVisualStyleBackColor = true;
-            this.buttonExportar.Click += new System.EventHandler(this.buttonExportar_Click);
-            // 
-            // labelMensajeNombre
-            // 
-            this.labelMensajeNombre.Location = new System.Drawing.Point(437, 59);
-            this.labelMensajeNombre.Name = "labelMensajeNombre";
-            this.labelMensajeNombre.Size = new System.Drawing.Size(268, 22);
-            this.labelMensajeNombre.TabIndex = 20;
-            this.labelMensajeNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBoxNombre
-            // 
-            this.textBoxNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxNombre.Dock = System.Windows.Forms.DockStyle.Left;
-            this.textBoxNombre.Location = new System.Drawing.Point(437, 38);
-            this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(392, 20);
-            this.textBoxNombre.TabIndex = 7;
-            this.textBoxNombre.TextChanged += new System.EventHandler(this.textBoxNombre_TextChanged);
-            // 
-            // labelNombre
-            // 
-            this.labelNombre.AutoSize = true;
-            this.labelNombre.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labelNombre.Location = new System.Drawing.Point(342, 35);
-            this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(82, 24);
-            this.labelNombre.TabIndex = 0;
-            this.labelNombre.Text = "Nombre del tour";
-            // 
             // UcPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -772,7 +821,9 @@
             this.Size = new System.Drawing.Size(1173, 770);
             this.Load += new System.EventHandler(this.UcPrincipal_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLupa)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.FotoGuardando)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDatos)).EndInit();
             this.tlpAgregar.ResumeLayout(false);
             this.tlpAgregar.PerformLayout();
@@ -781,7 +832,6 @@
             this.tlpEditar.ResumeLayout(false);
             this.tlpEditar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrecio2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLupa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -847,5 +897,8 @@
         private System.Windows.Forms.Label labelNombre;
         private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.Label labelMensajeNombre;
+        private System.Windows.Forms.Label labelNombrearchivo;
+        private System.Windows.Forms.Label labelGuardar;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox FotoGuardando;
     }
 }

@@ -8,6 +8,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Globalization;
 
 
 namespace Proyecto_Final
@@ -22,6 +24,115 @@ namespace Proyecto_Final
             System.Reflection.BindingFlags.SetProperty | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic,
             null, dataGridViewDatos, new object[] { true });
 
+        }
+        private string rutaArchivoActual;
+        public void CargarDatosDesdeCSV(string ruta)
+        {
+            this.rutaArchivoActual = ruta;
+            string NombreArchibo = Path.GetFileNameWithoutExtension(ruta);
+            labelNombrearchivo.Text = "Edición de: " + NombreArchibo;
+
+            dataGridViewDatos.Rows.Clear();
+            if (!File.Exists(ruta)) return;
+            
+
+            try
+            {
+                string[] lineas = File.ReadAllLines(ruta, Encoding.UTF8);
+                for (int i = 1; i < lineas.Length; i++)
+                {
+                    if (string.IsNullOrWhiteSpace(lineas[i])) continue;
+                    string[] celdas = lineas[i].Split(',');
+                    if (celdas.Length >= dataGridViewDatos.ColumnCount)
+                    {
+                        var id = celdas[0];
+                        var nombre = celdas[1];
+                        var pais = celdas[2];
+                        var destino = celdas[3];
+
+                        DateTime fecha;
+                        DateTime hora;
+                        // Intentar formatos esperados (ISO y dd/MM/yyyy/hh:mm)
+                        if (!DateTime.TryParseExact(celdas[4], new[] { "o", "s", "yyyy-MM-dd", "dd/MM/yyyy" }, CultureInfo.InvariantCulture, DateTimeStyles.None, out fecha))
+                            DateTime.TryParse(celdas[4], CultureInfo.InvariantCulture, DateTimeStyles.None, out fecha);
+
+                        if (!DateTime.TryParseExact(celdas[5], new[] { "o", "s", "HH:mm:ss", "HH:mm" }, CultureInfo.InvariantCulture, DateTimeStyles.None, out hora))
+                            DateTime.TryParse(celdas[5], CultureInfo.InvariantCulture, DateTimeStyles.None, out hora);
+
+                        decimal precio = 0m;
+                        decimal itbis = 0m;
+                        decimal.TryParse(celdas[6], NumberStyles.Any, CultureInfo.InvariantCulture, out precio);
+                        decimal.TryParse(celdas[7], NumberStyles.Any, CultureInfo.InvariantCulture, out itbis);
+
+                        var duracion = celdas.Length > 8 ? celdas[8] : "";
+                        var estado = celdas.Length > 9 ? celdas[9] : "";
+
+                        dataGridViewDatos.Rows.Add(id, nombre, pais, destino, fecha, hora, precio, itbis, duracion, estado);
+                    }
+                    dataGridViewDatos.CurrentCell = null;
+                    dataGridViewDatos.ClearSelection();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los datos: " + ex.Message);
+            }
+        }
+        private async Task GuardarCambiosEnCSV()
+        {
+            if (string.IsNullOrEmpty(rutaArchivoActual)) return;
+            try
+            {
+                FotoGuardando.Visible = true;
+                labelGuardar.ForeColor = Color.Red;
+                labelGuardar.Text = "Guardando datos...";
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine("ID,Nombre,País,Destino,Fecha,Hora,Precio,ITBIS,Duración,Estado");
+                foreach (DataGridViewRow fila in dataGridViewDatos.Rows)
+                {
+                    if (fila.IsNewRow) continue;
+
+                    string fechaStr = "";
+                    string horaStr = "";
+                    if (fila.Cells[4].Value is DateTime dtFecha) fechaStr = dtFecha.ToString("o", CultureInfo.InvariantCulture);
+                    else fechaStr = (fila.Cells[4].Value?.ToString() ?? "");
+
+                    if (fila.Cells[5].Value is DateTime dtHora) horaStr = dtHora.ToString("HH:mm:ss", CultureInfo.InvariantCulture);
+                    else horaStr = (fila.Cells[5].Value?.ToString() ?? "");
+
+                    string precioStr = "";
+                    string itbisStr = "";
+                    if (fila.Cells[6].Value != null) precioStr = Convert.ToDecimal(fila.Cells[6].Value).ToString(CultureInfo.InvariantCulture);
+                    if (fila.Cells[7].Value != null) itbisStr = Convert.ToDecimal(fila.Cells[7].Value).ToString(CultureInfo.InvariantCulture);
+
+                    // asegurar escapado si hay comas
+                    string Line(string v) => v?.Replace("\"", "\"\"").Contains(",") == true ? $"\"{v}\"" : v;
+
+                    string linea = string.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
+                        Line(fila.Cells[0].Value?.ToString() ?? ""),
+                        Line(fila.Cells[1].Value?.ToString() ?? ""),
+                        Line(fila.Cells[2].Value?.ToString() ?? ""),
+                        Line(fila.Cells[3].Value?.ToString() ?? ""),
+                        Line(fechaStr),
+                        Line(horaStr),
+                        Line(precioStr),
+                        Line(itbisStr),
+                        Line(fila.Cells[8].Value?.ToString() ?? ""),
+                        Line(fila.Cells[9].Value?.ToString() ?? ""));
+
+                    sb.AppendLine(linea);
+                }
+                File.WriteAllText(rutaArchivoActual, sb.ToString(), Encoding.UTF8);
+                await Task.Delay(2000);
+                labelGuardar.ForeColor = Color.Lime;
+                labelGuardar.Text = "Guardado";
+                FotoGuardando.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al sincronizar con el archivo CSV: " + ex.Message, "Error de Guardado");
+            }
         }
         private void ActualizarSugerenciasBusqueda()
         {
@@ -724,6 +835,7 @@ namespace Proyecto_Final
                 ActualizarSugerenciasBusqueda();
                 dataGridViewDatos.CurrentCell = null;
                 dataGridViewDatos.ClearSelection();
+                GuardarCambiosEnCSV();
             }
         }
 
@@ -741,6 +853,7 @@ namespace Proyecto_Final
                     dataGridViewDatos.Rows.RemoveAt(indice);
                     dataGridViewDatos.CurrentCell = null;
                     dataGridViewDatos.ClearSelection();
+                    GuardarCambiosEnCSV();
                 }
             }
             else
@@ -954,6 +1067,7 @@ namespace Proyecto_Final
                 dataGridViewDatos.CurrentCell = null;
                 dataGridViewDatos.ClearSelection();
                 MessageBox.Show("¡Tour actualizado con éxito!");
+                GuardarCambiosEnCSV();
 
                 if (expandir)
                 {
@@ -1032,7 +1146,6 @@ namespace Proyecto_Final
             }
         }
 
-    
     }
     
 }

@@ -36,11 +36,12 @@
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.timerBarralaterar = new System.Windows.Forms.Timer(this.components);
             this.tlpBarralateral = new System.Windows.Forms.TableLayoutPanel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.buttonAbout = new System.Windows.Forms.Button();
+            this.ButtonLogout = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.ButtonHome = new Guna.UI2.WinForms.Guna2Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.buttonConfiguracion = new System.Windows.Forms.Button();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
@@ -84,7 +85,7 @@
             this.tlpBarraTitulo.Name = "tlpBarraTitulo";
             this.tlpBarraTitulo.RowCount = 1;
             this.tlpBarraTitulo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBarraTitulo.Size = new System.Drawing.Size(837, 35);
+            this.tlpBarraTitulo.Size = new System.Drawing.Size(1039, 35);
             this.tlpBarraTitulo.TabIndex = 7;
             this.tlpBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tlpBarraTitulo_MouseDown);
             // 
@@ -94,7 +95,7 @@
             this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(84)))), ((int)(((byte)(99)))));
             this.guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.Red;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(796, 1);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(998, 1);
             this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(1);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(40, 33);
@@ -107,7 +108,7 @@
             this.guna2ControlBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(84)))), ((int)(((byte)(99)))));
             this.guna2ControlBox2.HoverState.FillColor = System.Drawing.Color.Silver;
             this.guna2ControlBox2.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(755, 1);
+            this.guna2ControlBox2.Location = new System.Drawing.Point(957, 1);
             this.guna2ControlBox2.Margin = new System.Windows.Forms.Padding(1);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.Size = new System.Drawing.Size(38, 33);
@@ -120,30 +121,11 @@
             this.guna2ControlBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(84)))), ((int)(((byte)(99)))));
             this.guna2ControlBox3.HoverState.FillColor = System.Drawing.Color.Silver;
             this.guna2ControlBox3.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox3.Location = new System.Drawing.Point(715, 1);
+            this.guna2ControlBox3.Location = new System.Drawing.Point(917, 1);
             this.guna2ControlBox3.Margin = new System.Windows.Forms.Padding(1);
             this.guna2ControlBox3.Name = "guna2ControlBox3";
             this.guna2ControlBox3.Size = new System.Drawing.Size(38, 33);
             this.guna2ControlBox3.TabIndex = 4;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.SlateGray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Image = global::Proyecto_Final.Properties.Resources._3643769_building_home_house_main_menu_start_113416__1_;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 43);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Home";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
-            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
             // 
             // timerBarralaterar
             // 
@@ -154,10 +136,11 @@
             this.tlpBarralateral.BackColor = System.Drawing.Color.SlateGray;
             this.tlpBarralateral.ColumnCount = 1;
             this.tlpBarralateral.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBarralateral.Controls.Add(this.button3, 0, 5);
-            this.tlpBarralateral.Controls.Add(this.button1, 0, 0);
-            this.tlpBarralateral.Controls.Add(this.buttonAbout, 0, 1);
-            this.tlpBarralateral.Controls.Add(this.buttonConfiguracion, 0, 2);
+            this.tlpBarralateral.Controls.Add(this.ButtonLogout, 0, 5);
+            this.tlpBarralateral.Controls.Add(this.guna2Button1, 0, 1);
+            this.tlpBarralateral.Controls.Add(this.ButtonHome, 0, 0);
+            this.tlpBarralateral.Controls.Add(this.button2, 0, 2);
+            this.tlpBarralateral.Controls.Add(this.buttonConfiguracion, 0, 3);
             this.tlpBarralateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.tlpBarralateral.Location = new System.Drawing.Point(0, 35);
             this.tlpBarralateral.MaximumSize = new System.Drawing.Size(205, 0);
@@ -170,47 +153,99 @@
             this.tlpBarralateral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tlpBarralateral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpBarralateral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tlpBarralateral.Size = new System.Drawing.Size(129, 496);
+            this.tlpBarralateral.Size = new System.Drawing.Size(129, 741);
             this.tlpBarralateral.TabIndex = 9;
-
             // 
-            // button3
+            // ButtonLogout
             // 
-            this.button3.BackColor = System.Drawing.Color.SlateGray;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Image = global::Proyecto_Final.Properties.Resources.out_log_icon_255959;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(3, 450);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(123, 43);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Cerrar sesión";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            this.button3.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
-            this.button3.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
+            this.ButtonLogout.Animated = true;
+            this.ButtonLogout.BorderRadius = 10;
+            this.ButtonLogout.BorderThickness = 1;
+            this.ButtonLogout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonLogout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ButtonLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ButtonLogout.FillColor = System.Drawing.Color.SlateGray;
+            this.ButtonLogout.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonLogout.ForeColor = System.Drawing.Color.Black;
+            this.ButtonLogout.HoverState.FillColor = System.Drawing.SystemColors.Control;
+            this.ButtonLogout.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.ButtonLogout.Image = global::Proyecto_Final.Properties.Resources.out_log_icon_255959;
+            this.ButtonLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.ButtonLogout.ImageSize = new System.Drawing.Size(32, 32);
+            this.ButtonLogout.Location = new System.Drawing.Point(3, 695);
+            this.ButtonLogout.Name = "ButtonLogout";
+            this.ButtonLogout.Size = new System.Drawing.Size(123, 43);
+            this.ButtonLogout.TabIndex = 2;
+            this.ButtonLogout.Text = "Cerrar sesión";
+            this.ButtonLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ButtonLogout.Click += new System.EventHandler(this.ButtonLogout_Click);
             // 
-            // buttonAbout
+            // guna2Button1
             // 
-            this.buttonAbout.BackColor = System.Drawing.Color.SlateGray;
-            this.buttonAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAbout.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAbout.ForeColor = System.Drawing.Color.Black;
-            this.buttonAbout.Image = global::Proyecto_Final.Properties.Resources._4213426_about_description_help_info_information_notification_115427;
-            this.buttonAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAbout.Location = new System.Drawing.Point(3, 52);
-            this.buttonAbout.Name = "buttonAbout";
-            this.buttonAbout.Size = new System.Drawing.Size(123, 43);
-            this.buttonAbout.TabIndex = 10;
-            this.buttonAbout.Text = "About";
-            this.buttonAbout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonAbout.UseVisualStyleBackColor = false;
-            this.buttonAbout.Click += new System.EventHandler(this.buttonAbout_Click);
-            this.buttonAbout.MouseEnter += new System.EventHandler(this.buttonAbout_MouseEnter);
-            this.buttonAbout.MouseLeave += new System.EventHandler(this.buttonAbout_MouseLeave);
+            this.guna2Button1.Animated = true;
+            this.guna2Button1.BorderRadius = 10;
+            this.guna2Button1.BorderThickness = 1;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.SlateGray;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button1.HoverState.FillColor = System.Drawing.SystemColors.Control;
+            this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button1.Image = global::Proyecto_Final.Properties.Resources._4213426_about_description_help_info_information_notification_115427;
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2Button1.Location = new System.Drawing.Point(3, 52);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(123, 43);
+            this.guna2Button1.TabIndex = 1;
+            this.guna2Button1.Text = "About";
+            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // ButtonHome
+            // 
+            this.ButtonHome.Animated = true;
+            this.ButtonHome.BorderRadius = 10;
+            this.ButtonHome.BorderThickness = 1;
+            this.ButtonHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonHome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ButtonHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ButtonHome.FillColor = System.Drawing.Color.SlateGray;
+            this.ButtonHome.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonHome.ForeColor = System.Drawing.Color.Black;
+            this.ButtonHome.HoverState.FillColor = System.Drawing.SystemColors.Control;
+            this.ButtonHome.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.ButtonHome.Image = global::Proyecto_Final.Properties.Resources.casa__3_;
+            this.ButtonHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.ButtonHome.ImageSize = new System.Drawing.Size(34, 34);
+            this.ButtonHome.Location = new System.Drawing.Point(3, 3);
+            this.ButtonHome.Name = "ButtonHome";
+            this.ButtonHome.Size = new System.Drawing.Size(123, 43);
+            this.ButtonHome.TabIndex = 0;
+            this.ButtonHome.Text = "Home";
+            this.ButtonHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.ButtonHome.Click += new System.EventHandler(this.ButtonHome_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.SlateGray;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Image = global::Proyecto_Final.Properties.Resources.instrucciones;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(3, 101);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(123, 43);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Instrucciones";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // buttonConfiguracion
             // 
@@ -220,7 +255,7 @@
             this.buttonConfiguracion.ForeColor = System.Drawing.Color.Black;
             this.buttonConfiguracion.Image = global::Proyecto_Final.Properties.Resources.configuracion;
             this.buttonConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonConfiguracion.Location = new System.Drawing.Point(3, 101);
+            this.buttonConfiguracion.Location = new System.Drawing.Point(3, 150);
             this.buttonConfiguracion.Name = "buttonConfiguracion";
             this.buttonConfiguracion.Size = new System.Drawing.Size(123, 43);
             this.buttonConfiguracion.TabIndex = 10;
@@ -240,10 +275,11 @@
             // 
             // panelContenedor
             // 
+            this.panelContenedor.BackColor = System.Drawing.SystemColors.Control;
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(129, 35);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(708, 496);
+            this.panelContenedor.Size = new System.Drawing.Size(910, 741);
             this.panelContenedor.TabIndex = 10;
             // 
             // FormMenuprincipal
@@ -252,7 +288,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(837, 531);
+            this.ClientSize = new System.Drawing.Size(1039, 776);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.tlpBarralateral);
             this.Controls.Add(this.tlpBarraTitulo);
@@ -276,11 +312,8 @@
         private System.Windows.Forms.Timer timerSalir;
         private System.Windows.Forms.TableLayoutPanel tlpBarraTitulo;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer timerBarralaterar;
         private System.Windows.Forms.TableLayoutPanel tlpBarralateral;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button buttonAbout;
         private System.Windows.Forms.Button buttonConfiguracion;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
@@ -288,6 +321,10 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
         private System.Windows.Forms.Panel panelContenedor;
+        private System.Windows.Forms.Button button2;
+        private Guna.UI2.WinForms.Guna2Button ButtonHome;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button ButtonLogout;
     }
 }
 

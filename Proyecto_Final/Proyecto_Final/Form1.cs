@@ -23,8 +23,8 @@ namespace Proyecto_Final
             guna2ShadowForm1.SetShadowForm(this);
             this.WindowState = FormWindowState.Normal;
             this.StartPosition = FormStartPosition.CenterScreen;
-            UcPrincipal ucprincipal = new UcPrincipal();
-            AbrirUc(ucprincipal);
+            UcAgregarListas lista = new UcAgregarListas();
+            AbrirUc(lista);
 
         }
 
@@ -70,6 +70,18 @@ namespace Proyecto_Final
 
                 existente.BringToFront();
             }
+        }
+        public void CargarEdicionTours(string ruta)
+        {
+            UcPrincipal control = panelContenedor.Controls.OfType<UcPrincipal>().FirstOrDefault();
+            if (control == null)
+            {
+                control = new UcPrincipal();
+                control.Dock = DockStyle.Fill;
+                panelContenedor.Controls.Add(control);
+            }
+            control.CargarDatosDesdeCSV(ruta);
+            control.BringToFront();
         }
 
         private void timerSalir_Tick(object sender, EventArgs e)
@@ -217,39 +229,6 @@ namespace Proyecto_Final
             
         }
 
-        private void buttonAbout_Click(object sender, EventArgs e)
-        {
-            CargarControl<UcAbout>();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-
-        private void button1_MouseEnter(object sender, EventArgs e)
-        {
-            button1.BackColor = Color.White;
-
-        }
-
-        private void button1_MouseLeave(object sender, EventArgs e)
-        {
-            button1.BackColor = Color.SlateGray;
-        }
-
-        private void buttonAbout_MouseEnter(object sender, EventArgs e)
-        {
-            buttonAbout.BackColor = Color.White;
-        }
-
-        
-
-        private void buttonAbout_MouseLeave(object sender, EventArgs e)
-        {
-            buttonAbout.BackColor = Color.SlateGray;
-        }
 
         private void buttonConfiguracion_MouseEnter(object sender, EventArgs e)
         {
@@ -263,25 +242,21 @@ namespace Proyecto_Final
 
         }
 
-        private void button3_MouseEnter(object sender, EventArgs e)
-        {
-            button3.BackColor = Color.White;
 
+        private void ButtonHome_Click(object sender, EventArgs e)
+        {
+            
+            CargarControl<UcAgregarListas>();
         }
 
-        private void button3_MouseLeave(object sender, EventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
-            button3.BackColor = Color.SlateGray;
-
+            CargarControl<UcAbout>();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ButtonLogout_Click(object sender, EventArgs e)
         {
-            CargarControl<UcPrincipal>();
-
+            this.Close();
         }
-
-
-
     }
 }
