@@ -127,11 +127,17 @@
   <data name="esconder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\esconder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Tutorial-Exportar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tutorial-Exportar.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boton-agregar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boton-agregar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Menu_icon_icon-icons.com_71858" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Menu_icon_icon-icons.com_71858.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boton-agregar (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boton-agregar (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="videoplayback" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\videoplayback.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,6 +157,9 @@
   <data name="close-icon-47" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close-icon-47.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Tutorial-Buscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tutorial-Buscar.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="basura" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\basura.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,20 +172,29 @@
   <data name="editar (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editar (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Tutorial-Editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tutorial-Editar.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="imgi_199_rs-180722-475734213" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgi_199_rs-180722-475734213.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tutorial-Agregar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tutorial-Agregar.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="maximizar (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\maximizar (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="boton-agregar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\boton-agregar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="instrucciones" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\instrucciones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="searcher_magnifyng_glass_search_locate_find_icon_123813" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\searcher_magnifyng_glass_search_locate_find_icon_123813.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="configuracion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\configuracion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tutorial-Eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tutorial-Eliminar.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minimizar-signo (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minimizar-signo (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,6 +223,9 @@
   <data name="editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="4213426-about-description-help-info-information-notification_115427" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4213426-about-description-help-info-information-notification_115427.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -214,10 +235,10 @@
   <data name="out_log_icon_255959" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\out_log_icon_255959.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="instrucciones" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\instrucciones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Tutorial-nueva-lista" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tutorial-nueva-lista.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="boton-agregar (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\boton-agregar (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Deseleccionar-tutoriar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Deseleccionar-tutoriar.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

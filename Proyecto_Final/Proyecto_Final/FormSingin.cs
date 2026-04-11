@@ -153,6 +153,7 @@ namespace Proyecto_Final
 
         private void buttonSingin_Click(object sender, EventArgs e)
         {
+            buttonSingin.Enabled = false;
             string textoUsuario = textBoxUsuario.Text;
             string textoContraseña = textBoxContra.Text;
             if (UsuarioEncontrado == true && ContraseñaCoincide == true)
@@ -171,11 +172,14 @@ namespace Proyecto_Final
                     else
                     {
                         timer.Stop();
+                        buttonSingin.Enabled = true;
                         this.Hide();
                     }
                 };
                 FormMenuprincipal form = new FormMenuprincipal();
                 form.FormClosed += (s, ve) => this.Show();
+                textBoxContra.Text = "";
+                textBoxUsuario.Text = "";
                 form.Opacity = 0;
                 form.StartPosition = FormStartPosition.CenterScreen;
                 form.WindowState = FormWindowState.Maximized;
@@ -199,6 +203,7 @@ namespace Proyecto_Final
             }
             else
             {
+                buttonSingin.Enabled = true;
                 SystemSounds.Exclamation.Play();
                 if (ContraseñaCoincide)
                 {
@@ -208,7 +213,7 @@ namespace Proyecto_Final
                 {
                     labelMensajeContra.ForeColor = Color.Red;
                     ContraseñaCoincide = false;
-                    labelMensajeContra.Text = "La contraseña o usuario incorectos";
+                    labelMensajeContra.Text = "La contraseña o usuario incorrectos";
                 }
 
             }
@@ -219,11 +224,13 @@ namespace Proyecto_Final
         private void textBoxUsuario_TextChanged(object sender, EventArgs e)
         {
             UsuarioEncontrado = false;
-            ContraseñaCoincide = false; 
-            string guardarRegistro = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),"NoLimitsEvents", "Usuarios", "Usuarios.txt");
+            ContraseñaCoincide = false;
+            string NLV_Carpeta_appdata = AppDomain.CurrentDomain.BaseDirectory;
+            string Carpeta_Usuarios = NLV_Carpeta_appdata + "\\Usuarios";
+            string archivo_Usuarios = Path.Combine(Carpeta_Usuarios, "usuarios.txt");
             string textoUsuario = textBoxUsuario.Text;
             string textoContraseña = textBoxContra.Text;
-            string[] lineas = File.ReadAllLines(guardarRegistro);
+            string[] lineas = File.ReadAllLines(archivo_Usuarios);
             foreach (string line in lineas)
             {
                 string[] datos = line.Split(',');
@@ -267,10 +274,14 @@ namespace Proyecto_Final
         private void textBoxContra_TextChanged(object sender, EventArgs e)
         {
             ContraseñaCoincide = false;
-            string guardarRegistro = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "NoLimitsEvents", "Usuarios", "Usuarios.txt");
+            string NLV_Carpeta_appdata = AppDomain.CurrentDomain.BaseDirectory;
+            string Carpeta_Usuarios = NLV_Carpeta_appdata + "\\Usuarios";
+            string archivo_Usuarios = Path.Combine(Carpeta_Usuarios, "usuarios.txt");
+
+
             string textoUsuario = textBoxUsuario.Text;
             string textoContraseña = textBoxContra.Text;
-            string[] lineas = File.ReadAllLines(guardarRegistro);
+            string[] lineas = File.ReadAllLines(archivo_Usuarios);
             foreach (string line in lineas)
             {
                 string[] datos = line.Split(',');

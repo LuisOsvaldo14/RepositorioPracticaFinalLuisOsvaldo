@@ -25,9 +25,17 @@ namespace Proyecto_Final
             tarjeta.RutaArchivo = ruta;
             tarjeta.Dock = DockStyle.Top;
 
-            // Obtener fecha de última apertura del archivo (si existe)
-            DateTime ultima = File.Exists(ruta) ? File.GetLastAccessTime(ruta) : DateTime.MinValue;
-            tarjeta.UltimaApertura = ultima == DateTime.MinValue ? "Nunca" : ultima.ToString("g");
+            // Obtener fecha de última apertura del archivo
+            if (File.Exists(ruta))
+            {
+                DateTime creation = File.GetCreationTime(ruta);
+                DateTime lastAccess = File.GetLastAccessTime(ruta);
+                tarjeta.UltimaApertura = lastAccess == creation ? "Nunca" : lastAccess.ToString("g");
+            }
+            else
+            {
+                tarjeta.UltimaApertura = "Nunca";
+            }
 
             tarjeta.Click += (s, ev) => AbrirArchivoCSV(ruta);
 
@@ -42,7 +50,6 @@ namespace Proyecto_Final
         }
         private void AbrirArchivoCSV(string ruta)
         {
-            // Actualizar la hora de último acceso antes de abrir
             try
             {
                 if (File.Exists(ruta))
@@ -52,15 +59,22 @@ namespace Proyecto_Final
             }
             catch
             {
-                // manejar si es necesario (permisos, etc.)
             }
 
-            // Actualizar el label en la tarjeta correspondiente
             foreach (var ctrl in panelLista.Controls.OfType<UcTarjetas>())
             {
                 if (string.Equals(ctrl.RutaArchivo, ruta, StringComparison.OrdinalIgnoreCase))
                 {
-                    ctrl.UltimaApertura = DateTime.Now.ToString("g");
+                    if (File.Exists(ruta))
+                    {
+                        DateTime creation = File.GetCreationTime(ruta);
+                        DateTime lastAccess = File.GetLastAccessTime(ruta);
+                        ctrl.UltimaApertura = lastAccess == creation ? "Nunca" : lastAccess.ToString("g");
+                    }
+                    else
+                    {
+                        ctrl.UltimaApertura = "Nunca";
+                    }
                     break;
                 }
             }
@@ -77,7 +91,10 @@ namespace Proyecto_Final
             {
                 string carpeta = Path.Combine(Application.StartupPath, "ListasTours");
                 string rutaCompleta = Path.Combine(carpeta, nombreLista + ".csv");
-                if (!Directory.Exists(carpeta)) Directory.CreateDirectory(carpeta);
+                if (!Directory.Exists(carpeta))
+                {
+                    Directory.CreateDirectory(carpeta);
+                }
                 if (File.Exists(rutaCompleta))
                 {
                     MessageBox.Show("Ya existe una lista con ese nombre. Intenta con otro.",

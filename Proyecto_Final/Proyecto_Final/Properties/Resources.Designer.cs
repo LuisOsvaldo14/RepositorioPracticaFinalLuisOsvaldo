@@ -183,6 +183,16 @@ namespace Proyecto_Final.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Deseleccionar_tutoriar {
+            get {
+                object obj = ResourceManager.GetObject("Deseleccionar-tutoriar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap editar {
             get {
                 object obj = ResourceManager.GetObject("editar", resourceCulture);
@@ -386,6 +396,66 @@ namespace Proyecto_Final.Properties {
         internal static System.Drawing.Bitmap toppng_com_icono_de_avion_980x978 {
             get {
                 object obj = ResourceManager.GetObject("toppng.com-icono-de-avion-980x978", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tutorial_Agregar {
+            get {
+                object obj = ResourceManager.GetObject("Tutorial-Agregar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tutorial_Buscar {
+            get {
+                object obj = ResourceManager.GetObject("Tutorial-Buscar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tutorial_Editar {
+            get {
+                object obj = ResourceManager.GetObject("Tutorial-Editar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tutorial_Eliminar {
+            get {
+                object obj = ResourceManager.GetObject("Tutorial-Eliminar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tutorial_Exportar {
+            get {
+                object obj = ResourceManager.GetObject("Tutorial-Exportar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tutorial_nueva_lista {
+            get {
+                object obj = ResourceManager.GetObject("Tutorial-nueva-lista", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

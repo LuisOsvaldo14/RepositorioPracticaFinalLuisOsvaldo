@@ -99,9 +99,11 @@ namespace Proyecto_Final
         {
             labelErrorRegistrar.Text = "";
 
-            string guardarRegistro = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "NoLimitsEvents", "Usuarios", "Usuarios.txt");
+            string NLV_Carpeta_appdata = AppDomain.CurrentDomain.BaseDirectory;
+            string Carpeta_Usuarios = NLV_Carpeta_appdata + "\\Usuarios";
+            string archivo_Usuarios = Path.Combine(Carpeta_Usuarios, "usuarios.txt");
             string textoUsuario = textBoxUsuario.Text;
-            string[] lineas = File.ReadAllLines(guardarRegistro);
+            string[] lineas = File.ReadAllLines(archivo_Usuarios);
             foreach (string line in lineas)
             {
                 string[] datos = line.Split(',');
@@ -197,10 +199,12 @@ namespace Proyecto_Final
         {
             if (veriUsuario && veriContra && veriConfirmacionContra)
             {
-                string guardarRegistro = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "NoLimitsEvents", "Usuarios", "Usuarios.txt");
+                string NLV_Carpeta_appdata = AppDomain.CurrentDomain.BaseDirectory;
+                string Carpeta_Usuarios = NLV_Carpeta_appdata + "\\Usuarios";
+                string archivo_Usuarios = Path.Combine(Carpeta_Usuarios, "usuarios.txt");
                 string usuario = textBoxUsuario.Text;
                 string Contrasena = textBoxContra1.Text;
-                File.AppendAllText(guardarRegistro, usuario + "," + Contrasena + Environment.NewLine);
+                File.AppendAllText(archivo_Usuarios, usuario + "," + Contrasena + Environment.NewLine);
                 labelErrorRegistrar.ForeColor = Color.Green;
                 labelErrorRegistrar.Text = "Usuario registrado";
                 timerSalir.Start();

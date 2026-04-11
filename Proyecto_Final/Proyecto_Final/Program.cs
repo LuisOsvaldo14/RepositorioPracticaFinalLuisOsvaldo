@@ -18,38 +18,28 @@ namespace Proyecto_Final
         static void Main()
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
-            string NLV_Carpeta_appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\NoLimitsEvents";
+            string NLV_Carpeta_appdata = AppDomain.CurrentDomain.BaseDirectory;
 
             string Carpeta_Usuarios = NLV_Carpeta_appdata + "\\Usuarios";
-            string Carpeta_configuracion = NLV_Carpeta_appdata + "\\Configuracion";
-            string Carpeta_log = NLV_Carpeta_appdata + "\\Logs";
+
             
 
             string archivo_Usuarios = Path.Combine(Carpeta_Usuarios,"usuarios.txt");
-            string archivo_configuracion = Path.Combine(Carpeta_configuracion,"configuracion.txt");
-            string archivo_log = Path.Combine(Carpeta_log,"Log.txt");
 
-
+            if (!Directory.Exists(Carpeta_Usuarios))
+            {
+                Directory.CreateDirectory(Carpeta_Usuarios);
+            }
 
             if (!File.Exists(archivo_Usuarios))
             {
                 File.Create(archivo_Usuarios).Close();
             }
 
-            if (!File.Exists(archivo_configuracion))
-            {
-                File.Create(archivo_configuracion).Close();
-            }
-
-            if (!File.Exists(archivo_log))
-            {
-                File.Create(archivo_log).Close();
-            }
-
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMenuprincipal());
+            Application.Run(new FormSingin());
         }
     }
 }

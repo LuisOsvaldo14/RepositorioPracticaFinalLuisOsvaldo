@@ -33,13 +33,13 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBoxLupa = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonAdd = new Guna.UI2.WinForms.Guna2Button();
             this.labelGuardar = new System.Windows.Forms.Label();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonEliminar = new System.Windows.Forms.Button();
-            this.buttonEditar = new System.Windows.Forms.Button();
-            this.buttonExportar = new System.Windows.Forms.Button();
             this.labelNombrearchivo = new System.Windows.Forms.Label();
             this.FotoGuardando = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.buttonEliminar = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonEditar = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonExportar = new Guna.UI2.WinForms.Guna2Button();
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
             this.dataGridViewDatos = new System.Windows.Forms.DataGridView();
             this.Clnid = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +56,6 @@
             this.labelNombre = new System.Windows.Forms.Label();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.buttonAgregar = new System.Windows.Forms.Button();
             this.numericUpDownPrecio = new System.Windows.Forms.NumericUpDown();
             this.labelPrecio = new System.Windows.Forms.Label();
             this.labelMensajePrecio = new System.Windows.Forms.Label();
@@ -68,6 +67,7 @@
             this.labelPais = new System.Windows.Forms.Label();
             this.labelMensajePais = new System.Windows.Forms.Label();
             this.labelMensajeNombre = new System.Windows.Forms.Label();
+            this.buttonAgregar = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tlpEditar = new System.Windows.Forms.TableLayoutPanel();
             this.labelNombre2 = new System.Windows.Forms.Label();
@@ -75,8 +75,6 @@
             this.labelFecha2 = new System.Windows.Forms.Label();
             this.labelHora2 = new System.Windows.Forms.Label();
             this.labelPrecio2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.textBoxNombre2 = new System.Windows.Forms.TextBox();
             this.numericUpDownPrecio2 = new System.Windows.Forms.NumericUpDown();
             this.comboBoxPais2 = new System.Windows.Forms.ComboBox();
@@ -88,6 +86,8 @@
             this.labelMensajeNombre2 = new System.Windows.Forms.Label();
             this.labelMensajePais2 = new System.Windows.Forms.Label();
             this.labelMensajePrecio2 = new System.Windows.Forms.Label();
+            this.ButtonEdit = new Guna.UI2.WinForms.Guna2Button();
+            this.ButtonCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.timerAnimacion = new System.Windows.Forms.Timer(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.timerAnimacion2 = new System.Windows.Forms.Timer(this.components);
@@ -138,20 +138,20 @@
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 7;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.tableLayoutPanel3.Controls.Add(this.labelGuardar, 6, 0);
             this.tableLayoutPanel3.Controls.Add(this.buttonAdd, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.labelGuardar, 6, 0);
+            this.tableLayoutPanel3.Controls.Add(this.labelNombrearchivo, 4, 0);
+            this.tableLayoutPanel3.Controls.Add(this.FotoGuardando, 5, 0);
             this.tableLayoutPanel3.Controls.Add(this.buttonEliminar, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.buttonEditar, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.buttonExportar, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.labelNombrearchivo, 4, 0);
-            this.tableLayoutPanel3.Controls.Add(this.FotoGuardando, 5, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(435, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -159,6 +159,27 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(735, 40);
             this.tableLayoutPanel3.TabIndex = 3;
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Animated = true;
+            this.buttonAdd.BorderRadius = 10;
+            this.buttonAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonAdd.ForeColor = System.Drawing.Color.Black;
+            this.buttonAdd.HoverState.FillColor = System.Drawing.Color.Lime;
+            this.buttonAdd.Image = global::Proyecto_Final.Properties.Resources.agregar;
+            this.buttonAdd.Location = new System.Drawing.Point(3, 3);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(75, 34);
+            this.buttonAdd.TabIndex = 27;
+            this.buttonAdd.Text = "Agregar";
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // labelGuardar
             // 
@@ -172,66 +193,14 @@
             this.labelGuardar.Text = "Guardado";
             this.labelGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // buttonAdd
-            // 
-            this.buttonAdd.BackgroundImage = global::Proyecto_Final.Properties.Resources.agregar;
-            this.buttonAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAdd.Location = new System.Drawing.Point(3, 3);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(39, 30);
-            this.buttonAdd.TabIndex = 2;
-            this.toolTip.SetToolTip(this.buttonAdd, "Agregar");
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // buttonEliminar
-            // 
-            this.buttonEliminar.BackgroundImage = global::Proyecto_Final.Properties.Resources.basura;
-            this.buttonEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEliminar.Location = new System.Drawing.Point(93, 3);
-            this.buttonEliminar.Name = "buttonEliminar";
-            this.buttonEliminar.Size = new System.Drawing.Size(36, 30);
-            this.buttonEliminar.TabIndex = 3;
-            this.toolTip.SetToolTip(this.buttonEliminar, "Eliminar");
-            this.buttonEliminar.UseVisualStyleBackColor = true;
-            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
-            // 
-            // buttonEditar
-            // 
-            this.buttonEditar.BackgroundImage = global::Proyecto_Final.Properties.Resources.editar;
-            this.buttonEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEditar.Location = new System.Drawing.Point(48, 3);
-            this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(39, 30);
-            this.buttonEditar.TabIndex = 4;
-            this.toolTip.SetToolTip(this.buttonEditar, "Editar");
-            this.buttonEditar.UseVisualStyleBackColor = true;
-            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
-            // 
-            // buttonExportar
-            // 
-            this.buttonExportar.BackgroundImage = global::Proyecto_Final.Properties.Resources.exportacion_de_archivos;
-            this.buttonExportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExportar.Location = new System.Drawing.Point(138, 3);
-            this.buttonExportar.Name = "buttonExportar";
-            this.buttonExportar.Size = new System.Drawing.Size(39, 30);
-            this.buttonExportar.TabIndex = 5;
-            this.toolTip.SetToolTip(this.buttonExportar, "Exportar");
-            this.buttonExportar.UseVisualStyleBackColor = true;
-            this.buttonExportar.Click += new System.EventHandler(this.buttonExportar_Click);
-            // 
             // labelNombrearchivo
             // 
             this.labelNombrearchivo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelNombrearchivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNombrearchivo.ForeColor = System.Drawing.Color.Lime;
-            this.labelNombrearchivo.Location = new System.Drawing.Point(187, 0);
+            this.labelNombrearchivo.Location = new System.Drawing.Point(327, 0);
             this.labelNombrearchivo.Name = "labelNombrearchivo";
-            this.labelNombrearchivo.Size = new System.Drawing.Size(406, 40);
+            this.labelNombrearchivo.Size = new System.Drawing.Size(266, 40);
             this.labelNombrearchivo.TabIndex = 6;
             this.labelNombrearchivo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -247,6 +216,70 @@
             this.FotoGuardando.TabIndex = 7;
             this.FotoGuardando.TabStop = false;
             this.FotoGuardando.Visible = false;
+            // 
+            // buttonEliminar
+            // 
+            this.buttonEliminar.Animated = true;
+            this.buttonEliminar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonEliminar.BorderRadius = 10;
+            this.buttonEliminar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonEliminar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonEliminar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonEliminar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonEliminar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonEliminar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonEliminar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonEliminar.ForeColor = System.Drawing.Color.Black;
+            this.buttonEliminar.HoverState.FillColor = System.Drawing.Color.Red;
+            this.buttonEliminar.Image = global::Proyecto_Final.Properties.Resources.basura;
+            this.buttonEliminar.Location = new System.Drawing.Point(165, 3);
+            this.buttonEliminar.Name = "buttonEliminar";
+            this.buttonEliminar.Size = new System.Drawing.Size(75, 34);
+            this.buttonEliminar.TabIndex = 26;
+            this.buttonEliminar.Text = "Eliminar";
+            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
+            // 
+            // buttonEditar
+            // 
+            this.buttonEditar.Animated = true;
+            this.buttonEditar.BorderRadius = 15;
+            this.buttonEditar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonEditar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonEditar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonEditar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonEditar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonEditar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonEditar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonEditar.ForeColor = System.Drawing.Color.Black;
+            this.buttonEditar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.buttonEditar.Image = global::Proyecto_Final.Properties.Resources.editar;
+            this.buttonEditar.Location = new System.Drawing.Point(84, 3);
+            this.buttonEditar.Name = "buttonEditar";
+            this.buttonEditar.Size = new System.Drawing.Size(75, 34);
+            this.buttonEditar.TabIndex = 25;
+            this.buttonEditar.Text = "Editar";
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
+            // 
+            // buttonExportar
+            // 
+            this.buttonExportar.Animated = true;
+            this.buttonExportar.BorderRadius = 10;
+            this.buttonExportar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonExportar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonExportar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonExportar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonExportar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonExportar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonExportar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonExportar.ForeColor = System.Drawing.Color.Black;
+            this.buttonExportar.HoverState.FillColor = System.Drawing.Color.Yellow;
+            this.buttonExportar.Image = global::Proyecto_Final.Properties.Resources.exportar__1_;
+            this.buttonExportar.Location = new System.Drawing.Point(246, 3);
+            this.buttonExportar.Name = "buttonExportar";
+            this.buttonExportar.Size = new System.Drawing.Size(75, 34);
+            this.buttonExportar.TabIndex = 28;
+            this.buttonExportar.Text = "Exportar";
+            this.buttonExportar.Click += new System.EventHandler(this.buttonExportar_Click);
             // 
             // comboBoxBuscar
             // 
@@ -372,7 +405,6 @@
             this.tlpAgregar.Controls.Add(this.labelNombre, 1, 1);
             this.tlpAgregar.Controls.Add(this.textBoxNombre, 2, 1);
             this.tlpAgregar.Controls.Add(this.label8, 2, 0);
-            this.tlpAgregar.Controls.Add(this.buttonAgregar, 2, 9);
             this.tlpAgregar.Controls.Add(this.numericUpDownPrecio, 2, 7);
             this.tlpAgregar.Controls.Add(this.labelPrecio, 1, 7);
             this.tlpAgregar.Controls.Add(this.labelMensajePrecio, 2, 8);
@@ -384,6 +416,7 @@
             this.tlpAgregar.Controls.Add(this.labelPais, 1, 3);
             this.tlpAgregar.Controls.Add(this.labelMensajePais, 2, 4);
             this.tlpAgregar.Controls.Add(this.labelMensajeNombre, 2, 2);
+            this.tlpAgregar.Controls.Add(this.buttonAgregar, 2, 9);
             this.tlpAgregar.Dock = System.Windows.Forms.DockStyle.Top;
             this.tlpAgregar.Location = new System.Drawing.Point(0, 300);
             this.tlpAgregar.MaximumSize = new System.Drawing.Size(0, 300);
@@ -433,25 +466,12 @@
             this.label8.Text = "Agregar";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // buttonAgregar
-            // 
-            this.buttonAgregar.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAgregar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAgregar.Location = new System.Drawing.Point(437, 262);
-            this.buttonAgregar.Name = "buttonAgregar";
-            this.buttonAgregar.Size = new System.Drawing.Size(75, 32);
-            this.buttonAgregar.TabIndex = 6;
-            this.buttonAgregar.Text = "Agregar";
-            this.buttonAgregar.UseVisualStyleBackColor = false;
-            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
-            // 
             // numericUpDownPrecio
             // 
             this.numericUpDownPrecio.DecimalPlaces = 2;
             this.numericUpDownPrecio.Location = new System.Drawing.Point(437, 210);
             this.numericUpDownPrecio.Maximum = new decimal(new int[] {
-            10000000,
+            1000000000,
             0,
             0,
             0});
@@ -554,6 +574,26 @@
             this.labelMensajeNombre.TabIndex = 20;
             this.labelMensajeNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // buttonAgregar
+            // 
+            this.buttonAgregar.BorderRadius = 15;
+            this.buttonAgregar.BorderThickness = 1;
+            this.buttonAgregar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonAgregar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonAgregar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonAgregar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonAgregar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonAgregar.FillColor = System.Drawing.Color.White;
+            this.buttonAgregar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonAgregar.ForeColor = System.Drawing.Color.Black;
+            this.buttonAgregar.HoverState.FillColor = System.Drawing.Color.Lime;
+            this.buttonAgregar.Location = new System.Drawing.Point(437, 262);
+            this.buttonAgregar.Name = "buttonAgregar";
+            this.buttonAgregar.Size = new System.Drawing.Size(394, 35);
+            this.buttonAgregar.TabIndex = 23;
+            this.buttonAgregar.Text = "Agregar";
+            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
+            // 
             // panel1
             // 
             this.panel1.AutoSize = true;
@@ -569,18 +609,17 @@
             // tlpEditar
             // 
             this.tlpEditar.BackColor = System.Drawing.SystemColors.Control;
-            this.tlpEditar.ColumnCount = 4;
+            this.tlpEditar.ColumnCount = 5;
             this.tlpEditar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpEditar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
-            this.tlpEditar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 400F));
+            this.tlpEditar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
+            this.tlpEditar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
             this.tlpEditar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpEditar.Controls.Add(this.labelNombre2, 1, 2);
             this.tlpEditar.Controls.Add(this.labelPaisDestino2, 1, 4);
             this.tlpEditar.Controls.Add(this.labelFecha2, 1, 6);
             this.tlpEditar.Controls.Add(this.labelHora2, 1, 7);
             this.tlpEditar.Controls.Add(this.labelPrecio2, 1, 8);
-            this.tlpEditar.Controls.Add(this.button2, 1, 10);
-            this.tlpEditar.Controls.Add(this.button3, 2, 10);
             this.tlpEditar.Controls.Add(this.textBoxNombre2, 2, 2);
             this.tlpEditar.Controls.Add(this.numericUpDownPrecio2, 2, 8);
             this.tlpEditar.Controls.Add(this.comboBoxPais2, 2, 4);
@@ -592,17 +631,19 @@
             this.tlpEditar.Controls.Add(this.labelMensajeNombre2, 2, 3);
             this.tlpEditar.Controls.Add(this.labelMensajePais2, 2, 5);
             this.tlpEditar.Controls.Add(this.labelMensajePrecio2, 2, 9);
+            this.tlpEditar.Controls.Add(this.ButtonEdit, 3, 10);
+            this.tlpEditar.Controls.Add(this.ButtonCancelar, 2, 10);
             this.tlpEditar.Dock = System.Windows.Forms.DockStyle.Top;
             this.tlpEditar.Location = new System.Drawing.Point(0, 0);
             this.tlpEditar.MaximumSize = new System.Drawing.Size(0, 300);
             this.tlpEditar.Name = "tlpEditar";
             this.tlpEditar.RowCount = 11;
             this.tlpEditar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tlpEditar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tlpEditar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tlpEditar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tlpEditar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tlpEditar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tlpEditar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tlpEditar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tlpEditar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 19F));
+            this.tlpEditar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpEditar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tlpEditar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tlpEditar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tlpEditar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
@@ -615,16 +656,16 @@
             // 
             this.labelNombre2.AutoSize = true;
             this.labelNombre2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labelNombre2.Location = new System.Drawing.Point(344, 61);
+            this.labelNombre2.Location = new System.Drawing.Point(334, 56);
             this.labelNombre2.Name = "labelNombre2";
-            this.labelNombre2.Size = new System.Drawing.Size(82, 24);
+            this.labelNombre2.Size = new System.Drawing.Size(82, 22);
             this.labelNombre2.TabIndex = 0;
             this.labelNombre2.Text = "Nombre del tour";
             // 
             // labelPaisDestino2
             // 
             this.labelPaisDestino2.AutoSize = true;
-            this.labelPaisDestino2.Location = new System.Drawing.Point(344, 101);
+            this.labelPaisDestino2.Location = new System.Drawing.Point(334, 97);
             this.labelPaisDestino2.Name = "labelPaisDestino2";
             this.labelPaisDestino2.Size = new System.Drawing.Size(83, 13);
             this.labelPaisDestino2.TabIndex = 1;
@@ -633,7 +674,7 @@
             // labelFecha2
             // 
             this.labelFecha2.AutoSize = true;
-            this.labelFecha2.Location = new System.Drawing.Point(344, 145);
+            this.labelFecha2.Location = new System.Drawing.Point(334, 145);
             this.labelFecha2.Name = "labelFecha2";
             this.labelFecha2.Size = new System.Drawing.Size(75, 13);
             this.labelFecha2.TabIndex = 2;
@@ -642,7 +683,7 @@
             // labelHora2
             // 
             this.labelHora2.AutoSize = true;
-            this.labelHora2.Location = new System.Drawing.Point(344, 181);
+            this.labelHora2.Location = new System.Drawing.Point(334, 181);
             this.labelHora2.Name = "labelHora2";
             this.labelHora2.Size = new System.Drawing.Size(68, 13);
             this.labelHora2.TabIndex = 3;
@@ -651,56 +692,35 @@
             // labelPrecio2
             // 
             this.labelPrecio2.AutoSize = true;
-            this.labelPrecio2.Location = new System.Drawing.Point(344, 219);
+            this.labelPrecio2.Location = new System.Drawing.Point(334, 219);
             this.labelPrecio2.Name = "labelPrecio2";
             this.labelPrecio2.Size = new System.Drawing.Size(37, 13);
             this.labelPrecio2.TabIndex = 4;
             this.labelPrecio2.Text = "Precio";
             // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(344, 268);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 27);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(434, 268);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 27);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Editar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // textBoxNombre2
             // 
             this.textBoxNombre2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tlpEditar.SetColumnSpan(this.textBoxNombre2, 2);
             this.textBoxNombre2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.textBoxNombre2.Location = new System.Drawing.Point(434, 64);
+            this.textBoxNombre2.Location = new System.Drawing.Point(424, 59);
             this.textBoxNombre2.Name = "textBoxNombre2";
-            this.textBoxNombre2.Size = new System.Drawing.Size(392, 20);
+            this.textBoxNombre2.Size = new System.Drawing.Size(414, 20);
             this.textBoxNombre2.TabIndex = 7;
             this.textBoxNombre2.TextChanged += new System.EventHandler(this.textBoxNombre2_TextChanged);
             // 
             // numericUpDownPrecio2
             // 
+            this.tlpEditar.SetColumnSpan(this.numericUpDownPrecio2, 2);
             this.numericUpDownPrecio2.DecimalPlaces = 2;
-            this.numericUpDownPrecio2.Location = new System.Drawing.Point(434, 222);
+            this.numericUpDownPrecio2.Location = new System.Drawing.Point(424, 222);
             this.numericUpDownPrecio2.Maximum = new decimal(new int[] {
             1000000000,
             0,
             0,
             0});
             this.numericUpDownPrecio2.Name = "numericUpDownPrecio2";
-            this.numericUpDownPrecio2.Size = new System.Drawing.Size(392, 20);
+            this.numericUpDownPrecio2.Size = new System.Drawing.Size(414, 20);
             this.numericUpDownPrecio2.TabIndex = 11;
             this.numericUpDownPrecio2.ThousandsSeparator = true;
             this.toolTip.SetToolTip(this.numericUpDownPrecio2, "Introduce el precio.");
@@ -714,36 +734,40 @@
             // 
             // comboBoxPais2
             // 
+            this.tlpEditar.SetColumnSpan(this.comboBoxPais2, 2);
             this.comboBoxPais2.FormattingEnabled = true;
-            this.comboBoxPais2.Location = new System.Drawing.Point(434, 104);
+            this.comboBoxPais2.Location = new System.Drawing.Point(424, 100);
             this.comboBoxPais2.Name = "comboBoxPais2";
-            this.comboBoxPais2.Size = new System.Drawing.Size(392, 21);
+            this.comboBoxPais2.Size = new System.Drawing.Size(414, 21);
             this.comboBoxPais2.TabIndex = 15;
             this.comboBoxPais2.TextChanged += new System.EventHandler(this.comboBoxPais2_TextChanged);
             // 
             // dtpHora2
             // 
+            this.tlpEditar.SetColumnSpan(this.dtpHora2, 2);
             this.dtpHora2.CustomFormat = "HH:mm ";
             this.dtpHora2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpHora2.Location = new System.Drawing.Point(434, 184);
+            this.dtpHora2.Location = new System.Drawing.Point(424, 184);
             this.dtpHora2.Name = "dtpHora2";
             this.dtpHora2.ShowUpDown = true;
-            this.dtpHora2.Size = new System.Drawing.Size(392, 20);
+            this.dtpHora2.Size = new System.Drawing.Size(414, 20);
             this.dtpHora2.TabIndex = 16;
             // 
             // dtpFecha2
             // 
-            this.dtpFecha2.Location = new System.Drawing.Point(434, 148);
+            this.tlpEditar.SetColumnSpan(this.dtpFecha2, 2);
+            this.dtpFecha2.Location = new System.Drawing.Point(424, 148);
             this.dtpFecha2.Name = "dtpFecha2";
-            this.dtpFecha2.Size = new System.Drawing.Size(392, 20);
+            this.dtpFecha2.Size = new System.Drawing.Size(414, 20);
             this.dtpFecha2.TabIndex = 17;
             // 
             // label9
             // 
+            this.tlpEditar.SetColumnSpan(this.label9, 2);
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(434, 0);
+            this.label9.Location = new System.Drawing.Point(424, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(393, 33);
+            this.label9.Size = new System.Drawing.Size(414, 33);
             this.label9.TabIndex = 22;
             this.label9.Text = "Editar";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -751,17 +775,18 @@
             // richTextBoxMensaje
             // 
             this.richTextBoxMensaje.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxMensaje.Location = new System.Drawing.Point(434, 36);
+            this.tlpEditar.SetColumnSpan(this.richTextBoxMensaje, 2);
+            this.richTextBoxMensaje.Location = new System.Drawing.Point(424, 36);
             this.richTextBoxMensaje.Name = "richTextBoxMensaje";
             this.richTextBoxMensaje.ReadOnly = true;
-            this.richTextBoxMensaje.Size = new System.Drawing.Size(394, 22);
+            this.richTextBoxMensaje.Size = new System.Drawing.Size(414, 17);
             this.richTextBoxMensaje.TabIndex = 23;
             this.richTextBoxMensaje.Text = "";
             // 
             // labelEditando
             // 
             this.labelEditando.AutoSize = true;
-            this.labelEditando.Location = new System.Drawing.Point(344, 33);
+            this.labelEditando.Location = new System.Drawing.Point(334, 33);
             this.labelEditando.Name = "labelEditando";
             this.labelEditando.Size = new System.Drawing.Size(52, 13);
             this.labelEditando.TabIndex = 24;
@@ -769,27 +794,68 @@
             // 
             // labelMensajeNombre2
             // 
-            this.labelMensajeNombre2.Location = new System.Drawing.Point(434, 85);
+            this.tlpEditar.SetColumnSpan(this.labelMensajeNombre2, 2);
+            this.labelMensajeNombre2.Location = new System.Drawing.Point(424, 78);
             this.labelMensajeNombre2.Name = "labelMensajeNombre2";
-            this.labelMensajeNombre2.Size = new System.Drawing.Size(394, 16);
+            this.labelMensajeNombre2.Size = new System.Drawing.Size(414, 16);
             this.labelMensajeNombre2.TabIndex = 20;
             this.labelMensajeNombre2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelMensajePais2
             // 
-            this.labelMensajePais2.Location = new System.Drawing.Point(434, 127);
+            this.tlpEditar.SetColumnSpan(this.labelMensajePais2, 2);
+            this.labelMensajePais2.Location = new System.Drawing.Point(424, 122);
             this.labelMensajePais2.Name = "labelMensajePais2";
-            this.labelMensajePais2.Size = new System.Drawing.Size(392, 18);
+            this.labelMensajePais2.Size = new System.Drawing.Size(414, 23);
             this.labelMensajePais2.TabIndex = 19;
             this.labelMensajePais2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelMensajePrecio2
             // 
-            this.labelMensajePrecio2.Location = new System.Drawing.Point(434, 247);
+            this.tlpEditar.SetColumnSpan(this.labelMensajePrecio2, 2);
+            this.labelMensajePrecio2.Location = new System.Drawing.Point(424, 247);
             this.labelMensajePrecio2.Name = "labelMensajePrecio2";
-            this.labelMensajePrecio2.Size = new System.Drawing.Size(394, 18);
+            this.labelMensajePrecio2.Size = new System.Drawing.Size(414, 18);
             this.labelMensajePrecio2.TabIndex = 23;
             this.labelMensajePrecio2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ButtonEdit
+            // 
+            this.ButtonEdit.BorderRadius = 15;
+            this.ButtonEdit.BorderThickness = 1;
+            this.ButtonEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ButtonEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ButtonEdit.FillColor = System.Drawing.Color.White;
+            this.ButtonEdit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonEdit.ForeColor = System.Drawing.Color.Black;
+            this.ButtonEdit.HoverState.FillColor = System.Drawing.Color.Lime;
+            this.ButtonEdit.Location = new System.Drawing.Point(634, 268);
+            this.ButtonEdit.Name = "ButtonEdit";
+            this.ButtonEdit.Size = new System.Drawing.Size(204, 27);
+            this.ButtonEdit.TabIndex = 24;
+            this.ButtonEdit.Text = "Editar";
+            this.ButtonEdit.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // ButtonCancelar
+            // 
+            this.ButtonCancelar.BorderRadius = 15;
+            this.ButtonCancelar.BorderThickness = 1;
+            this.ButtonCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ButtonCancelar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ButtonCancelar.FillColor = System.Drawing.Color.White;
+            this.ButtonCancelar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonCancelar.ForeColor = System.Drawing.Color.Black;
+            this.ButtonCancelar.HoverState.FillColor = System.Drawing.Color.Red;
+            this.ButtonCancelar.Location = new System.Drawing.Point(424, 268);
+            this.ButtonCancelar.Name = "ButtonCancelar";
+            this.ButtonCancelar.Size = new System.Drawing.Size(204, 27);
+            this.ButtonCancelar.TabIndex = 25;
+            this.ButtonCancelar.Text = "Cancelar";
+            this.ButtonCancelar.Click += new System.EventHandler(this.ButtonCancelar_Click);
             // 
             // timerAnimacion
             // 
@@ -840,22 +906,17 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.DataGridView dataGridViewDatos;
         private System.Windows.Forms.TableLayoutPanel tlpAgregar;
         private System.Windows.Forms.Label labelPais;
         private System.Windows.Forms.Label labelFecha;
         private System.Windows.Forms.Label labelHora;
         private System.Windows.Forms.Label labelPrecio;
-        private System.Windows.Forms.Button buttonAgregar;
         private System.Windows.Forms.NumericUpDown numericUpDownPrecio;
         private System.Windows.Forms.ComboBox comboBoxPais;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer timerAnimacion;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Button buttonEliminar;
-        private System.Windows.Forms.Button buttonEditar;
-        private System.Windows.Forms.Button buttonExportar;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.DateTimePicker dtpHora;
         private System.Windows.Forms.DateTimePicker dtpFecha;
@@ -877,8 +938,6 @@
         private System.Windows.Forms.Label labelFecha2;
         private System.Windows.Forms.Label labelHora2;
         private System.Windows.Forms.Label labelPrecio2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBoxNombre2;
         private System.Windows.Forms.NumericUpDown numericUpDownPrecio2;
         private System.Windows.Forms.ComboBox comboBoxPais2;
@@ -900,5 +959,12 @@
         private System.Windows.Forms.Label labelNombrearchivo;
         private System.Windows.Forms.Label labelGuardar;
         private Guna.UI2.WinForms.Guna2CirclePictureBox FotoGuardando;
+        private Guna.UI2.WinForms.Guna2Button buttonAdd;
+        private Guna.UI2.WinForms.Guna2Button buttonEliminar;
+        private Guna.UI2.WinForms.Guna2Button buttonEditar;
+        private Guna.UI2.WinForms.Guna2Button buttonExportar;
+        private Guna.UI2.WinForms.Guna2Button buttonAgregar;
+        private Guna.UI2.WinForms.Guna2Button ButtonCancelar;
+        private Guna.UI2.WinForms.Guna2Button ButtonEdit;
     }
 }

@@ -39,6 +39,15 @@
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.3856.49, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.3856.49\lib\net462\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.3856.49, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.3856.49\lib\net462\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.3856.49, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.3856.49\lib\net462\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
@@ -148,17 +157,17 @@
     <Compile Include="Pruebas.Designer.cs">
       <DependentUpon>Pruebas.cs</DependentUpon>
     </Compile>
-    <Compile Include="UcAbout.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UcAbout.Designer.cs">
-      <DependentUpon>UcAbout.cs</DependentUpon>
-    </Compile>
     <Compile Include="UcAgregarListas.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UcAgregarListas.Designer.cs">
       <DependentUpon>UcAgregarListas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcIntrucciones.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcIntrucciones.Designer.cs">
+      <DependentUpon>UcIntrucciones.cs</DependentUpon>
     </Compile>
     <Compile Include="UcPrincipal.cs">
       <SubType>UserControl</SubType>
@@ -171,6 +180,12 @@
     </Compile>
     <Compile Include="UcTarjetas.Designer.cs">
       <DependentUpon>UcTarjetas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcViajes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcViajes.Designer.cs">
+      <DependentUpon>UcViajes.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -200,17 +215,20 @@
     <EmbeddedResource Include="Pruebas.resx">
       <DependentUpon>Pruebas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UcAbout.resx">
-      <DependentUpon>UcAbout.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UcAgregarListas.resx">
       <DependentUpon>UcAgregarListas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcIntrucciones.resx">
+      <DependentUpon>UcIntrucciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UcPrincipal.resx">
       <DependentUpon>UcPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UcTarjetas.resx">
       <DependentUpon>UcTarjetas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcViajes.resx">
+      <DependentUpon>UcViajes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -328,5 +346,33 @@
   <ItemGroup>
     <None Include="Resources\boton-agregar %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tutorial-nueva-lista.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tutorial-Agregar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tutorial-Editar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tutorial-Eliminar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tutorial-Exportar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tutorial-Buscar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Deseleccionar-tutoriar.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.3856.49\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.3856.49\build\Microsoft.Web.WebView2.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.3856.49\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.3856.49\build\Microsoft.Web.WebView2.targets'))" />
+  </Target>
 </Project>

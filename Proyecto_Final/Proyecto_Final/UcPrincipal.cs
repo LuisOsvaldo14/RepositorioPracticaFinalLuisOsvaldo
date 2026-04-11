@@ -63,12 +63,19 @@ namespace Proyecto_Final
                         decimal itbis = 0m;
                         decimal.TryParse(celdas[6], NumberStyles.Any, CultureInfo.InvariantCulture, out precio);
                         decimal.TryParse(celdas[7], NumberStyles.Any, CultureInfo.InvariantCulture, out itbis);
-
-                        var duracion = celdas.Length > 8 ? celdas[8] : "";
-                        var estado = celdas.Length > 9 ? celdas[9] : "";
+                        string duracion = celdas.Length > 8 ? celdas[8] : "";
+                        TimeSpan duracionCalculada = ObtenerDuracion(pais);
+                        DateTime fechaHoraInicio = fecha.Add(hora.TimeOfDay);
+                        DateTime fechaHoraFin = fechaHoraInicio.Add(duracionCalculada);
+                        var estado = DateTime.Now > fechaHoraFin ? "Vencida" : "Vigente";
 
                         dataGridViewDatos.Rows.Add(id, nombre, pais, destino, fecha, hora, precio, itbis, duracion, estado);
                     }
+                    tlpAgregar.Height = tlpAgregar.MaximumSize.Height;
+                    tlpEditar.Height = tlpEditar.MinimumSize.Height;
+                    LimpiarCamposEditar();
+                    LimpiarCamposAgregar();
+                    ActualizarSugerenciasBusqueda();
                     dataGridViewDatos.CurrentCell = null;
                     dataGridViewDatos.ClearSelection();
 
@@ -78,6 +85,29 @@ namespace Proyecto_Final
             {
                 MessageBox.Show("Error al cargar los datos: " + ex.Message);
             }
+        }
+        private void LimpiarCamposAgregar()
+        {
+            textBoxNombre.Clear();
+            comboBoxPais.SelectedIndex = -1;
+            dtpFecha.Value = DateTime.Now.Date;
+            dtpHora.Value = DateTime.Now;
+            numericUpDownPrecio.Value = 1m;
+            labelMensajeNombre.Text = "";
+            labelMensajePais.Text = "";
+            labelMensajePrecio.Visible = false;
+        }
+        private void LimpiarCamposEditar()
+        {
+            textBoxNombre2.Clear();
+            comboBoxPais2.SelectedIndex = -1;
+            dtpFecha2.Value = DateTime.Now.Date;
+            dtpHora2.Value = DateTime.Now;
+            numericUpDownPrecio2.Value = 1m;
+            labelMensajeNombre2.Text = "";
+            labelMensajePais2.Text = "";
+            labelMensajePrecio2.Visible = false;
+            richTextBoxMensaje.Clear();
         }
         private async Task GuardarCambiosEnCSV()
         {
@@ -726,16 +756,20 @@ namespace Proyecto_Final
 
         }
 
-        private void buttonAgregar_Click(object sender, EventArgs e)
+        private async void buttonAgregar_Click(object sender, EventArgs e)
         {
+            // Validar precio
             if (decimal.TryParse(numericUpDownPrecio.Text, out decimal valorEscrito))
             {
-                if (valorEscrito <= 0 || valorEscrito > 10000000)
+
+                if (valorEscrito <= 0m || valorEscrito > 10000000m) // <-- usar OR
                 {
                     PrecioInput = false;
                     labelMensajePrecio.Text = "Introduce un número entre 1 y 10,000,000";
                     labelMensajePrecio.ForeColor = Color.Red;
                     labelMensajePrecio.Visible = true;
+                    numericUpDownPrecio.Value = 1m;
+
                 }
                 else
                 {
@@ -833,13 +867,19 @@ namespace Proyecto_Final
 
                 );
                 ActualizarSugerenciasBusqueda();
+                LimpiarCamposAgregar();
                 dataGridViewDatos.CurrentCell = null;
                 dataGridViewDatos.ClearSelection();
-                GuardarCambiosEnCSV();
+                await GuardarCambiosEnCSV();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, corrige los errores antes de agregar el tour.",
+                    "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void buttonEliminar_Click(object sender, EventArgs e)
+        private async void buttonEliminar_Click(object sender, EventArgs e)
         {
             if (dataGridViewDatos.CurrentRow != null)
             {
@@ -853,7 +893,7 @@ namespace Proyecto_Final
                     dataGridViewDatos.Rows.RemoveAt(indice);
                     dataGridViewDatos.CurrentCell = null;
                     dataGridViewDatos.ClearSelection();
-                    GuardarCambiosEnCSV();
+                    await GuardarCambiosEnCSV();
                 }
             }
             else
@@ -952,32 +992,62 @@ namespace Proyecto_Final
             }
         }
         string idSeleccionada;
+        private int ultimoIndiceSeleccionado = -1;
 
         private void dataGridViewDatos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow fila = dataGridViewDatos.Rows[e.RowIndex];
-                textBoxNombre2.Text = fila.Cells["ClnNombreTour"].Value.ToString();
-                comboBoxPais2.Text = fila.Cells["ClnPais"].Value.ToString();
-                dtpFecha2.Value = (DateTime)fila.Cells["ClnFecha"].Value;
-                dtpHora2.Value = (DateTime)fila.Cells["ClnHora"].Value;
-                numericUpDownPrecio2.Text = fila.Cells["ClnPrecio"].Value.ToString();
-                idSeleccionada = fila.Cells["Clnid"].Value.ToString();
-                richTextBoxMensaje.Clear();
-                richTextBoxMensaje.SelectionColor = Color.Black;
-                richTextBoxMensaje.AppendText("ID: ");
-                richTextBoxMensaje.SelectionColor = Color.Green;
-                richTextBoxMensaje.AppendText(idSeleccionada + " ");
-                richTextBoxMensaje.SelectionColor = Color.Black;
-                richTextBoxMensaje.AppendText("| Tour: ");
-                richTextBoxMensaje.SelectionColor = Color.Green;
-                richTextBoxMensaje.AppendText(fila.Cells["ClnNombreTour"].Value.ToString());
+                if (e.RowIndex == ultimoIndiceSeleccionado)
+                {
+
+                    if(tlpEditar.Height > tlpEditar.MinimumSize.Height)
+                    {
+                        DialogResult respuesta = MessageBox.Show("Si deseleccionas la fila, vas a dejar de editar. ¿Quieres deseleccionar?\r\n",
+                        "Confirmar Deselección", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (respuesta == DialogResult.Yes)
+                        {
+                            expandireditar = false;
+                            pendienteAbrirEditar = false;
+                            pendienteAbrirAgregar = true;
+                            LimpiarCamposEditar();
+                            timerAnimacion.Start();
+                            dataGridViewDatos.ClearSelection();
+                            dataGridViewDatos.CurrentCell = null;
+                            ultimoIndiceSeleccionado = -1;
+
+                        }
+                    }
+                    dataGridViewDatos.ClearSelection();
+                    dataGridViewDatos.CurrentCell = null;
+                    ultimoIndiceSeleccionado = -1; 
+                }
+                else
+                {
+                    ultimoIndiceSeleccionado = e.RowIndex;
+                    textBoxNombre2.Text = fila.Cells["ClnNombreTour"].Value.ToString();
+                    comboBoxPais2.Text = fila.Cells["ClnPais"].Value.ToString();
+                    dtpFecha2.Value = (DateTime)fila.Cells["ClnFecha"].Value;
+                    dtpHora2.Value = (DateTime)fila.Cells["ClnHora"].Value;
+                    numericUpDownPrecio2.Text = fila.Cells["ClnPrecio"].Value.ToString();
+                    idSeleccionada = fila.Cells["Clnid"].Value.ToString();
+                    richTextBoxMensaje.Clear();
+                    richTextBoxMensaje.SelectionColor = Color.Black;
+                    richTextBoxMensaje.AppendText("ID: ");
+                    richTextBoxMensaje.SelectionColor = Color.Green;
+                    richTextBoxMensaje.AppendText(idSeleccionada + " ");
+                    richTextBoxMensaje.SelectionColor = Color.Black;
+                    richTextBoxMensaje.AppendText("| Tour: ");
+                    richTextBoxMensaje.SelectionColor = Color.Green;
+                    richTextBoxMensaje.AppendText(fila.Cells["ClnNombreTour"].Value.ToString());
+                }
 
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private async void button3_Click(object sender, EventArgs e)
         {
             if (decimal.TryParse(numericUpDownPrecio2.Text, out decimal valorEscrito2))
             {
@@ -1066,8 +1136,8 @@ namespace Proyecto_Final
                 ActualizarSugerenciasBusqueda();
                 dataGridViewDatos.CurrentCell = null;
                 dataGridViewDatos.ClearSelection();
-                MessageBox.Show("¡Tour actualizado con éxito!");
-                GuardarCambiosEnCSV();
+                LimpiarCamposAgregar();
+                await GuardarCambiosEnCSV();
 
                 if (expandir)
                 {
@@ -1082,7 +1152,13 @@ namespace Proyecto_Final
                     expandireditar = false;
                 }
                 timerAnimacion.Start();
-        
+                MessageBox.Show("¡Tour actualizado con éxito!");
+
+            }
+            else
+            {
+                MessageBox.Show("Por favor, corrige los errores antes de agregar el tour.",
+                    "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1146,6 +1222,22 @@ namespace Proyecto_Final
             }
         }
 
+        private void ButtonCancelar_Click(object sender, EventArgs e)
+        {
+            LimpiarCamposEditar();
+             if (expandireditar)
+            {
+                expandireditar = false;
+                pendienteAbrirEditar = false;
+            }
+            else
+            {
+                pendienteAbrirEditar = true;
+                pendienteAbrirAgregar = false;
+                expandir = false;
+            }
+            timerAnimacion.Start();
+        }
     }
     
 }

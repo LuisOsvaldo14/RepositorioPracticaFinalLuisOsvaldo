@@ -303,12 +303,13 @@
             this.Controls.Add(this.panelBarraTitulo);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1010, 605);
             this.Name = "FormSingin";
             this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormSingin";
+            this.Text = "NoLImitsEvents";
             this.Activated += new System.EventHandler(this.FormSingin_Activated);
             this.Load += new System.EventHandler(this.FormSingin_Load);
             this.panelBarraTitulo.ResumeLayout(false);

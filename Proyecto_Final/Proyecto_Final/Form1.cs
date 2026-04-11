@@ -33,8 +33,6 @@ namespace Proyecto_Final
         [System.Runtime.InteropServices.DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         private void tlpBarraTitulo_MouseDown(object sender, MouseEventArgs e)
-
-
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -99,24 +97,7 @@ namespace Proyecto_Final
 
         }
 
-        private void buttonMinimized_Click(object sender, EventArgs e)
-        {
-            Timer timerminimizar = new Timer();
-            timerminimizar.Interval = 10;
-            timerminimizar.Tick += (s, ve) =>
-            {
-                if (this.Opacity > 0)
-                {
-                    this.Opacity -= 0.2;
-                }
-                else
-                {
-                    timerminimizar.Stop();
-                    this.WindowState = FormWindowState.Minimized;
-                }
-            };
-            timerminimizar.Start();
-        }
+
 
         private void FormMenuprincipal_Activated(object sender, EventArgs e)
         {
@@ -127,7 +108,7 @@ namespace Proyecto_Final
                 {
                     if (this.Opacity < 1)
                     {
-                        this.Opacity += 0.1;
+                        this.Opacity += 0.025;
                     }
                     else
                     {
@@ -137,9 +118,6 @@ namespace Proyecto_Final
                 Mostrar.Start();
             }
         }
-
-
-        bool expandir;
 
 
         private void buttonMaximizar_Click(object sender, EventArgs e)
@@ -157,7 +135,6 @@ namespace Proyecto_Final
                     else
                     {
                         timernormal.Stop();
-                        this.WindowState = FormWindowState.Normal;
                         this.StartPosition = FormStartPosition.CenterScreen;
 
                         Timer timernormal2 = new Timer();
@@ -195,7 +172,6 @@ namespace Proyecto_Final
                     else
                     {
                         timernormal.Stop();
-                        this.WindowState = FormWindowState.Maximized;
 
                         Timer timernormal2 = new Timer();
                         timernormal2.Interval = 10;
@@ -230,17 +206,6 @@ namespace Proyecto_Final
         }
 
 
-        private void buttonConfiguracion_MouseEnter(object sender, EventArgs e)
-        {
-            buttonConfiguracion.BackColor = Color.White;
-        }
-    
-
-        private void buttonConfiguracion_MouseLeave(object sender, EventArgs e)
-        {
-            buttonConfiguracion.BackColor = Color.SlateGray;
-
-        }
 
 
         private void ButtonHome_Click(object sender, EventArgs e)
@@ -249,14 +214,36 @@ namespace Proyecto_Final
             CargarControl<UcAgregarListas>();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            CargarControl<UcAbout>();
-        }
-
         private void ButtonLogout_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            CargarControl<UcIntrucciones>();
+
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            CargarControl<UcViajes>();
+        }
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
         }
     }
 }
